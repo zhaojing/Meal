@@ -15,6 +15,9 @@
 		0D4C9BCA1D53341E00E1B534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC81D53341E00E1B534 /* LaunchScreen.storyboard */; };
 		0D4C9BD51D53341E00E1B534 /* MealTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BD41D53341E00E1B534 /* MealTests.m */; };
 		0D4C9BE01D53341E00E1B534 /* MealUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BDF1D53341E00E1B534 /* MealUITests.m */; };
+		0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BF11D5339A100E1B534 /* ShakeViewController.m */; };
+		0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BF41D5339B500E1B534 /* MineViewController.m */; };
+		0D4C9BF81D5339CF00E1B534 /* MenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BF71D5339CF00E1B534 /* MenuListViewController.m */; };
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
@@ -54,6 +57,12 @@
 		0D4C9BDB1D53341E00E1B534 /* MealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4C9BDF1D53341E00E1B534 /* MealUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealUITests.m; sourceTree = "<group>"; };
 		0D4C9BE11D53341E00E1B534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D4C9BF01D5339A100E1B534 /* ShakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeViewController.h; sourceTree = "<group>"; };
+		0D4C9BF11D5339A100E1B534 /* ShakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeViewController.m; sourceTree = "<group>"; };
+		0D4C9BF31D5339B500E1B534 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		0D4C9BF41D5339B500E1B534 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		0D4C9BF61D5339CF00E1B534 /* MenuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListViewController.h; sourceTree = "<group>"; };
+		0D4C9BF71D5339CF00E1B534 /* MenuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewController.m; sourceTree = "<group>"; };
 		3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.debug.xcconfig"; sourceTree = "<group>"; };
 		749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +127,9 @@
 		0D4C9BB91D53341E00E1B534 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
+				0D4C9BEF1D53397500E1B534 /* Shake */,
+				0D4C9BEE1D53396C00E1B534 /* Mine */,
+				0D4C9BED1D53395800E1B534 /* MenuList */,
 				0D4C9BBD1D53341E00E1B534 /* AppDelegate.h */,
 				0D4C9BBE1D53341E00E1B534 /* AppDelegate.m */,
 				0D4C9BC01D53341E00E1B534 /* ViewController.h */,
@@ -155,6 +167,105 @@
 				0D4C9BE11D53341E00E1B534 /* Info.plist */,
 			);
 			path = MealUITests;
+			sourceTree = "<group>";
+		};
+		0D4C9BED1D53395800E1B534 /* MenuList */ = {
+			isa = PBXGroup;
+			children = (
+				0D4C9BFF1D533BFC00E1B534 /* View */,
+				0D4C9C001D533C1500E1B534 /* ViewModel */,
+				0D4C9C011D533C3600E1B534 /* Model */,
+				0D4C9BF61D5339CF00E1B534 /* MenuListViewController.h */,
+				0D4C9BF71D5339CF00E1B534 /* MenuListViewController.m */,
+			);
+			path = MenuList;
+			sourceTree = "<group>";
+		};
+		0D4C9BEE1D53396C00E1B534 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				0D4C9BFE1D533BA700E1B534 /* View */,
+				0D4C9BFD1D533B8B00E1B534 /* ViewModel */,
+				0D4C9BFC1D533B6D00E1B534 /* Model */,
+				0D4C9BF31D5339B500E1B534 /* MineViewController.h */,
+				0D4C9BF41D5339B500E1B534 /* MineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		0D4C9BEF1D53397500E1B534 /* Shake */ = {
+			isa = PBXGroup;
+			children = (
+				0D4C9BFB1D533B3600E1B534 /* View */,
+				0D4C9BFA1D533B0B00E1B534 /* ViewModel */,
+				0D4C9BF91D533AF700E1B534 /* Model */,
+				0D4C9BF01D5339A100E1B534 /* ShakeViewController.h */,
+				0D4C9BF11D5339A100E1B534 /* ShakeViewController.m */,
+			);
+			path = Shake;
+			sourceTree = "<group>";
+		};
+		0D4C9BF91D533AF700E1B534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0D4C9BFA1D533B0B00E1B534 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D4C9BFB1D533B3600E1B534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0D4C9BFC1D533B6D00E1B534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0D4C9BFD1D533B8B00E1B534 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D4C9BFE1D533BA700E1B534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0D4C9BFF1D533BFC00E1B534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0D4C9C001D533C1500E1B534 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D4C9C011D533C3600E1B534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D6B33482C7C3594F4269C717 /* Frameworks */ = {
@@ -446,7 +557,10 @@
 			files = (
 				0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */,
 				0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */,
+				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,
+				0D4C9BF81D5339CF00E1B534 /* MenuListViewController.m in Sources */,
 				0D4C9BBC1D53341E00E1B534 /* main.m in Sources */,
+				0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
