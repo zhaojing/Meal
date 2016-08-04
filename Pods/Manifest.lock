@@ -1,0 +1,20 @@
+PODS:
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - Kiwi (2.4.0)
+  - OCMock (3.3.1)
+
+DEPENDENCIES:
+  - FMDB
+  - Kiwi (= 2.4.0)
+  - OCMock
+
+SPEC CHECKSUMS:
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+
+PODFILE CHECKSUM: c369ca25a9d6910949b03f02aa634559e9cd4f7a
+
+COCOAPODS: 1.0.1

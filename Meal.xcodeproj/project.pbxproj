@@ -15,6 +15,9 @@
 		0D4C9BCA1D53341E00E1B534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC81D53341E00E1B534 /* LaunchScreen.storyboard */; };
 		0D4C9BD51D53341E00E1B534 /* MealTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BD41D53341E00E1B534 /* MealTests.m */; };
 		0D4C9BE01D53341E00E1B534 /* MealUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BDF1D53341E00E1B534 /* MealUITests.m */; };
+		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
+		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
+		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,15 @@
 		0D4C9BDB1D53341E00E1B534 /* MealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4C9BDF1D53341E00E1B534 /* MealUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealUITests.m; sourceTree = "<group>"; };
 		0D4C9BE11D53341E00E1B534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.debug.xcconfig"; sourceTree = "<group>"; };
+		749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BDD40F5B6DACFDD1605D791 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
+		ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		B4CF69063CB6B1C24727FB59 /* Pods-MealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Meal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				0D4C9BD31D53341E00E1B534 /* MealTests */,
 				0D4C9BDE1D53341E00E1B534 /* MealUITests */,
 				0D4C9BB81D53341E00E1B534 /* Products */,
+				E6ACD36B86731C76D792A9F5 /* Pods */,
+				D6B33482C7C3594F4269C717 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +157,29 @@
 			path = MealUITests;
 			sourceTree = "<group>";
 		};
+		D6B33482C7C3594F4269C717 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */,
+				7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */,
+				C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6ACD36B86731C76D792A9F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */,
+				8BDD40F5B6DACFDD1605D791 /* Pods-Meal.release.xcconfig */,
+				674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */,
+				B4CF69063CB6B1C24727FB59 /* Pods-MealTests.release.xcconfig */,
+				3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */,
+				749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D4C9BE41D53341E00E1B534 /* Build configuration list for PBXNativeTarget "Meal" */;
 			buildPhases = (
+				817243E138A397C0CF9337D3 /* [CP] Check Pods Manifest.lock */,
 				0D4C9BB31D53341E00E1B534 /* Sources */,
 				0D4C9BB41D53341E00E1B534 /* Frameworks */,
 				0D4C9BB51D53341E00E1B534 /* Resources */,
+				833F5DF21D3BE7341FFA5605 /* [CP] Embed Pods Frameworks */,
+				ADD881CF902AEFC0C79E71BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D4C9BE71D53341E00E1B534 /* Build configuration list for PBXNativeTarget "MealTests" */;
 			buildPhases = (
+				8B2292B22AEA4905ECA72E24 /* [CP] Check Pods Manifest.lock */,
 				0D4C9BCC1D53341E00E1B534 /* Sources */,
 				0D4C9BCD1D53341E00E1B534 /* Frameworks */,
 				0D4C9BCE1D53341E00E1B534 /* Resources */,
+				6CB640874A6B17178C66FA40 /* [CP] Embed Pods Frameworks */,
+				80748E0077979C25EE784B51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D4C9BEA1D53341E00E1B534 /* Build configuration list for PBXNativeTarget "MealUITests" */;
 			buildPhases = (
+				DFCA54F1279B419552DD9975 /* [CP] Check Pods Manifest.lock */,
 				0D4C9BD71D53341E00E1B534 /* Sources */,
 				0D4C9BD81D53341E00E1B534 /* Frameworks */,
 				0D4C9BD91D53341E00E1B534 /* Resources */,
+				59C5F1950CA4A3AFAF7D2E82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +315,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59C5F1950CA4A3AFAF7D2E82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CB640874A6B17178C66FA40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealTests/Pods-MealTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80748E0077979C25EE784B51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MealTests/Pods-MealTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		817243E138A397C0CF9337D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		833F5DF21D3BE7341FFA5605 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meal/Pods-Meal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B2292B22AEA4905ECA72E24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADD881CF902AEFC0C79E71BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meal/Pods-Meal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFCA54F1279B419552DD9975 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D4C9BB31D53341E00E1B534 /* Sources */ = {
@@ -416,6 +587,7 @@
 		};
 		0D4C9BE51D53341E00E1B534 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meal/Info.plist;
@@ -427,6 +599,7 @@
 		};
 		0D4C9BE61D53341E00E1B534 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BDD40F5B6DACFDD1605D791 /* Pods-Meal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meal/Info.plist;
@@ -438,6 +611,7 @@
 		};
 		0D4C9BE81D53341E00E1B534 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MealTests/Info.plist;
@@ -450,6 +624,7 @@
 		};
 		0D4C9BE91D53341E00E1B534 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4CF69063CB6B1C24727FB59 /* Pods-MealTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MealTests/Info.plist;
@@ -462,6 +637,7 @@
 		};
 		0D4C9BEB1D53341E00E1B534 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MealUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -473,6 +649,7 @@
 		};
 		0D4C9BEC1D53341E00E1B534 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MealUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -501,6 +678,7 @@
 				0D4C9BE61D53341E00E1B534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D4C9BE71D53341E00E1B534 /* Build configuration list for PBXNativeTarget "MealTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +687,7 @@
 				0D4C9BE91D53341E00E1B534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D4C9BEA1D53341E00E1B534 /* Build configuration list for PBXNativeTarget "MealUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +696,7 @@
 				0D4C9BEC1D53341E00E1B534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
