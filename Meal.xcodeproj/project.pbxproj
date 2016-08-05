@@ -25,6 +25,8 @@
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
 		AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */; };
+		AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */; };
+		AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
 		AEFFDEFF1D5438830090C5D5 /* EditMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewController.h; sourceTree = "<group>"; };
 		AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewController.m; sourceTree = "<group>"; };
+		AEFFDF031D5468FA0090C5D5 /* EditMenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewModel.h; sourceTree = "<group>"; };
+		AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewModel.m; sourceTree = "<group>"; };
+		AEFFDF061D54764B0090C5D5 /* MenuListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListViewModel.h; sourceTree = "<group>"; };
+		AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewModel.m; sourceTree = "<group>"; };
 		B4CF69063CB6B1C24727FB59 /* Pods-MealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Meal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +191,6 @@
 		0D4C9BED1D53395800E1B534 /* MenuList */ = {
 			isa = PBXGroup;
 			children = (
-				AEFFDF021D54602D0090C5D5 /* Edit */,
 				0D4C9BFF1D533BFC00E1B534 /* View */,
 				0D4C9C001D533C1500E1B534 /* ViewModel */,
 				0D4C9C011D533C3600E1B534 /* Model */,
@@ -273,6 +278,10 @@
 		0D4C9C001D533C1500E1B534 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AEFFDF031D5468FA0090C5D5 /* EditMenuViewModel.h */,
+				AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */,
+				AEFFDF061D54764B0090C5D5 /* MenuListViewModel.h */,
+				AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -295,14 +304,6 @@
 				0D4C9C051D533FC900E1B534 /* RemindMeal.m */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-
-		AEFFDF021D54602D0090C5D5 /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Edit;
 			sourceTree = "<group>";
 		};
 		D6B33482C7C3594F4269C717 /* Frameworks */ = {
@@ -602,6 +603,8 @@
 				0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */,
 				0D4C9C111D5393CE00E1B534 /* Menu.m in Sources */,
 				0D4C9C0E1D53937900E1B534 /* MenuRequest.m in Sources */,
+				AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */,
+				AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

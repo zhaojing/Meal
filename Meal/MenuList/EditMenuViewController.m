@@ -10,12 +10,23 @@
 
 @interface EditMenuViewController ()
 
+@property (strong, nonatomic) EditMenuViewModel *viewModel;
+@property (strong, nonatomic) IBOutlet UITextField *name;
+@property (strong, nonatomic) IBOutlet UITextField *price;
+@property (strong, nonatomic) IBOutlet UITextField *location;
 @property (strong, nonatomic) UIAlertController *sheet;
 @property (strong, nonatomic) IBOutlet UIButton *pictureButton;
 
 @end
 
 @implementation EditMenuViewController
+
+-(void)configure:(EditMenuViewModel *)viewModel {
+    self.viewModel = viewModel;
+    self.name.text =  viewModel.name;
+    self.price.text = viewModel.price;
+    self.location.text = viewModel.location;
+}
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -32,51 +43,42 @@
                                               preferredStyle: UIAlertControllerStyleActionSheet];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle: @"取消"
                                                      style: UIAlertActionStyleCancel handler:nil];
+    __weak EditMenuViewController *weakSelf = self;
     UIAlertAction *album = [UIAlertAction actionWithTitle: @"从相册选择"
                                                     style:UIAlertActionStyleDestructive
                                                   handler: ^(UIAlertAction * _Nonnull action) {
-                                [self addAlbum];
-                            }];
+                                                      [self addAlbumWithController:weakSelf];
+                                                  }];
     UIAlertAction *takePhoto = [UIAlertAction actionWithTitle: @"拍照"
                                                         style: UIAlertActionStyleDestructive
                                                       handler: ^(UIAlertAction * _Nonnull action) {
-                                    [self addTakePhoto];
-                                }];
+                                                          [self addPickerWithController:weakSelf];
+                                                      }];
     [self.sheet addAction: cancel];
     [self.sheet addAction: album];
     [self.sheet addAction: takePhoto];
 }
 
--(BOOL)addAlbum {
-    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypePhotoLibrary]){
-        NSLog(@"相册不可用");
-        return NO;
-    }
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController: picker animated: YES completion: nil];
-    return YES;
+-(void)addAlbumWithController:(EditMenuViewController *)controller {
+    UIImagePickerController *picker = [self.viewModel getAlbumController];
+    picker.delegate = controller;
+    [controller presentViewController:picker animated:YES completion:nil];
 }
 
--(BOOL)addTakePhoto {
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-        NSLog(@"相册不可用");
-        return NO;
-    }
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion: nil];
-    return YES;
+-(void)addPickerWithController:(EditMenuViewController *)controller {
+    UIImagePickerController *picker = [self.viewModel getImageController];
+    picker.delegate = controller;
+    [controller presentViewController:picker animated:YES completion:nil];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *resultImage = [info objectForKey: @"UIImagePickerControllerEditedImage"];
     [self.pictureButton setImage: [resultImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]forState: UIControlStateNormal];
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
+}
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

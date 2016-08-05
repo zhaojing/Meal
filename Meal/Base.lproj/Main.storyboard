@@ -118,12 +118,12 @@
                     <navigationItem key="navigationItem" title="MenuList" id="tcY-gK-6PL">
                         <barButtonItem key="leftBarButtonItem" title="编辑" id="g0Q-wz-MEH">
                             <connections>
-                                <segue destination="GcA-QK-gi4" kind="show" id="ifg-jF-mVY"/>
+                                <segue destination="GcA-QK-gi4" kind="show" identifier="edit" id="ifg-jF-mVY"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="bD4-RB-9QY">
                             <connections>
-                                <segue destination="GcA-QK-gi4" kind="show" id="bNf-Sb-5Hu"/>
+                                <segue destination="GcA-QK-gi4" kind="show" identifier="add" id="bNf-Sb-5Hu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -189,11 +189,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加食物" id="6wm-b9-84y">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="FjN-8b-jhP"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="FjN-8b-jhP">
+                            <connections>
+                                <action selector="back:" destination="GcA-QK-gi4" id="FPH-Bd-CcH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="05D-SE-Ozv"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="location" destination="C8h-2y-pTI" id="mv7-bF-1Tw"/>
+                        <outlet property="name" destination="ptL-yl-0eV" id="s72-cd-P7L"/>
                         <outlet property="pictureButton" destination="tKl-T8-waN" id="dVF-SY-siZ"/>
+                        <outlet property="price" destination="YKu-ho-8G7" id="WdU-co-cFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFx-Yq-06Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,6 +284,6 @@
         <image name="images" width="275" height="183"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bNf-Sb-5Hu"/>
+        <segue reference="ifg-jF-mVY"/>
     </inferredMetricsTieBreakers>
 </document>

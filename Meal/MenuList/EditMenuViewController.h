@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditMenuViewModel.h"
 
 @interface EditMenuViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+-(void)configure:(EditMenuViewModel *)viewModel;
 
 @end
