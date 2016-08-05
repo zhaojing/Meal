@@ -20,5 +20,9 @@
 -(instancetype)initWithMenu: (Menu *)menu;
 -(UIImagePickerController *)getAlbumController;
 -(UIImagePickerController *)getImageController;
+-(BOOL )saveTheImage:(UIImage *)image
+             andName:(NSString *)name
+         andLocation:(NSString *)location
+            andPrice:(NSString *)price;
 
 @end

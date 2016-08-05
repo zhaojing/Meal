@@ -7,21 +7,26 @@
 //
 
 #import "EditMenuViewController.h"
+#import "SVProgressHUD.h"
 
-@interface EditMenuViewController ()
+@interface EditMenuViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) EditMenuViewModel *viewModel;
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *price;
 @property (strong, nonatomic) IBOutlet UITextField *location;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (strong, nonatomic) UIAlertController *sheet;
-@property (strong, nonatomic) IBOutlet UIButton *pictureButton;
+@property (copy, nonatomic) void(^needUpdate)();
 
 @end
 
 @implementation EditMenuViewController
 
--(void)configure:(EditMenuViewModel *)viewModel {
+-(void)configure:(EditMenuViewModel *)viewModel needUpdate:(void(^)())needUpdate {
+    self.needUpdate = needUpdate;
+//    self.needUpdate();
     self.viewModel = viewModel;
     self.name.text =  viewModel.name;
     self.price.text = viewModel.price;
@@ -33,9 +38,7 @@
     [self addChoosePhotoType];
 }
 
-- (IBAction)clickPicture:(UIButton *)sender {
-    [self presentViewController:self.sheet animated:YES completion:nil];
-}
+#pragma mark photo add
 
 -(void)addChoosePhotoType {
     self.sheet = [UIAlertController alertControllerWithTitle: @"请选择方式"
@@ -61,24 +64,77 @@
 
 -(void)addAlbumWithController:(EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getAlbumController];
+    if (!picker) {
+        [SVProgressHUD showInfoWithStatus:@"相册未授权"];
+        return;
+    }
     picker.delegate = controller;
-    [controller presentViewController:picker animated:YES completion:nil];
+    [controller presentViewController: picker animated: YES completion: nil];
 }
 
 -(void)addPickerWithController:(EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getImageController];
+    if (!picker) {
+        [SVProgressHUD showInfoWithStatus: @"相册未授权"];
+        return;
+    }
     picker.delegate = controller;
-    [controller presentViewController:picker animated:YES completion:nil];
+    [controller presentViewController: picker animated: YES completion: nil];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *resultImage = [info objectForKey: @"UIImagePickerControllerEditedImage"];
-    [self.pictureButton setImage: [resultImage imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]forState: UIControlStateNormal];
+    [self.imageView setImage:resultImage];
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
 }
 
+#pragma mark- textFileDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    UITextField *nextTextField = [self getNextTextField: textField];
+    nextTextField ? [nextTextField becomeFirstResponder]: [textField resignFirstResponder];
+    return YES;
+}
+
+-(UITextField *)getNextTextField:(UITextField *)textField {
+    if (textField == self.location)
+        return nil;
+    return textField == self.name ? self.price : self.location ;
+}
+
+#pragma mark- action
+
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)clickPicture:(UIButton *)sender {
+    [self presentViewController:self.sheet animated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
+    if (![self checkText: self.name andInfo: @"名字"])
+        return;
+    if (![self checkText: self.price andInfo: @"价格"])
+        return;
+    if (![self checkText: self.location andInfo:@"地点"])
+        return;
+    BOOL addSuccess =  [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text];
+    if (addSuccess) {
+        [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+        self.needUpdate();
+        [self back:nil];
+    }
+    else
+        [SVProgressHUD showSuccessWithStatus:@"添加失败"];
+}
+
+-(BOOL)checkText:(UITextField *)field andInfo:(NSString *)info {
+    if ([field.text isEqual:@""]) {
+        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"未填写%@",info]];
+        return false;
+    }
+    return YES;
 }
 
 @end

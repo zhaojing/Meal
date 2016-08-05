@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6gc-O0-xDx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6gc-O0-xDx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -116,11 +116,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MenuList" id="tcY-gK-6PL">
-                        <barButtonItem key="leftBarButtonItem" title="编辑" id="g0Q-wz-MEH">
-                            <connections>
-                                <segue destination="GcA-QK-gi4" kind="show" identifier="edit" id="ifg-jF-mVY"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="bD4-RB-9QY">
                             <connections>
                                 <segue destination="GcA-QK-gi4" kind="show" identifier="add" id="bNf-Sb-5Hu"/>
@@ -145,26 +140,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptL-yl-0eV">
-                                <rect key="frame" x="38" y="250" width="524" height="30"/>
+                                <rect key="frame" x="38" y="159" width="524" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GcA-QK-gi4" id="bPx-8M-GjU"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKu-ho-8G7">
-                                <rect key="frame" x="38" y="318" width="524" height="30"/>
+                                <rect key="frame" x="38" y="199" width="524" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GcA-QK-gi4" id="PAc-Ra-2C9"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="地点" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8h-2y-pTI">
-                                <rect key="frame" x="38" y="386" width="524" height="30"/>
+                                <rect key="frame" x="38" y="239" width="524" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GcA-QK-gi4" id="NhK-Ys-dit"/>
+                                </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="QXO-hu-cHV">
+                                <rect key="frame" x="263" y="74" width="75" height="75"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKl-T8-waN">
-                                <rect key="frame" x="240.5" y="102" width="120" height="120"/>
+                                <rect key="frame" x="263" y="74" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tKl-T8-waN" secondAttribute="height" multiplier="1:1" id="cba-DB-xBd"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="images"/>
                                 <connections>
                                     <action selector="clickPicture:" destination="GcA-QK-gi4" eventType="touchUpInside" id="ZDg-MO-Au4"/>
                                 </connections>
@@ -176,16 +182,20 @@
                             <constraint firstItem="YKu-ho-8G7" firstAttribute="width" secondItem="ptL-yl-0eV" secondAttribute="width" id="2RA-4N-3gh"/>
                             <constraint firstItem="C8h-2y-pTI" firstAttribute="height" secondItem="ptL-yl-0eV" secondAttribute="height" id="7h6-Nt-ZhP"/>
                             <constraint firstItem="C8h-2y-pTI" firstAttribute="centerX" secondItem="ptL-yl-0eV" secondAttribute="centerX" id="AEP-FK-yaQ"/>
-                            <constraint firstItem="YKu-ho-8G7" firstAttribute="top" secondItem="ptL-yl-0eV" secondAttribute="bottom" constant="38" id="Awp-Ye-Obh"/>
+                            <constraint firstItem="YKu-ho-8G7" firstAttribute="top" secondItem="ptL-yl-0eV" secondAttribute="bottom" constant="10" id="Awp-Ye-Obh"/>
                             <constraint firstItem="YKu-ho-8G7" firstAttribute="height" secondItem="ptL-yl-0eV" secondAttribute="height" id="FU3-pl-6cm"/>
+                            <constraint firstItem="QXO-hu-cHV" firstAttribute="centerY" secondItem="tKl-T8-waN" secondAttribute="centerY" id="FnZ-aG-BNX"/>
                             <constraint firstItem="C8h-2y-pTI" firstAttribute="width" secondItem="ptL-yl-0eV" secondAttribute="width" id="L1X-fb-hgr"/>
-                            <constraint firstItem="ptL-yl-0eV" firstAttribute="top" secondItem="tKl-T8-waN" secondAttribute="bottom" constant="28" id="YpY-ug-e87"/>
-                            <constraint firstItem="tKl-T8-waN" firstAttribute="top" secondItem="KUp-nG-zdb" secondAttribute="bottom" constant="38" id="dAP-eW-nFb"/>
-                            <constraint firstItem="C8h-2y-pTI" firstAttribute="top" secondItem="YKu-ho-8G7" secondAttribute="bottom" constant="38" id="iMW-jW-Zon"/>
+                            <constraint firstItem="QXO-hu-cHV" firstAttribute="width" secondItem="tKl-T8-waN" secondAttribute="width" id="LtL-r4-0dl"/>
+                            <constraint firstItem="QXO-hu-cHV" firstAttribute="height" secondItem="tKl-T8-waN" secondAttribute="height" id="Ozs-u9-Sd4"/>
+                            <constraint firstItem="ptL-yl-0eV" firstAttribute="top" secondItem="tKl-T8-waN" secondAttribute="bottom" constant="10" id="YpY-ug-e87"/>
+                            <constraint firstItem="tKl-T8-waN" firstAttribute="top" secondItem="KUp-nG-zdb" secondAttribute="bottom" constant="10" id="dAP-eW-nFb"/>
+                            <constraint firstItem="C8h-2y-pTI" firstAttribute="top" secondItem="YKu-ho-8G7" secondAttribute="bottom" constant="10" id="iMW-jW-Zon"/>
                             <constraint firstItem="ptL-yl-0eV" firstAttribute="leading" secondItem="lAx-aZ-CwD" secondAttribute="leadingMargin" constant="18" id="jHb-WX-wjw"/>
                             <constraint firstItem="tKl-T8-waN" firstAttribute="centerX" secondItem="lAx-aZ-CwD" secondAttribute="centerX" id="mxX-Hp-E5h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ptL-yl-0eV" secondAttribute="trailing" constant="18" id="opd-Se-b4V"/>
-                            <constraint firstItem="tKl-T8-waN" firstAttribute="width" secondItem="lAx-aZ-CwD" secondAttribute="height" multiplier="1:5" id="yLY-8G-mx4"/>
+                            <constraint firstItem="QXO-hu-cHV" firstAttribute="centerX" secondItem="tKl-T8-waN" secondAttribute="centerX" id="qNa-Hm-uWn"/>
+                            <constraint firstItem="tKl-T8-waN" firstAttribute="width" secondItem="lAx-aZ-CwD" secondAttribute="height" multiplier="1:8" id="yLY-8G-mx4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加食物" id="6wm-b9-84y">
@@ -194,12 +204,16 @@
                                 <action selector="back:" destination="GcA-QK-gi4" id="FPH-Bd-CcH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="05D-SE-Ozv"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="05D-SE-Ozv">
+                            <connections>
+                                <action selector="save:" destination="GcA-QK-gi4" id="2eK-d7-Sgd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="QXO-hu-cHV" id="ypr-co-VEv"/>
                         <outlet property="location" destination="C8h-2y-pTI" id="mv7-bF-1Tw"/>
                         <outlet property="name" destination="ptL-yl-0eV" id="s72-cd-P7L"/>
-                        <outlet property="pictureButton" destination="tKl-T8-waN" id="dVF-SY-siZ"/>
                         <outlet property="price" destination="YKu-ho-8G7" id="WdU-co-cFf"/>
                     </connections>
                 </viewController>
@@ -283,7 +297,4 @@
     <resources>
         <image name="images" width="275" height="183"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ifg-jF-mVY"/>
-    </inferredMetricsTieBreakers>
 </document>

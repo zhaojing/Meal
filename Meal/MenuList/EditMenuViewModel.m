@@ -7,6 +7,8 @@
 //
 
 #import "EditMenuViewModel.h"
+#import "SVProgressHUD.h"
+#import "MenuRequest.h"
 
 @interface EditMenuViewModel ()
 
@@ -28,9 +30,26 @@
     return self;
 }
 
+-(BOOL )saveTheImage:(UIImage *)image
+            andName:(NSString *)name
+        andLocation:(NSString *)location
+           andPrice:(NSString *)price {
+    MenuRequest *menuRequest = [[MenuRequest alloc]init];
+    if (self.menu.menuId)
+       return [menuRequest modifyMenu:[[Menu alloc] initWithId:self.menu.menuId andName:name andprice:price andLocation:location andImage:image]];
+    else
+      return [menuRequest addMenu:[[Menu alloc] initWithId:[self getRandom] andName:name andprice:price andLocation:location andImage:image]];
+}
+
+-(NSInteger )getRandom {
+    NSTimeInterval interval =[[NSDate date]timeIntervalSinceReferenceDate];
+    return interval*100 + arc4random() % 100;
+}
+
+#pragma mark- getAlbumController
+
 -(UIImagePickerController *)getAlbumController {
     if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypePhotoLibrary]){
-        NSLog(@"相册不可用");
         return nil;
     }
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -41,7 +60,6 @@
 
 -(UIImagePickerController *)getImageController {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-        NSLog(@"相册不可用");
         return nil;
     }
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];

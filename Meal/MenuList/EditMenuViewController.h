@@ -11,6 +11,6 @@
 
 @interface EditMenuViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
--(void)configure:(EditMenuViewModel *)viewModel;
+-(void)configure:(EditMenuViewModel *)viewModel needUpdate:(void(^)())needUpdate;
 
 @end
