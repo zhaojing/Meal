@@ -24,6 +24,7 @@
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
+		AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDD40F5B6DACFDD1605D791 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
 		ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		AEFFDEFF1D5438830090C5D5 /* EditMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewController.h; sourceTree = "<group>"; };
+		AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewController.m; sourceTree = "<group>"; };
 		B4CF69063CB6B1C24727FB59 /* Pods-MealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Meal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,11 +185,14 @@
 		0D4C9BED1D53395800E1B534 /* MenuList */ = {
 			isa = PBXGroup;
 			children = (
+				AEFFDF021D54602D0090C5D5 /* Edit */,
 				0D4C9BFF1D533BFC00E1B534 /* View */,
 				0D4C9C001D533C1500E1B534 /* ViewModel */,
 				0D4C9C011D533C3600E1B534 /* Model */,
 				0D4C9BF61D5339CF00E1B534 /* MenuListViewController.h */,
 				0D4C9BF71D5339CF00E1B534 /* MenuListViewController.m */,
+				AEFFDEFF1D5438830090C5D5 /* EditMenuViewController.h */,
+				AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */,
 			);
 			path = MenuList;
 			sourceTree = "<group>";
@@ -289,6 +295,14 @@
 				0D4C9C051D533FC900E1B534 /* RemindMeal.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+
+		AEFFDF021D54602D0090C5D5 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 		D6B33482C7C3594F4269C717 /* Frameworks */ = {
@@ -578,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */,
 				0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */,
 				0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */,
 				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,
@@ -735,6 +750,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.Meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -748,6 +764,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.Meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
