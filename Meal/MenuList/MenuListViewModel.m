@@ -10,7 +10,7 @@
 
 @interface MenuListViewModel ()
 
-@property (strong , nonatomic)NSMutableArray<Menu *> * menus;
+@property (strong , nonatomic)NSMutableArray<Menu *>  *menus;
 
 @end
 
@@ -24,8 +24,16 @@
     return  [[EditMenuViewModel alloc]init];
 }
 
--(EditMenuViewModel *)willEditMenuWithIndex:(NSIndexPath*)index {
+-(EditMenuViewModel *)willEditMenuWithIndex:(NSIndexPath *)index {
     return  [[EditMenuViewModel alloc]initWithMenu: [_menus objectAtIndex:index.row]];
+}
+
+-(MenuListCellViewModel *)getCellViewModel:(NSIndexPath *)index {
+    return  [[MenuListCellViewModel alloc]initWithMenu:[_menus objectAtIndex:index.row]];
+}
+
+-(NSUInteger )tableViewCount {
+    return [self.menus count];
 }
 
 @end

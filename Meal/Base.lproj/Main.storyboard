@@ -46,7 +46,7 @@
         <!--MenuList-->
         <scene sceneID="rLg-gz-Vru">
             <objects>
-                <viewController id="n6X-pG-OVn" customClass="MenuListViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="n6X-pG-OVn" customClass="MenuListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YcP-xk-6xP"/>
                         <viewControllerLayoutGuide type="bottom" id="BIP-Kl-TDI"/>
@@ -55,15 +55,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="407" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nNk-3e-c6U">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nNk-3e-c6U">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuListCell" rowHeight="407" id="EGA-Y3-wDW" customClass="MenuListCell">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="407"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuListCell" rowHeight="80" id="EGA-Y3-wDW" customClass="MenuListCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EGA-Y3-wDW" id="L4d-zC-1Aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="406.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RKb-xN-e0Z">
@@ -103,16 +103,27 @@
                                                 <constraint firstItem="AiP-vQ-Onz" firstAttribute="leading" secondItem="LWp-IH-tKX" secondAttribute="leading" id="uHx-OU-kig"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="image" destination="RKb-xN-e0Z" id="tAe-qi-IFW"/>
+                                            <outlet property="location" destination="AiP-vQ-Onz" id="4eC-CV-flD"/>
+                                            <outlet property="name" destination="LWp-IH-tKX" id="jZi-om-dnR"/>
+                                            <outlet property="price" destination="EUe-cn-fUw" id="oAg-Z3-x54"/>
+                                            <segue destination="GcA-QK-gi4" kind="push" identifier="edit" id="sVd-XA-7hf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n6X-pG-OVn" id="tcB-a1-cF7"/>
+                                    <outlet property="delegate" destination="n6X-pG-OVn" id="LcZ-iI-w0E"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.15261281199999999" green="1" blue="0.35708544440000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nNk-3e-c6U" firstAttribute="width" secondItem="kZD-Oj-Pah" secondAttribute="width" id="6U1-d8-O8y"/>
                             <constraint firstItem="nNk-3e-c6U" firstAttribute="centerX" secondItem="kZD-Oj-Pah" secondAttribute="centerX" id="FpV-bb-NNA"/>
-                            <constraint firstItem="nNk-3e-c6U" firstAttribute="height" secondItem="kZD-Oj-Pah" secondAttribute="height" id="IgJ-cm-3Fn"/>
-                            <constraint firstItem="nNk-3e-c6U" firstAttribute="centerY" secondItem="kZD-Oj-Pah" secondAttribute="centerY" id="deV-7f-UJj"/>
+                            <constraint firstItem="nNk-3e-c6U" firstAttribute="bottom" secondItem="kZD-Oj-Pah" secondAttribute="bottomMargin" id="GyN-bb-tNe"/>
+                            <constraint firstItem="nNk-3e-c6U" firstAttribute="top" secondItem="YcP-xk-6xP" secondAttribute="bottom" id="tMq-pn-COO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MenuList" id="tcY-gK-6PL">
@@ -122,6 +133,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="nNk-3e-c6U" id="RO5-c0-7NX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kz9-TG-6Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,4 +311,7 @@
     <resources>
         <image name="images" width="275" height="183"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sVd-XA-7hf"/>
+    </inferredMetricsTieBreakers>
 </document>

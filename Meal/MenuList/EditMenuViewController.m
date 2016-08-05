@@ -28,13 +28,14 @@
     self.needUpdate = needUpdate;
 //    self.needUpdate();
     self.viewModel = viewModel;
-    self.name.text =  viewModel.name;
-    self.price.text = viewModel.price;
-    self.location.text = viewModel.location;
+
 }
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    self.name.text =  self.viewModel.name;
+    self.price.text = self.viewModel.price;
+    self.location.text = self.viewModel.location;
     [self addChoosePhotoType];
 }
 

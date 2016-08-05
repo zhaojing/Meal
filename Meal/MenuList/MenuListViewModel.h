@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "EditMenuViewModel.h"
+#import "MenuListCellViewModel.h"
 #import "Menu.h"
 
 @interface MenuListViewModel : NSObject
 
 -(void)configureMenus:(NSArray<Menu *> *)menus;
 -(EditMenuViewModel *)willSaveMenu;
+-(EditMenuViewModel *)willEditMenuWithIndex:(NSIndexPath *)index;
+-(MenuListCellViewModel *)getCellViewModel:(NSIndexPath *)index;
+-(NSUInteger )tableViewCount;
 
 @end

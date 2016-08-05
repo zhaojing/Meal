@@ -10,11 +10,13 @@
 #import "EditMenuViewController.h"
 #import "MenuListViewModel.h"
 #import "MenuRequest.h"
+#import "MenuListCell.h"
 
-@interface MenuListViewController ()
+@interface MenuListViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong , nonatomic)MenuRequest *request;
-@property (strong , nonatomic)MenuListViewModel* viewModel;
+@property (strong , nonatomic)MenuListViewModel *viewModel;
 
 @end
 
@@ -28,15 +30,36 @@
 }
 
 -(void)loadData {
-    [self.viewModel configureMenus:[self.request getAllMenus]];
-    NSLog(@"betta");
+    [self.viewModel configureMenus: [self.request getAllMenus]];
+    [self.tableView reloadData];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"add"]) {
         EditMenuViewController *editController = segue.destinationViewController;
-        [editController configure:_viewModel.willSaveMenu];
+        [editController configure: self.viewModel.willSaveMenu needUpdate: ^{
+            [self loadData];
+        }];
+    } else if ([segue.identifier isEqualToString:@"edit"]){
+        EditMenuViewController *editController = segue.destinationViewController;
+        NSIndexPath *index = [self.tableView indexPathForCell:sender];
+        [editController configure: [self.viewModel willEditMenuWithIndex:index] needUpdate: ^{
+            [self loadData];
+        }];
     }
+}
+
+#pragma mark -UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.viewModel.tableViewCount;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MenuListCell *cell = [tableView dequeueReusableCellWithIdentifier:[MenuListCell identifierCell]];
+    [cell configureViewModel:[self.viewModel getCellViewModel:indexPath]];
+
+    return cell;
 }
 
 @end
