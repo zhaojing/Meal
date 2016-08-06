@@ -7,6 +7,7 @@
 //
 
 #import "ShakeViewController.h"
+#import "SVProgressHUD.h"
 #import "MenuRequest.h"
 #import "Menu.h"
 
@@ -32,12 +33,16 @@
     if (motion == UIEventSubtypeMotionShake) {
         self.request = [[MenuRequest alloc] init];
         NSArray *allMenus = [self.request getAllMenus];
-        Menu *randomMenu = allMenus[arc4random() % [allMenus count]];
-        NSLog(@"menuId:%ld name:%@ price:%@ location:%@",
-              (long)randomMenu.menuId,
-              randomMenu.name,
-              randomMenu.price,
-              randomMenu.location);
+        if([allMenus count] == 0) {
+            [SVProgressHUD showErrorWithStatus: @"还没有选项，请先添加一些"];
+        }else{
+            Menu *randomMenu = allMenus[arc4random() % [allMenus count]];
+            NSLog(@"menuId:%ld name:%@ price:%@ location:%@",
+                  (long)randomMenu.menuId,
+                  randomMenu.name,
+                  randomMenu.price,
+                  randomMenu.location);
+        }
     }
 }
 
