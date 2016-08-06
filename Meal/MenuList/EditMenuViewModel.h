@@ -11,7 +11,7 @@
 
 @interface EditMenuViewModel : NSObject
 
-@property (assign, nonatomic)NSInteger menuId;
+@property (assign, nonatomic)NSString *menuId;
 @property (strong, nonatomic)NSString *name;
 @property (strong, nonatomic)NSString *location;
 @property (strong, nonatomic)NSString *price;

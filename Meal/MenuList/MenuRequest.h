@@ -12,7 +12,7 @@
 @interface MenuRequest : NSObject
 
 -(BOOL)addMenu:(Menu *)menu;
--(BOOL)deleteMenu:(NSInteger )menuId;
+-(BOOL)deleteMenu:(NSString *)menuId;
 -(NSArray<Menu *> *)getAllMenus;
 -(BOOL)modifyMenu:(Menu *)menu;
 

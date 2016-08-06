@@ -10,7 +10,7 @@
 
 @implementation Menu
 
--(instancetype)initWithId:(NSInteger )menuId
+-(instancetype)initWithId:(NSString *)menuId
                   andName:(NSString *)name
                  andprice:(NSString *)price
               andLocation:(NSString *)location

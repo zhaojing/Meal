@@ -37,7 +37,7 @@
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
-    NSString * sql = @"create table if not exists 'Menu' ('id' INTEGER PRIMARY KEY  NOT NULL , 'name' VARCHAR(30) , 'location' text , 'price' text , 'imageData' blob )";
+    NSString * sql = @"create table if not exists 'Menu' ('id' text PRIMARY KEY  NOT NULL , 'name' VARCHAR(30) , 'location' text , 'price' text , 'imageData' blob )";
     return [db executeUpdate:sql];
 }
 
@@ -46,16 +46,16 @@
     if (![db open])
         return false;
     NSString * sql = @"insert into Menu (id, name, location, price, imageData) values(?, ?, ?, ?, ?)";
-    return [db executeUpdate:sql, [NSString stringWithFormat:@"%ld",(long)menu.menuId], menu.name , menu.location, menu.price, [self transformImage:menu.image]];
+    return [db executeUpdate:sql,menu.menuId , menu.name , menu.location , menu.price, [self transformImage:menu.image]];
    
 }
 
--(BOOL)deleteMenu:(NSInteger )menuId {
+-(BOOL)deleteMenu:(NSString *)menuId {
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
     NSString * sql = @"delete from Menu where id = ?";
-    return [db executeUpdate:sql, [NSString stringWithFormat:@"%ld",(long)menuId]];
+    return [db executeUpdate:sql, menuId];
 }
 
 -(BOOL)modifyMenu:(Menu *)menu {
@@ -63,7 +63,7 @@
     if (![db open])
          return false;
     NSString * sql = @"update Menu SET name = ?, location = ?, price = ? , imageData = ? WHERE id=?";
-    return [db executeUpdate:sql, menu.name, menu.location, menu.price, [self transformImage:menu.image], [NSString stringWithFormat:@"%ld",(long)menu.menuId]];
+    return [db executeUpdate:sql, menu.name, menu.location, menu.price, [self transformImage:menu.image], menu.menuId];
 
 }
 
@@ -75,7 +75,7 @@
     NSString * sql = @"select * from Menu";
     FMResultSet * rs = [db executeQuery:sql];
     while ([rs next]) {
-        Menu *menu = [[Menu alloc]initWithId:[rs intForColumn:@"id"]
+        Menu *menu = [[Menu alloc]initWithId:[rs stringForColumn:@"id"]
                                      andName:[rs stringForColumn:@"name"]
                                     andprice:[rs stringForColumn:@"price"]
                                  andLocation:[rs stringForColumn:@"location"]

@@ -41,9 +41,9 @@
       return [menuRequest addMenu:[[Menu alloc] initWithId:[self getRandom] andName:name andprice:price andLocation:location andImage:image]];
 }
 
--(NSInteger )getRandom {
-    NSTimeInterval interval =[[NSDate date]timeIntervalSinceReferenceDate];
-    return interval*100 + arc4random() % 100;
+-(NSString *)getRandom {
+    NSString *interval = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
+    return [NSString stringWithFormat:@"%1.0f",[interval doubleValue]*100 + arc4random() % 100];
 }
 
 #pragma mark- getAlbumController
