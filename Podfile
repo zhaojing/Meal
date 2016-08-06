@@ -3,6 +3,7 @@
 
 target 'Meal' do
     pod 'FMDB'
+    pod 'SVProgressHUD'
   target 'MealTests' do
     inherit! :search_paths
     pod 'Kiwi', '2.4.0'

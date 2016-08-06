@@ -21,9 +21,14 @@
 		0D4C9C061D533FC900E1B534 /* RemindMeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9C051D533FC900E1B534 /* RemindMeal.m */; };
 		0D4C9C0E1D53937900E1B534 /* MenuRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9C0D1D53937900E1B534 /* MenuRequest.m */; };
 		0D4C9C111D5393CE00E1B534 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9C101D5393CE00E1B534 /* Menu.m */; };
+		0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0621D54E82600360F9E /* MenuListCell.m */; };
+		0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */; };
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
+		AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */; };
+		AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */; };
+		AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,12 +77,22 @@
 		0D4C9C0D1D53937900E1B534 /* MenuRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuRequest.m; sourceTree = "<group>"; };
 		0D4C9C0F1D5393CE00E1B534 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		0D4C9C101D5393CE00E1B534 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		0D9EE0611D54E82600360F9E /* MenuListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListCell.h; sourceTree = "<group>"; };
+		0D9EE0621D54E82600360F9E /* MenuListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListCell.m; sourceTree = "<group>"; };
+		0D9EE0641D54E84200360F9E /* MenuListCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListCellViewModel.h; sourceTree = "<group>"; };
+		0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListCellViewModel.m; sourceTree = "<group>"; };
 		3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.debug.xcconfig"; sourceTree = "<group>"; };
 		749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDD40F5B6DACFDD1605D791 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
 		ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		AEFFDEFF1D5438830090C5D5 /* EditMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewController.h; sourceTree = "<group>"; };
+		AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewController.m; sourceTree = "<group>"; };
+		AEFFDF031D5468FA0090C5D5 /* EditMenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewModel.h; sourceTree = "<group>"; };
+		AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewModel.m; sourceTree = "<group>"; };
+		AEFFDF061D54764B0090C5D5 /* MenuListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListViewModel.h; sourceTree = "<group>"; };
+		AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewModel.m; sourceTree = "<group>"; };
 		B4CF69063CB6B1C24727FB59 /* Pods-MealTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Meal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +202,8 @@
 				0D4C9C011D533C3600E1B534 /* Model */,
 				0D4C9BF61D5339CF00E1B534 /* MenuListViewController.h */,
 				0D4C9BF71D5339CF00E1B534 /* MenuListViewController.m */,
+				AEFFDEFF1D5438830090C5D5 /* EditMenuViewController.h */,
+				AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */,
 			);
 			path = MenuList;
 			sourceTree = "<group>";
@@ -260,6 +277,8 @@
 		0D4C9BFF1D533BFC00E1B534 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D9EE0611D54E82600360F9E /* MenuListCell.h */,
+				0D9EE0621D54E82600360F9E /* MenuListCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -267,6 +286,12 @@
 		0D4C9C001D533C1500E1B534 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AEFFDF031D5468FA0090C5D5 /* EditMenuViewModel.h */,
+				AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */,
+				AEFFDF061D54764B0090C5D5 /* MenuListViewModel.h */,
+				AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */,
+				0D9EE0641D54E84200360F9E /* MenuListCellViewModel.h */,
+				0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -578,15 +603,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */,
 				0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */,
 				0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */,
+				0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */,
 				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,
 				0D4C9BF81D5339CF00E1B534 /* MenuListViewController.m in Sources */,
 				0D4C9C061D533FC900E1B534 /* RemindMeal.m in Sources */,
 				0D4C9BBC1D53341E00E1B534 /* main.m in Sources */,
 				0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */,
+				0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */,
 				0D4C9C111D5393CE00E1B534 /* Menu.m in Sources */,
 				0D4C9C0E1D53937900E1B534 /* MenuRequest.m in Sources */,
+				AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */,
+				AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +765,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.Meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -748,6 +779,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.Meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
