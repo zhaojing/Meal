@@ -10,29 +10,29 @@
 
 @interface MenuListViewModel ()
 
-@property (strong , nonatomic)NSMutableArray<Menu *>  *menus;
+@property (strong, nonatomic)NSMutableArray<Menu *>  *menus;
 
 @end
 
 @implementation MenuListViewModel
 
--(void)configureMenus:(NSArray<Menu *> *)menus {
-    self.menus = [NSMutableArray arrayWithArray:menus];
+- (void)configureMenus: (NSArray<Menu *> *)menus {
+    self.menus = [NSMutableArray arrayWithArray: menus];
 }
 
--(EditMenuViewModel *)willSaveMenu {
+- (EditMenuViewModel *)willSaveMenu {
     return  [[EditMenuViewModel alloc]init];
 }
 
--(EditMenuViewModel *)willEditMenuWithIndex:(NSIndexPath *)index {
-    return  [[EditMenuViewModel alloc]initWithMenu: [_menus objectAtIndex:index.row]];
+- (EditMenuViewModel *)willEditMenuWithIndex: (NSIndexPath *)index {
+    return  [[EditMenuViewModel alloc]initWithMenu: [_menus objectAtIndex: index.row]];
 }
 
--(MenuListCellViewModel *)getCellViewModel:(NSIndexPath *)index {
-    return  [[MenuListCellViewModel alloc]initWithMenu:[_menus objectAtIndex:index.row]];
+- (MenuListCellViewModel *)getCellViewModel: (NSIndexPath *)index {
+    return  [[MenuListCellViewModel alloc]initWithMenu: [_menus objectAtIndex: index.row]];
 }
 
--(NSUInteger )tableViewCount {
+- (NSUInteger )tableViewCount {
     return [self.menus count];
 }
 

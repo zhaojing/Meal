@@ -24,11 +24,9 @@
 
 @implementation EditMenuViewController
 
--(void)configure:(EditMenuViewModel *)viewModel needUpdate:(void(^)())needUpdate {
+-(void)configure: (EditMenuViewModel *)viewModel needUpdate: (void(^)())needUpdate {
     self.needUpdate = needUpdate;
-//    self.needUpdate();
     self.viewModel = viewModel;
-
 }
 
 -(void)viewDidLoad {
@@ -63,7 +61,7 @@
     [self.sheet addAction: takePhoto];
 }
 
--(void)addAlbumWithController:(EditMenuViewController *)controller {
+-(void)addAlbumWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getAlbumController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus:@"相册未授权"];
@@ -73,7 +71,7 @@
     [controller presentViewController: picker animated: YES completion: nil];
 }
 
--(void)addPickerWithController:(EditMenuViewController *)controller {
+-(void)addPickerWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getImageController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus: @"相册未授权"];
@@ -83,7 +81,7 @@
     [controller presentViewController: picker animated: YES completion: nil];
 }
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+-(void)imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo: (NSDictionary<NSString *,id> *)info{
     UIImage *resultImage = [info objectForKey: @"UIImagePickerControllerEditedImage"];
     [self.imageView setImage:resultImage];
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
@@ -91,13 +89,13 @@
 
 #pragma mark- textFileDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn: (UITextField *)textField {
     UITextField *nextTextField = [self getNextTextField: textField];
     nextTextField ? [nextTextField becomeFirstResponder]: [textField resignFirstResponder];
     return YES;
 }
 
--(UITextField *)getNextTextField:(UITextField *)textField {
+-(UITextField *)getNextTextField: (UITextField *)textField {
     if (textField == self.location)
         return nil;
     return textField == self.name ? self.price : self.location ;
@@ -105,15 +103,15 @@
 
 #pragma mark- action
 
-- (IBAction)back:(id)sender {
+- (IBAction)back: (id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)clickPicture:(UIButton *)sender {
-    [self presentViewController:self.sheet animated:YES completion:nil];
+- (IBAction)clickPicture: (UIButton *)sender {
+    [self presentViewController: self.sheet animated: YES completion: nil];
 }
 
-- (IBAction)save:(id)sender {
+- (IBAction)save: (id)sender {
     if (![self checkText: self.name andInfo: @"名字"])
         return;
     if (![self checkText: self.price andInfo: @"价格"])
@@ -130,7 +128,7 @@
         [SVProgressHUD showSuccessWithStatus:@"添加失败"];
 }
 
--(BOOL)checkText:(UITextField *)field andInfo:(NSString *)info {
+-(BOOL)checkText: (UITextField *)field andInfo: (NSString *)info {
     if ([field.text isEqual:@""]) {
         [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"未填写%@",info]];
         return false;

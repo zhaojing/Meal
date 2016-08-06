@@ -17,9 +17,10 @@
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)UIImage *image;
 
--(instancetype)initWithId:(NSString *)menuId
-                  andName:(NSString *)name
-                 andprice:(NSString *)price
-              andLocation:(NSString *)location
-                 andImage:(UIImage *)image;
+- (instancetype)initWithId: (NSString *)menuId
+                   andName: (NSString *)name
+                  andprice: (NSString *)price
+               andLocation: (NSString *)location
+                  andImage: (UIImage *)image;
+
 @end

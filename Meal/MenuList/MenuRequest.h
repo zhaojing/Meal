@@ -11,9 +11,9 @@
 
 @interface MenuRequest : NSObject
 
--(BOOL)addMenu:(Menu *)menu;
--(BOOL)deleteMenu:(NSString *)menuId;
--(NSArray<Menu *> *)getAllMenus;
--(BOOL)modifyMenu:(Menu *)menu;
+- (BOOL)addMenu: (Menu *)menu;
+- (BOOL)deleteMenu: (NSString *)menuId;
+- (NSArray<Menu *> *)getAllMenus;
+- (BOOL)modifyMenu: (Menu *)menu;
 
 @end

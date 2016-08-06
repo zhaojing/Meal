@@ -13,10 +13,10 @@
 
 @interface MenuListViewModel : NSObject
 
--(void)configureMenus:(NSArray<Menu *> *)menus;
--(EditMenuViewModel *)willSaveMenu;
--(EditMenuViewModel *)willEditMenuWithIndex:(NSIndexPath *)index;
--(MenuListCellViewModel *)getCellViewModel:(NSIndexPath *)index;
--(NSUInteger )tableViewCount;
+- (void)configureMenus: (NSArray<Menu *> *)menus;
+- (EditMenuViewModel *)willSaveMenu;
+- (EditMenuViewModel *)willEditMenuWithIndex: (NSIndexPath *)index;
+- (MenuListCellViewModel *)getCellViewModel: (NSIndexPath *)index;
+- (NSUInteger )tableViewCount;
 
 @end

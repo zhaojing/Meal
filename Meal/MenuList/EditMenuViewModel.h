@@ -17,12 +17,12 @@
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)UIImage *image;
 
--(instancetype)initWithMenu: (Menu *)menu;
--(UIImagePickerController *)getAlbumController;
--(UIImagePickerController *)getImageController;
--(BOOL )saveTheImage:(UIImage *)image
-             andName:(NSString *)name
-         andLocation:(NSString *)location
-            andPrice:(NSString *)price;
+- (instancetype)initWithMenu: (Menu *)menu;
+- (UIImagePickerController *)getAlbumController;
+- (UIImagePickerController *)getImageController;
+- (BOOL )saveTheImage: (UIImage *)image
+             andName: (NSString *)name
+         andLocation: (NSString *)location
+            andPrice: (NSString *)price;
 
 @end
