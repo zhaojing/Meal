@@ -8,6 +8,7 @@
 //
 
 #import "SetReminderViewController.h"
+#import "SVProgressHUD.h"
 
 @interface SetReminderViewController ()
 
@@ -48,9 +49,9 @@
     self.myRemindMeal = [[RemindMeal alloc] init];
     [self.myRemindMeal addRemindParams:self.remindDictionary
                               andError:^(RemindAddErrorResult addResult, NSString *errorInfo) {
-                                  NSLog(@"add error");
+                                  [SVProgressHUD showErrorWithStatus: @"提醒添加失败，请授权应用"];
                               } andSuccess:^{
-                                  NSLog(@"add success");
+                                  [SVProgressHUD showSuccessWithStatus: @"提醒添加成功"];
                               }];
 }
 
