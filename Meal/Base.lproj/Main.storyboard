@@ -365,7 +365,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vum-f1-RlC" id="CB1-3i-cIy">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udj-Jf-UEu">
@@ -392,17 +392,17 @@
         <!--Alarm Set Controller-->
         <scene sceneID="rd5-jg-bK4">
             <objects>
-                <viewController title="Alarm Set Controller" id="aL1-mA-tff" sceneMemberID="viewController">
+                <viewController title="Alarm Set Controller" id="aL1-mA-tff" customClass="SetReminderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n6b-R0-2CW"/>
                         <viewControllerLayoutGuide type="bottom" id="JcH-Hy-k0c"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2EH-7r-V0j">
+                    <view key="view" contentMode="scaleToFill" id="2EH-7r-V0j" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-z2-sHI">
-                                <rect key="frame" x="20" y="349" width="80" height="30"/>
+                                <rect key="frame" x="20" y="397" width="80" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="重复选择">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -411,65 +411,77 @@
                                     <segue destination="kJY-ub-oVi" kind="push" id="Ljk-U9-EHM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7W-cX-7ej">
-                                <rect key="frame" x="560" y="404" width="20" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-7H-5EO">
+                                <rect key="frame" x="560" y="402" width="20" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="提醒时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEM-Ef-DTd">
-                                <rect key="frame" x="260" y="84" width="80" height="21"/>
+                                <rect key="frame" x="260" y="125" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FJa-PZ-g0p">
-                                <rect key="frame" x="20" y="125" width="560" height="216"/>
+                                <rect key="frame" x="20" y="173" width="560" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="492011881.22585702">
                                     <!--2016-08-04 13:58:01 +0000-->
                                 </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-wK-TlT">
-                                <rect key="frame" x="20" y="399" width="80" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="提醒内容">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
                                 <connections>
-                                    <segue destination="h5K-Co-WrU" kind="push" id="ZJ5-a9-3UB"/>
+                                    <action selector="clickDatePicker:" destination="aL1-mA-tff" eventType="valueChanged" id="PRY-Yj-ibg"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-7H-5EO">
-                                <rect key="frame" x="560" y="354" width="20" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="提醒标题:吃饭啦" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PCv-NG-gea">
+                                <rect key="frame" x="20" y="82" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PCv-NG-gea" firstAttribute="trailing" secondItem="2EH-7r-V0j" secondAttribute="trailingMargin" constant="-20" id="1Q8-Ko-7Da"/>
                             <constraint firstItem="gpy-z2-sHI" firstAttribute="leading" secondItem="2EH-7r-V0j" secondAttribute="leadingMargin" constant="20" id="3ht-04-pXk"/>
-                            <constraint firstAttribute="trailing" secondItem="WzM-wK-TlT" secondAttribute="trailing" constant="-20" id="Cth-ju-VvH"/>
-                            <constraint firstItem="X7W-cX-7ej" firstAttribute="trailing" secondItem="nAd-7H-5EO" secondAttribute="trailing" id="GNa-fr-2k9"/>
+                            <constraint firstItem="PCv-NG-gea" firstAttribute="top" secondItem="n6b-R0-2CW" secondAttribute="bottom" constant="20" id="4RM-VB-iOF"/>
                             <constraint firstItem="qEM-Ef-DTd" firstAttribute="centerX" secondItem="2EH-7r-V0j" secondAttribute="centerX" id="OCF-4b-66J"/>
                             <constraint firstItem="nAd-7H-5EO" firstAttribute="trailing" secondItem="2EH-7r-V0j" secondAttribute="trailingMargin" constant="-20" id="OIE-qf-xHn"/>
-                            <constraint firstItem="WzM-wK-TlT" firstAttribute="leading" secondItem="2EH-7r-V0j" secondAttribute="leadingMargin" constant="20" id="PYF-ux-dZa"/>
                             <constraint firstItem="gpy-z2-sHI" firstAttribute="top" secondItem="FJa-PZ-g0p" secondAttribute="bottom" constant="20" id="Sos-d5-0hM"/>
-                            <constraint firstItem="X7W-cX-7ej" firstAttribute="centerY" secondItem="WzM-wK-TlT" secondAttribute="centerY" id="TWx-YE-aPc"/>
+                            <constraint firstItem="qEM-Ef-DTd" firstAttribute="centerX" secondItem="2EH-7r-V0j" secondAttribute="centerX" id="YjC-lz-Nwm"/>
                             <constraint firstItem="FJa-PZ-g0p" firstAttribute="leading" secondItem="2EH-7r-V0j" secondAttribute="leadingMargin" constant="20" id="afV-7l-yMP"/>
-                            <constraint firstItem="qEM-Ef-DTd" firstAttribute="top" secondItem="n6b-R0-2CW" secondAttribute="bottom" constant="20" id="hso-wi-3Gd"/>
                             <constraint firstItem="FJa-PZ-g0p" firstAttribute="trailing" secondItem="2EH-7r-V0j" secondAttribute="trailingMargin" constant="-20" id="ifA-nu-y1s"/>
                             <constraint firstItem="nAd-7H-5EO" firstAttribute="centerY" secondItem="gpy-z2-sHI" secondAttribute="centerY" id="jcm-gg-0pc"/>
+                            <constraint firstItem="qEM-Ef-DTd" firstAttribute="top" secondItem="PCv-NG-gea" secondAttribute="bottom" constant="20" id="m8l-Jh-1Kl"/>
                             <constraint firstAttribute="trailing" secondItem="gpy-z2-sHI" secondAttribute="trailing" constant="-20" id="rsw-Wn-Fgy"/>
-                            <constraint firstItem="WzM-wK-TlT" firstAttribute="top" secondItem="gpy-z2-sHI" secondAttribute="bottom" constant="20" id="v2K-zK-oxN"/>
+                            <constraint firstItem="PCv-NG-gea" firstAttribute="leading" secondItem="2EH-7r-V0j" secondAttribute="leadingMargin" constant="20" id="swW-gf-VMk"/>
                             <constraint firstItem="FJa-PZ-g0p" firstAttribute="top" secondItem="qEM-Ef-DTd" secondAttribute="bottom" constant="20" id="wpH-0q-mtS"/>
                         </constraints>
+                        <connections>
+                            <action selector="clickBackground:" destination="aL1-mA-tff" eventType="touchUpInside" id="yIj-vg-fDn"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="提醒时间设置" id="0m1-SC-bdr"/>
+                    <navigationItem key="navigationItem" title="提醒时间设置" id="0m1-SC-bdr">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="iOt-rt-LFO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="00L-J3-ZYK">
+                                <rect key="frame" x="500" y="7" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="保存提醒">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickSaveReminder:" destination="aL1-mA-tff" eventType="touchUpInside" id="dhI-rP-FaG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="reminderDatePicker" destination="FJa-PZ-g0p" id="aQx-BM-5h7"/>
+                        <outlet property="reminderTitleTextFiled" destination="PCv-NG-gea" id="7Kx-IQ-Pzq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eN-8Y-Jr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2386" y="1479"/>
+            <point key="canvasLocation" x="2282" y="1332"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XsY-hF-bIK">
@@ -493,7 +505,7 @@
         <!--重复选择-->
         <scene sceneID="aKV-TH-hRQ">
             <objects>
-                <viewController id="kJY-ub-oVi" sceneMemberID="viewController">
+                <viewController id="kJY-ub-oVi" customClass="SetRepeatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hog-TR-lba"/>
                         <viewControllerLayoutGuide type="bottom" id="VKY-pa-bK9"/>
@@ -508,8 +520,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qz-fu-Pf2">
+                            <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qz-fu-Pf2">
                                 <rect key="frame" x="531" y="157" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitchButton:" destination="kJY-ub-oVi" eventType="valueChanged" id="uVd-wA-CMJ"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="每周重复" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3w-Bp-4b3">
                                 <rect key="frame" x="20" y="160" width="80" height="26"/>
@@ -517,8 +532,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23g-PK-rjo">
+                            <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23g-PK-rjo">
                                 <rect key="frame" x="531" y="203" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitchButton:" destination="kJY-ub-oVi" eventType="valueChanged" id="RDL-ro-zf3"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="每月重复" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAT-6K-G5B">
                                 <rect key="frame" x="20" y="206" width="80" height="26"/>
@@ -534,9 +552,15 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNd-zb-tur">
                                 <rect key="frame" x="531" y="111" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitchButton:" destination="kJY-ub-oVi" eventType="valueChanged" id="vgI-50-Yvp"/>
+                                </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENV-30-Aei">
+                            <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENV-30-Aei">
                                 <rect key="frame" x="531" y="249" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitchButton:" destination="kJY-ub-oVi" eventType="valueChanged" id="7eh-xJ-yZh"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -560,6 +584,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="重复选择" id="5tI-Ul-D3o"/>
+                    <connections>
+                        <outlet property="everydaySwitch" destination="fNd-zb-tur" id="Xrg-3F-u5A"/>
+                        <outlet property="everymonthSwitch" destination="23g-PK-rjo" id="WmD-zj-4eR"/>
+                        <outlet property="everyweekSwitch" destination="2Qz-fu-Pf2" id="IlU-Hq-L0K"/>
+                        <outlet property="everyyearSwitch" destination="ENV-30-Aei" id="uN8-YQ-RRU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dz4-Ze-qAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
