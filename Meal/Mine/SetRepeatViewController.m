@@ -22,32 +22,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setAllSwitchOff];
+}
+
+#pragma mark - action
+
+- (IBAction)changeSwitchButton:(id)sender {
+    [self setAllSwitchOff];
+    [sender setOn:true];
+    [self.delegate passRepeatFrequency:(int)[sender tag]];
+}
+
+- (void)setAllSwitchOff {
     [self.everydaySwitch setOn:false];
     [self.everyweekSwitch setOn:false];
     [self.everymonthSwitch setOn:false];
     [self.everyyearSwitch setOn:false];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark- action
-
-- (IBAction)changeSwitchButton:(id)sender {
-    if ([sender tag] != everyday) {
-        [self.everydaySwitch setOn:false];
-    }
-    if ([sender tag] != everyweek) {
-        [self.everyweekSwitch setOn:false];
-    }
-    if ([sender tag] != everymonth) {
-        [self.everymonthSwitch setOn:false];
-    }
-    if ([sender tag] != everyyear) {
-        [self.everyyearSwitch setOn:false];
-    }
-    [self.delegate passRepeatFrequency:(int)[sender tag]];
 }
 
 @end
