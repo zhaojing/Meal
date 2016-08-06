@@ -108,6 +108,14 @@
     return YES;
 }
 
+- (BOOL)textField: (UITextField *)textField shouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)string {
+    if (textField == self.price) {
+        NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        return [self.viewModel checkStringIsNumber: newString];
+    }
+    return YES;
+}
+
 #pragma mark -action
 
 - (IBAction)back: (id)sender {

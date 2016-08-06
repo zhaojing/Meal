@@ -85,6 +85,17 @@
     return [NSString stringWithFormat: @"%1.0f", [interval doubleValue]*100 + arc4random() % 100];
 }
 
+- (BOOL)checkStringIsNumber: (NSString *)string {
+    NSString *expression = @"^([0-9]+)?(\\.([0-9]{1,2})?)?$";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: expression
+                                                                           options: NSRegularExpressionCaseInsensitive
+                                                                             error: nil];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString: string
+                                                        options: 0
+                                                          range: NSMakeRange(0, [string length])];
+    return numberOfMatches == 0 ? false : true;
+}
+
 #pragma mark- getAlbumController
 
 - (UIImagePickerController *)getAlbumController {
