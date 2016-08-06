@@ -58,8 +58,19 @@
 - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath {
     MenuListCell *cell = [tableView dequeueReusableCellWithIdentifier: [MenuListCell identifierCell]];
     [cell configureViewModel:[self.viewModel getCellViewModel: indexPath]];
-
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSString *deletedId = [self.viewModel getCellViewModel:indexPath].getMenuId;
+        [self.request deleteMenu:deletedId];
+        [self loadData];
+    }
 }
 
 @end

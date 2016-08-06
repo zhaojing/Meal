@@ -40,4 +40,8 @@
     return self.menu.image;
 }
 
+- (NSString *)getMenuId {
+    return self.menu.menuId;
+}
+
 @end

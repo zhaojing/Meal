@@ -13,9 +13,11 @@
 @interface MenuListCellViewModel : NSObject
 
 - (instancetype)initWithMenu: (Menu *)menu;
+
 - (NSString *)getName;
 - (NSString *)getPrice;
 - (NSString *)getLocation;
 - (UIImage *)getImage;
+- (NSString *)getMenuId;
 
 @end

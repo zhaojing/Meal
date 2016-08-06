@@ -29,7 +29,7 @@
     self.viewModel = viewModel;
 }
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.title = [self.viewModel getTitleName];
     self.viewModel.image ? self.imageView.image = self.viewModel.image : nil;
@@ -41,7 +41,7 @@
 
 #pragma mark -photo add
 
--(void)addChoosePhotoType {
+- (void)addChoosePhotoType {
     self.sheet = [UIAlertController alertControllerWithTitle: @"请选择方式"
                                                      message: @""
                                               preferredStyle: UIAlertControllerStyleActionSheet];
