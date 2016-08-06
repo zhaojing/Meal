@@ -30,15 +30,54 @@
     return self;
 }
 
-- (BOOL )saveTheImage: (UIImage *)image
-              andName: (NSString *)name
-          andLocation: (NSString *)location
-             andPrice: (NSString *)price {
-    MenuRequest *menuRequest = [[MenuRequest alloc]init];
-    if (self.menu.menuId)
-        return [menuRequest modifyMenu: [[Menu alloc] initWithId: self.menu.menuId andName: name andprice:price andLocation: location andImage:image]];
+- (void)saveTheImage: (UIImage *)image
+             andName: (NSString *)name
+         andLocation: (NSString *)location
+            andPrice: (NSString *)price
+          andSuccess: (void(^)(NSString *successInfo))success
+            andError:(void(^)(NSString* errorInfo))error {
+    if ([self getTheType] == editType)
+        [self saveEditTypeTheImage:image andName:name andLocation:location andPrice:price andSuccess:success andError:error];
     else
-        return [menuRequest addMenu: [[Menu alloc] initWithId: [self getRandom] andName: name andprice:price andLocation: location andImage: image]];
+        [self saveAddTypeTheImage:image andName:name andLocation:location andPrice:price andSuccess:success andError:error];
+}
+- (Type )getTheType {
+    if (self.menu) {
+        return editType;
+    }
+    return addType;
+}
+
+- (NSString *)getTitleName {
+    return [self getTheType] == editType ? @"编辑界面" : @"添加界面";
+}
+
+- (void)saveEditTypeTheImage: (UIImage *)image
+                     andName: (NSString *)name
+                 andLocation: (NSString *)location
+                    andPrice: (NSString *)price
+                  andSuccess: (void(^)(NSString *successInfo))success
+                    andError: (void(^)(NSString* errorInfo))error {
+    if(![self checkMenuModify: image andName: name andLocation: location andPrice: price])
+        error(@"没有修改任何内容");
+    else
+        [[[MenuRequest alloc]init] modifyMenu:[[Menu alloc] initWithId:self.menu.menuId andName:name andprice:price andLocation:location andImage:image]] ? success(@"修改成功") :error(@"修改失败");
+}
+
+- (void)saveAddTypeTheImage: (UIImage *)image
+                    andName: (NSString *)name
+                andLocation: (NSString *)location
+                   andPrice: (NSString *)price
+                 andSuccess: (void(^)(NSString *successInfo))success
+                   andError: (void(^)(NSString* errorInfo))error {
+    [[[MenuRequest alloc]init] addMenu:[[Menu alloc] initWithId:[self getRandom] andName:name andprice:price andLocation:location andImage:image]] ? success(@"添加成功") : error(@"添加失败");
+}
+
+-(BOOL)checkMenuModify: (UIImage *)image
+               andName: (NSString *)name
+           andLocation: (NSString *)location
+              andPrice: (NSString *)price {
+    return [self.menu.image isEqual: image] && [self.menu.name isEqual: name] && [self.menu.location isEqual: location] && [self.menu.price isEqual: price] ? false : true;
 }
 
 - (NSString *)getRandom {

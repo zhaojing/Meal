@@ -31,13 +31,15 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [self.viewModel getTitleName];
+    self.viewModel.image ? self.imageView.image = self.viewModel.image : nil;
     self.name.text =  self.viewModel.name;
     self.price.text = self.viewModel.price;
     self.location.text = self.viewModel.location;
     [self addChoosePhotoType];
 }
 
-#pragma mark photo add
+#pragma mark -photo add
 
 -(void)addChoosePhotoType {
     self.sheet = [UIAlertController alertControllerWithTitle: @"请选择方式"
@@ -47,7 +49,7 @@
                                                      style: UIAlertActionStyleCancel handler:nil];
     __weak EditMenuViewController *weakSelf = self;
     UIAlertAction *album = [UIAlertAction actionWithTitle: @"从相册选择"
-                                                    style:UIAlertActionStyleDestructive
+                                                    style: UIAlertActionStyleDestructive
                                                   handler: ^(UIAlertAction * _Nonnull action) {
                                                       [self addAlbumWithController:weakSelf];
                                                   }];
@@ -83,11 +85,11 @@
 
 -(void)imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo: (NSDictionary<NSString *,id> *)info{
     UIImage *resultImage = [info objectForKey: @"UIImagePickerControllerEditedImage"];
-    [self.imageView setImage:resultImage];
+    [self.imageView setImage: resultImage];
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
 }
 
-#pragma mark- textFileDelegate
+#pragma mark -textFileDelegate
 
 - (BOOL)textFieldShouldReturn: (UITextField *)textField {
     UITextField *nextTextField = [self getNextTextField: textField];
@@ -101,9 +103,15 @@
     return textField == self.name ? self.price : self.location ;
 }
 
-#pragma mark- action
+- (BOOL)textFieldShouldBeginEditing: (UITextField *)textField{
+    [SVProgressHUD dismiss];
+    return YES;
+}
+
+#pragma mark -action
 
 - (IBAction)back: (id)sender {
+    [SVProgressHUD dismiss];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -118,19 +126,18 @@
         return;
     if (![self checkText: self.location andInfo:@"地点"])
         return;
-    BOOL addSuccess =  [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text];
-    if (addSuccess) {
-        [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+    [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text andSuccess: ^(NSString *successInfo) {
+        [SVProgressHUD showSuccessWithStatus: successInfo];
         self.needUpdate();
-        [self back:nil];
-    }
-    else
-        [SVProgressHUD showSuccessWithStatus:@"添加失败"];
+        [self performSelector: @selector(back:) withObject: nil afterDelay: 0.2];
+    } andError: ^(NSString *errorInfo) {
+        [SVProgressHUD showErrorWithStatus: errorInfo];
+    }];
 }
 
 -(BOOL)checkText: (UITextField *)field andInfo: (NSString *)info {
     if ([field.text isEqual:@""]) {
-        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"未填写%@",info]];
+        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"未填写%@",info]];
         return false;
     }
     return YES;

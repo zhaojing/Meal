@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Menu.h"
 
+typedef enum : NSUInteger {
+    editType,
+    addType
+} Type;
+
 @interface EditMenuViewModel : NSObject
 
 @property (assign, nonatomic)NSString *menuId;
@@ -20,9 +25,14 @@
 - (instancetype)initWithMenu: (Menu *)menu;
 - (UIImagePickerController *)getAlbumController;
 - (UIImagePickerController *)getImageController;
-- (BOOL )saveTheImage: (UIImage *)image
-             andName: (NSString *)name
-         andLocation: (NSString *)location
-            andPrice: (NSString *)price;
+- (Type )getTheType;
+- (NSString *)getTitleName;
+- (BOOL)checkStringIsNumber: (NSString *)string;
+- (void )saveTheImage: (UIImage *)image
+              andName: (NSString *)name
+          andLocation: (NSString *)location
+             andPrice: (NSString *)price
+           andSuccess: (void(^)(NSString *successInfo))success
+             andError: (void(^)(NSString* errorInfo))error;
 
 @end
