@@ -7,6 +7,7 @@
 //
 
 #import "ShakeViewController.h"
+#import "EditHistoryViewModel.h"
 #import "SVProgressHUD.h"
 #import "MenuRequest.h"
 #import "Menu.h"
@@ -14,7 +15,8 @@
 @interface ShakeViewController ()
 
 @property (strong, nonatomic) MenuRequest *request;
-
+@property (strong, nonatomic) Menu *menu;
+@property (strong, nonatomic) EditHistoryViewModel *viewModel;
 @property (strong, nonatomic) IBOutlet UIImageView *resultImage;
 @property (strong, nonatomic) IBOutlet UILabel *resultName;
 @property (strong, nonatomic) IBOutlet UILabel *resultPrice;
@@ -25,9 +27,14 @@
 
 @implementation ShakeViewController
 
+-(void)configure: (EditHistoryViewModel *)viewModel needUpdate: (void(^)())needUpdate {
+    self.viewModel = viewModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self cleanUIForShakeBegin];
+    self.viewModel = [[EditHistoryViewModel alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,14 +61,14 @@
          if([allMenus count] == 0) {
              [SVProgressHUD showErrorWithStatus: @"还没有选项，请先添加一些"];
          }else{
-             Menu *randomMenu = allMenus[arc4random() % [allMenus count]];
-             self.resultImage.image = randomMenu.image;
+             self.menu = allMenus[arc4random() % [allMenus count]];
+             self.resultImage.image = self.menu.image;
              [self.resultName setHidden:false];
              [self.resultPrice setHidden:false];
              [self.resultLocation setHidden:false];
-             self.resultName.text = randomMenu.name;
-             self.resultPrice.text = randomMenu.price;
-             self.resultLocation.text = randomMenu.location;
+             self.resultName.text = self.menu.name;
+             self.resultPrice.text = self.menu.price;
+             self.resultLocation.text = self.menu.location;
         }
     }
 }
@@ -73,7 +80,14 @@
 }
 
 - (IBAction)clickConfirm:(id)sender {
-    [SVProgressHUD showSuccessWithStatus: @"确定成功"];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour;
+    NSDateComponents *dateComponents  = [calendar components:unitFlags fromDate:[NSDate date]];
+    [self.viewModel saveTheImage:self.self.menu.image andMenuId:self.menu.menuId andName:self.menu.name andLocation:self.menu.location andDate:[NSString stringWithFormat:@"%ld-%ld-%ld %ld时",(long)[dateComponents year], [dateComponents month], (long)[dateComponents day], (long)[dateComponents hour]] andYear:[dateComponents year] andMonth:[dateComponents month] andPrice:self.menu.price andSuccess:^(NSString *successInfo){
+        [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
+    }andError:^(NSString *errorInfo){
+        [SVProgressHUD showErrorWithStatus: errorInfo];
+    }];
 }
 
 @end
