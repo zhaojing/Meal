@@ -23,6 +23,8 @@
 		0D4C9C111D5393CE00E1B534 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9C101D5393CE00E1B534 /* Menu.m */; };
 		0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0621D54E82600360F9E /* MenuListCell.m */; };
 		0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */; };
+		2E35CB841D54B41400443FA8 /* SetRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */; };
+		2E62BEDC1D5466CE0037F484 /* SetReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */; };
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
@@ -81,6 +83,10 @@
 		0D9EE0621D54E82600360F9E /* MenuListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListCell.m; sourceTree = "<group>"; };
 		0D9EE0641D54E84200360F9E /* MenuListCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListCellViewModel.h; sourceTree = "<group>"; };
 		0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListCellViewModel.m; sourceTree = "<group>"; };
+		2E35CB821D54B41400443FA8 /* SetRepeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRepeatViewController.h; sourceTree = "<group>"; };
+		2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRepeatViewController.m; sourceTree = "<group>"; };
+		2E62BEDA1D5466CE0037F484 /* SetReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetReminderViewController.h; sourceTree = "<group>"; };
+		2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetReminderViewController.m; sourceTree = "<group>"; };
 		3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.debug.xcconfig"; sourceTree = "<group>"; };
 		749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +222,10 @@
 				0D4C9BFC1D533B6D00E1B534 /* Model */,
 				0D4C9BF31D5339B500E1B534 /* MineViewController.h */,
 				0D4C9BF41D5339B500E1B534 /* MineViewController.m */,
+				2E62BEDA1D5466CE0037F484 /* SetReminderViewController.h */,
+				2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */,
+				2E35CB821D54B41400443FA8 /* SetRepeatViewController.h */,
+				2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -414,7 +424,7 @@
 				TargetAttributes = {
 					0D4C9BB61D53341E00E1B534 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 25EZUPR5QA;
+						DevelopmentTeam = 6K9Z395B8F;
 					};
 					0D4C9BCF1D53341E00E1B534 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -610,6 +620,7 @@
 				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,
 				0D4C9BF81D5339CF00E1B534 /* MenuListViewController.m in Sources */,
 				0D4C9C061D533FC900E1B534 /* RemindMeal.m in Sources */,
+				2E35CB841D54B41400443FA8 /* SetRepeatViewController.m in Sources */,
 				0D4C9BBC1D53341E00E1B534 /* main.m in Sources */,
 				0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */,
 				0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */,
@@ -617,6 +628,7 @@
 				0D4C9C0E1D53937900E1B534 /* MenuRequest.m in Sources */,
 				AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */,
 				AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */,
+				2E62BEDC1D5466CE0037F484 /* SetReminderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,7 +773,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Meal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.Meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -775,7 +789,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Meal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.none.Meal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
