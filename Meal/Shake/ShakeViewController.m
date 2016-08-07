@@ -56,6 +56,9 @@
          }else{
              Menu *randomMenu = allMenus[arc4random() % [allMenus count]];
              self.resultImage.image = randomMenu.image;
+             [self.resultName setHidden:false];
+             [self.resultPrice setHidden:false];
+             [self.resultLocation setHidden:false];
              self.resultName.text = randomMenu.name;
              self.resultPrice.text = randomMenu.price;
              self.resultLocation.text = randomMenu.location;
