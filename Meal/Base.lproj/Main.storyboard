@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="664" y="-523"/>
         </scene>
-        <!--MenuList-->
+        <!--食物列表-->
         <scene sceneID="rLg-gz-Vru">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="n6X-pG-OVn" customClass="MenuListViewController" sceneMemberID="viewController">
@@ -67,39 +67,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RKb-xN-e0Z">
-                                                    <rect key="frame" x="26" y="26" width="50" height="50"/>
+                                                    <rect key="frame" x="28" y="28" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="RKb-xN-e0Z" secondAttribute="height" multiplier="1:1" id="63j-xL-cms"/>
                                                         <constraint firstAttribute="width" constant="50" id="qzk-Ez-oxi"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆小面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWp-IH-tKX">
-                                                    <rect key="frame" x="94" y="26" width="60" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="98" y="28" width="80" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8块" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUe-cn-fUw">
-                                                    <rect key="frame" x="190" y="60" width="21.5" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="226" y="56" width="29.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中软国际餐厅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiP-vQ-Onz">
-                                                    <rect key="frame" x="94" y="60" width="78" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="98" y="56.5" width="108" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="RKb-xN-e0Z" firstAttribute="leading" secondItem="L4d-zC-1Aq" secondAttribute="leadingMargin" constant="18" id="D4d-AX-Bla"/>
-                                                <constraint firstItem="LWp-IH-tKX" firstAttribute="leading" secondItem="RKb-xN-e0Z" secondAttribute="trailing" constant="18" id="If9-yE-qxZ"/>
+                                                <constraint firstItem="RKb-xN-e0Z" firstAttribute="leading" secondItem="L4d-zC-1Aq" secondAttribute="leadingMargin" constant="20" id="D4d-AX-Bla"/>
+                                                <constraint firstItem="LWp-IH-tKX" firstAttribute="leading" secondItem="RKb-xN-e0Z" secondAttribute="trailing" constant="20" id="If9-yE-qxZ"/>
                                                 <constraint firstItem="LWp-IH-tKX" firstAttribute="top" secondItem="RKb-xN-e0Z" secondAttribute="top" id="UEA-WY-Xnw"/>
                                                 <constraint firstItem="AiP-vQ-Onz" firstAttribute="bottom" secondItem="RKb-xN-e0Z" secondAttribute="bottom" id="YVH-ET-P0s"/>
-                                                <constraint firstItem="RKb-xN-e0Z" firstAttribute="top" secondItem="L4d-zC-1Aq" secondAttribute="topMargin" constant="18" id="Yp3-Z6-qYV"/>
+                                                <constraint firstItem="RKb-xN-e0Z" firstAttribute="top" secondItem="L4d-zC-1Aq" secondAttribute="topMargin" constant="20" id="Yp3-Z6-qYV"/>
                                                 <constraint firstItem="EUe-cn-fUw" firstAttribute="centerY" secondItem="AiP-vQ-Onz" secondAttribute="centerY" id="mv5-fL-BBj"/>
-                                                <constraint firstItem="EUe-cn-fUw" firstAttribute="leading" secondItem="AiP-vQ-Onz" secondAttribute="trailing" constant="18" id="oio-G1-ymy"/>
+                                                <constraint firstItem="EUe-cn-fUw" firstAttribute="leading" secondItem="AiP-vQ-Onz" secondAttribute="trailing" constant="20" id="oio-G1-ymy"/>
                                                 <constraint firstItem="AiP-vQ-Onz" firstAttribute="leading" secondItem="LWp-IH-tKX" secondAttribute="leading" id="uHx-OU-kig"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -108,7 +108,7 @@
                                             <outlet property="location" destination="AiP-vQ-Onz" id="4eC-CV-flD"/>
                                             <outlet property="name" destination="LWp-IH-tKX" id="jZi-om-dnR"/>
                                             <outlet property="price" destination="EUe-cn-fUw" id="oAg-Z3-x54"/>
-                                            <segue destination="GcA-QK-gi4" kind="push" identifier="edit" id="sVd-XA-7hf"/>
+                                            <segue destination="GcA-QK-gi4" kind="show" identifier="edit" id="sVd-XA-7hf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -126,8 +126,8 @@
                             <constraint firstItem="nNk-3e-c6U" firstAttribute="top" secondItem="YcP-xk-6xP" secondAttribute="bottom" id="tMq-pn-COO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MenuList" id="tcY-gK-6PL">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="bD4-RB-9QY">
+                    <navigationItem key="navigationItem" title="食物列表" id="tcY-gK-6PL">
+                        <barButtonItem key="rightBarButtonItem" title="添加" id="bD4-RB-9QY">
                             <connections>
                                 <segue destination="GcA-QK-gi4" kind="show" identifier="add" id="bNf-Sb-5Hu"/>
                             </connections>
@@ -154,34 +154,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptL-yl-0eV">
-                                <rect key="frame" x="38" y="159" width="524" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="40" y="224" width="520" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="GcA-QK-gi4" id="bPx-8M-GjU"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKu-ho-8G7">
-                                <rect key="frame" x="38" y="199" width="524" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="40" y="274" width="520" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="GcA-QK-gi4" id="PAc-Ra-2C9"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="地点" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8h-2y-pTI">
-                                <rect key="frame" x="38" y="239" width="524" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="40" y="324" width="520" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="GcA-QK-gi4" id="NhK-Ys-dit"/>
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="QXO-hu-cHV">
-                                <rect key="frame" x="263" y="74" width="75" height="75"/>
+                                <rect key="frame" x="240.5" y="84" width="120" height="120"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKl-T8-waN">
-                                <rect key="frame" x="263" y="74" width="75" height="75"/>
+                                <rect key="frame" x="240.5" y="84" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tKl-T8-waN" secondAttribute="height" multiplier="1:1" id="cba-DB-xBd"/>
                                 </constraints>
@@ -196,20 +196,20 @@
                             <constraint firstItem="YKu-ho-8G7" firstAttribute="width" secondItem="ptL-yl-0eV" secondAttribute="width" id="2RA-4N-3gh"/>
                             <constraint firstItem="C8h-2y-pTI" firstAttribute="height" secondItem="ptL-yl-0eV" secondAttribute="height" id="7h6-Nt-ZhP"/>
                             <constraint firstItem="C8h-2y-pTI" firstAttribute="centerX" secondItem="ptL-yl-0eV" secondAttribute="centerX" id="AEP-FK-yaQ"/>
-                            <constraint firstItem="YKu-ho-8G7" firstAttribute="top" secondItem="ptL-yl-0eV" secondAttribute="bottom" constant="10" id="Awp-Ye-Obh"/>
+                            <constraint firstItem="YKu-ho-8G7" firstAttribute="top" secondItem="ptL-yl-0eV" secondAttribute="bottom" constant="20" id="Awp-Ye-Obh"/>
                             <constraint firstItem="YKu-ho-8G7" firstAttribute="height" secondItem="ptL-yl-0eV" secondAttribute="height" id="FU3-pl-6cm"/>
                             <constraint firstItem="QXO-hu-cHV" firstAttribute="centerY" secondItem="tKl-T8-waN" secondAttribute="centerY" id="FnZ-aG-BNX"/>
                             <constraint firstItem="C8h-2y-pTI" firstAttribute="width" secondItem="ptL-yl-0eV" secondAttribute="width" id="L1X-fb-hgr"/>
                             <constraint firstItem="QXO-hu-cHV" firstAttribute="width" secondItem="tKl-T8-waN" secondAttribute="width" id="LtL-r4-0dl"/>
                             <constraint firstItem="QXO-hu-cHV" firstAttribute="height" secondItem="tKl-T8-waN" secondAttribute="height" id="Ozs-u9-Sd4"/>
-                            <constraint firstItem="ptL-yl-0eV" firstAttribute="top" secondItem="tKl-T8-waN" secondAttribute="bottom" constant="10" id="YpY-ug-e87"/>
-                            <constraint firstItem="tKl-T8-waN" firstAttribute="top" secondItem="KUp-nG-zdb" secondAttribute="bottom" constant="10" id="dAP-eW-nFb"/>
-                            <constraint firstItem="C8h-2y-pTI" firstAttribute="top" secondItem="YKu-ho-8G7" secondAttribute="bottom" constant="10" id="iMW-jW-Zon"/>
-                            <constraint firstItem="ptL-yl-0eV" firstAttribute="leading" secondItem="lAx-aZ-CwD" secondAttribute="leadingMargin" constant="18" id="jHb-WX-wjw"/>
+                            <constraint firstItem="ptL-yl-0eV" firstAttribute="top" secondItem="tKl-T8-waN" secondAttribute="bottom" constant="20" id="YpY-ug-e87"/>
+                            <constraint firstItem="tKl-T8-waN" firstAttribute="top" secondItem="KUp-nG-zdb" secondAttribute="bottom" constant="20" id="dAP-eW-nFb"/>
+                            <constraint firstItem="C8h-2y-pTI" firstAttribute="top" secondItem="YKu-ho-8G7" secondAttribute="bottom" constant="20" id="iMW-jW-Zon"/>
+                            <constraint firstItem="ptL-yl-0eV" firstAttribute="leading" secondItem="lAx-aZ-CwD" secondAttribute="leadingMargin" constant="20" id="jHb-WX-wjw"/>
                             <constraint firstItem="tKl-T8-waN" firstAttribute="centerX" secondItem="lAx-aZ-CwD" secondAttribute="centerX" id="mxX-Hp-E5h"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ptL-yl-0eV" secondAttribute="trailing" constant="18" id="opd-Se-b4V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ptL-yl-0eV" secondAttribute="trailing" constant="20" id="opd-Se-b4V"/>
                             <constraint firstItem="QXO-hu-cHV" firstAttribute="centerX" secondItem="tKl-T8-waN" secondAttribute="centerX" id="qNa-Hm-uWn"/>
-                            <constraint firstItem="tKl-T8-waN" firstAttribute="width" secondItem="lAx-aZ-CwD" secondAttribute="height" multiplier="1:8" id="yLY-8G-mx4"/>
+                            <constraint firstItem="tKl-T8-waN" firstAttribute="width" secondItem="lAx-aZ-CwD" secondAttribute="height" multiplier="1:5" id="yLY-8G-mx4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加食物" id="6wm-b9-84y">

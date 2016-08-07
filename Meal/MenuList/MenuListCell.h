@@ -11,7 +11,8 @@
 
 @interface MenuListCell : UITableViewCell
 
-+(NSString *)identifierCell;
--(void)configureViewModel:(MenuListCellViewModel *)viewModel;
++ (NSString *)identifierCell;
+
+- (void)configureViewModel: (MenuListCellViewModel *)viewModel;
 
 @end

@@ -16,28 +16,32 @@
 
 @implementation MenuListCellViewModel
 
--(instancetype)initWithMenu:(Menu *)menu {
+- (instancetype)initWithMenu: (Menu *)menu {
     self = [super init];
     if (self) {
-    self.menu = menu;
+        self.menu = menu;
     }
     return self;
 }
 
--(NSString *)getName {
+- (NSString *)getName {
     return self.menu.name;
 }
 
--(NSString *)getPrice {
+- (NSString *)getPrice {
     return self.menu.price;
 }
 
--(NSString *)getLocation {
+- (NSString *)getLocation {
     return self.menu.location;
 }
 
--(UIImage *)getImage {
+- (UIImage *)getImage {
     return self.menu.image;
+}
+
+- (NSString *)getMenuId {
+    return self.menu.menuId;
 }
 
 @end

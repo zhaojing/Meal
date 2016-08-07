@@ -19,26 +19,27 @@
 
 @implementation MenuListCell
 
-+(NSString *)identifierCell{
++ (NSString *)identifierCell {
     return @"MenuListCell";
 }
 
--(void)configureViewModel:(MenuListCellViewModel *)viewModel {
+- (void)configureViewModel:  (MenuListCellViewModel *)viewModel {
     self.image.image = [viewModel getImage];
     self.name.text = [viewModel getName];
     self.price.text = [viewModel getPrice];
     self.location.text = [viewModel getLocation];
 }
 
--(void)prepareForReuse {
+- (void)prepareForReuse {
     [super prepareForReuse];
     self.image.image = nil;
     self.name.text = @"";
     self.price.text = @"";
     self.location.text = @"";
 }
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+
+- (void)setSelected: (BOOL)selected animated: (BOOL)animated {
+    [super setSelected: selected animated: animated];
 }
 
 @end

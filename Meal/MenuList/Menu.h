@@ -11,15 +11,16 @@
 
 @interface Menu : NSObject
 
-@property (assign, nonatomic)NSInteger menuId;
+@property (strong, nonatomic)NSString * menuId;
 @property (strong, nonatomic)NSString *name;
 @property (strong, nonatomic)NSString *location;
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)UIImage *image;
 
--(instancetype)initWithId:(NSInteger )menuId
-                  andName:(NSString *)name
-                 andprice:(NSString *)price
-              andLocation:(NSString *)location
-                 andImage:(UIImage *)image;
+- (instancetype)initWithId: (NSString *)menuId
+                   andName: (NSString *)name
+                  andprice: (NSString *)price
+               andLocation: (NSString *)location
+                  andImage: (UIImage *)image;
+
 @end

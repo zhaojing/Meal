@@ -10,11 +10,11 @@
 
 @implementation Menu
 
--(instancetype)initWithId:(NSInteger )menuId
-                  andName:(NSString *)name
-                 andprice:(NSString *)price
-              andLocation:(NSString *)location
-                 andImage:(UIImage *)image {
+- (instancetype)initWithId: (NSString *)menuId
+                   andName: (NSString *)name
+                  andprice: (NSString *)price
+               andLocation: (NSString *)location
+                  andImage: (UIImage *)image {
     self = [super init];
     if (self) {
         self.menuId = menuId;

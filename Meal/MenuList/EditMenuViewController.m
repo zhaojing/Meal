@@ -24,24 +24,24 @@
 
 @implementation EditMenuViewController
 
--(void)configure:(EditMenuViewModel *)viewModel needUpdate:(void(^)())needUpdate {
+-(void)configure: (EditMenuViewModel *)viewModel needUpdate: (void(^)())needUpdate {
     self.needUpdate = needUpdate;
-//    self.needUpdate();
     self.viewModel = viewModel;
-
 }
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [self.viewModel getTitleName];
+    self.viewModel.image ? self.imageView.image = self.viewModel.image : nil;
     self.name.text =  self.viewModel.name;
     self.price.text = self.viewModel.price;
     self.location.text = self.viewModel.location;
     [self addChoosePhotoType];
 }
 
-#pragma mark photo add
+#pragma mark -photo add
 
--(void)addChoosePhotoType {
+- (void)addChoosePhotoType {
     self.sheet = [UIAlertController alertControllerWithTitle: @"请选择方式"
                                                      message: @""
                                               preferredStyle: UIAlertControllerStyleActionSheet];
@@ -49,7 +49,7 @@
                                                      style: UIAlertActionStyleCancel handler:nil];
     __weak EditMenuViewController *weakSelf = self;
     UIAlertAction *album = [UIAlertAction actionWithTitle: @"从相册选择"
-                                                    style:UIAlertActionStyleDestructive
+                                                    style: UIAlertActionStyleDestructive
                                                   handler: ^(UIAlertAction * _Nonnull action) {
                                                       [self addAlbumWithController:weakSelf];
                                                   }];
@@ -63,7 +63,7 @@
     [self.sheet addAction: takePhoto];
 }
 
--(void)addAlbumWithController:(EditMenuViewController *)controller {
+-(void)addAlbumWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getAlbumController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus:@"相册未授权"];
@@ -73,7 +73,7 @@
     [controller presentViewController: picker animated: YES completion: nil];
 }
 
--(void)addPickerWithController:(EditMenuViewController *)controller {
+-(void)addPickerWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getImageController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus: @"相册未授权"];
@@ -83,56 +83,69 @@
     [controller presentViewController: picker animated: YES completion: nil];
 }
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+-(void)imagePickerController: (UIImagePickerController *)picker didFinishPickingMediaWithInfo: (NSDictionary<NSString *,id> *)info{
     UIImage *resultImage = [info objectForKey: @"UIImagePickerControllerEditedImage"];
-    [self.imageView setImage:resultImage];
+    [self.imageView setImage: resultImage];
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
 }
 
-#pragma mark- textFileDelegate
+#pragma mark -textFileDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn: (UITextField *)textField {
     UITextField *nextTextField = [self getNextTextField: textField];
     nextTextField ? [nextTextField becomeFirstResponder]: [textField resignFirstResponder];
     return YES;
 }
 
--(UITextField *)getNextTextField:(UITextField *)textField {
+-(UITextField *)getNextTextField: (UITextField *)textField {
     if (textField == self.location)
         return nil;
     return textField == self.name ? self.price : self.location ;
 }
 
-#pragma mark- action
+- (BOOL)textFieldShouldBeginEditing: (UITextField *)textField{
+    [SVProgressHUD dismiss];
+    return YES;
+}
 
-- (IBAction)back:(id)sender {
+- (BOOL)textField: (UITextField *)textField shouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)string {
+    if (textField == self.price) {
+        NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        return [self.viewModel checkStringIsNumber: newString];
+    }
+    return YES;
+}
+
+#pragma mark -action
+
+- (IBAction)back: (id)sender {
+    [SVProgressHUD dismiss];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)clickPicture:(UIButton *)sender {
-    [self presentViewController:self.sheet animated:YES completion:nil];
+- (IBAction)clickPicture: (UIButton *)sender {
+    [self presentViewController: self.sheet animated: YES completion: nil];
 }
 
-- (IBAction)save:(id)sender {
+- (IBAction)save: (id)sender {
     if (![self checkText: self.name andInfo: @"名字"])
         return;
     if (![self checkText: self.price andInfo: @"价格"])
         return;
     if (![self checkText: self.location andInfo:@"地点"])
         return;
-    BOOL addSuccess =  [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text];
-    if (addSuccess) {
-        [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+    [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text andSuccess: ^(NSString *successInfo) {
+        [SVProgressHUD showSuccessWithStatus: successInfo];
         self.needUpdate();
-        [self back:nil];
-    }
-    else
-        [SVProgressHUD showSuccessWithStatus:@"添加失败"];
+        [self performSelector: @selector(back:) withObject: nil afterDelay: 0.2];
+    } andError: ^(NSString *errorInfo) {
+        [SVProgressHUD showErrorWithStatus: errorInfo];
+    }];
 }
 
--(BOOL)checkText:(UITextField *)field andInfo:(NSString *)info {
+-(BOOL)checkText: (UITextField *)field andInfo: (NSString *)info {
     if ([field.text isEqual:@""]) {
-        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"未填写%@",info]];
+        [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat: @"未填写%@",info]];
         return false;
     }
     return YES;
