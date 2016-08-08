@@ -146,7 +146,7 @@
         <!--添加食物-->
         <scene sceneID="fz9-cz-ICC">
             <objects>
-                <viewController id="GcA-QK-gi4" customClass="EditMenuViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="GcA-QK-gi4" customClass="EditMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KUp-nG-zdb"/>
                         <viewControllerLayoutGuide type="bottom" id="h4d-Xt-JSC"/>
@@ -269,7 +269,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QW-b6-PqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="524"/>
+            <point key="canvasLocation" x="664" y="510"/>
         </scene>
         <!--Shake View Controller-->
         <scene sceneID="4uN-re-tyy">
@@ -428,7 +428,7 @@
         <!--摇一摇历史-->
         <scene sceneID="n8A-wU-cy3">
             <objects>
-                <viewController id="jWG-N3-DZj" customClass="HistoryListViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jWG-N3-DZj" customClass="HistoryListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hlk-ns-TnR"/>
                         <viewControllerLayoutGuide type="bottom" id="HQf-PD-lQL"/>
@@ -522,7 +522,7 @@
         <!--Alarm Set Controller-->
         <scene sceneID="rd5-jg-bK4">
             <objects>
-                <viewController title="Alarm Set Controller" id="aL1-mA-tff" customClass="SetReminderViewController" sceneMemberID="viewController">
+                <viewController title="Alarm Set Controller" hidesBottomBarWhenPushed="YES" id="aL1-mA-tff" customClass="SetReminderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n6b-R0-2CW"/>
                         <viewControllerLayoutGuide type="bottom" id="JcH-Hy-k0c"/>
@@ -616,7 +616,7 @@
         <!--重复选择-->
         <scene sceneID="aKV-TH-hRQ">
             <objects>
-                <viewController id="kJY-ub-oVi" customClass="SetRepeatViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="kJY-ub-oVi" customClass="SetRepeatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hog-TR-lba"/>
                         <viewControllerLayoutGuide type="bottom" id="VKY-pa-bK9"/>
