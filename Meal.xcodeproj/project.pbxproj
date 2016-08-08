@@ -25,6 +25,13 @@
 		0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */; };
 		2E35CB841D54B41400443FA8 /* SetRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */; };
 		2E62BEDC1D5466CE0037F484 /* SetReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */; };
+		2E9DD1DF1D5717C6003CA17A /* HistoryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1DE1D5717C6003CA17A /* HistoryListCell.m */; };
+		2E9DD1E21D5719DD003CA17A /* HistoryListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1E11D5719DD003CA17A /* HistoryListViewModel.m */; };
+		2E9DD1E51D571AE2003CA17A /* HistoryListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1E41D571AE2003CA17A /* HistoryListCellViewModel.m */; };
+		2E9DD1E81D572059003CA17A /* HistoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1E71D572059003CA17A /* HistoryListViewController.m */; };
+		2E9DD1EB1D57239D003CA17A /* HistoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1EA1D57239D003CA17A /* HistoryItem.m */; };
+		2E9DD1EE1D572469003CA17A /* HistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1ED1D572469003CA17A /* HistoryRequest.m */; };
+		2E9DD1F41D5747EC003CA17A /* EditHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1F31D5747EC003CA17A /* EditHistoryViewModel.m */; };
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
@@ -87,6 +94,20 @@
 		2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRepeatViewController.m; sourceTree = "<group>"; };
 		2E62BEDA1D5466CE0037F484 /* SetReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetReminderViewController.h; sourceTree = "<group>"; };
 		2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetReminderViewController.m; sourceTree = "<group>"; };
+		2E9DD1DD1D5717C6003CA17A /* HistoryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListCell.h; sourceTree = "<group>"; };
+		2E9DD1DE1D5717C6003CA17A /* HistoryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListCell.m; sourceTree = "<group>"; };
+		2E9DD1E01D5719DD003CA17A /* HistoryListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListViewModel.h; sourceTree = "<group>"; };
+		2E9DD1E11D5719DD003CA17A /* HistoryListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListViewModel.m; sourceTree = "<group>"; };
+		2E9DD1E31D571AE2003CA17A /* HistoryListCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListCellViewModel.h; sourceTree = "<group>"; };
+		2E9DD1E41D571AE2003CA17A /* HistoryListCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListCellViewModel.m; sourceTree = "<group>"; };
+		2E9DD1E61D572059003CA17A /* HistoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListViewController.h; sourceTree = "<group>"; };
+		2E9DD1E71D572059003CA17A /* HistoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListViewController.m; sourceTree = "<group>"; };
+		2E9DD1E91D57239D003CA17A /* HistoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryItem.h; sourceTree = "<group>"; };
+		2E9DD1EA1D57239D003CA17A /* HistoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryItem.m; sourceTree = "<group>"; };
+		2E9DD1EC1D572469003CA17A /* HistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryRequest.h; sourceTree = "<group>"; };
+		2E9DD1ED1D572469003CA17A /* HistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryRequest.m; sourceTree = "<group>"; };
+		2E9DD1F21D5747EC003CA17A /* EditHistoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHistoryViewModel.h; sourceTree = "<group>"; };
+		2E9DD1F31D5747EC003CA17A /* EditHistoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHistoryViewModel.m; sourceTree = "<group>"; };
 		3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.debug.xcconfig"; sourceTree = "<group>"; };
 		749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +241,8 @@
 				0D4C9BFE1D533BA700E1B534 /* View */,
 				0D4C9BFD1D533B8B00E1B534 /* ViewModel */,
 				0D4C9BFC1D533B6D00E1B534 /* Model */,
+				2E9DD1E61D572059003CA17A /* HistoryListViewController.h */,
+				2E9DD1E71D572059003CA17A /* HistoryListViewController.m */,
 				0D4C9BF31D5339B500E1B534 /* MineViewController.h */,
 				0D4C9BF41D5339B500E1B534 /* MineViewController.m */,
 				2E62BEDA1D5466CE0037F484 /* SetReminderViewController.h */,
@@ -252,6 +275,8 @@
 		0D4C9BFA1D533B0B00E1B534 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2E9DD1F21D5747EC003CA17A /* EditHistoryViewModel.h */,
+				2E9DD1F31D5747EC003CA17A /* EditHistoryViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -266,6 +291,10 @@
 		0D4C9BFC1D533B6D00E1B534 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2E9DD1E91D57239D003CA17A /* HistoryItem.h */,
+				2E9DD1EA1D57239D003CA17A /* HistoryItem.m */,
+				2E9DD1EC1D572469003CA17A /* HistoryRequest.h */,
+				2E9DD1ED1D572469003CA17A /* HistoryRequest.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -273,6 +302,10 @@
 		0D4C9BFD1D533B8B00E1B534 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2E9DD1E01D5719DD003CA17A /* HistoryListViewModel.h */,
+				2E9DD1E11D5719DD003CA17A /* HistoryListViewModel.m */,
+				2E9DD1E31D571AE2003CA17A /* HistoryListCellViewModel.h */,
+				2E9DD1E41D571AE2003CA17A /* HistoryListCellViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -280,6 +313,8 @@
 		0D4C9BFE1D533BA700E1B534 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E9DD1DD1D5717C6003CA17A /* HistoryListCell.h */,
+				2E9DD1DE1D5717C6003CA17A /* HistoryListCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -424,7 +459,7 @@
 				TargetAttributes = {
 					0D4C9BB61D53341E00E1B534 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6K9Z395B8F;
+						DevelopmentTeam = 25EZUPR5QA;
 					};
 					0D4C9BCF1D53341E00E1B534 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -613,22 +648,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9DD1EE1D572469003CA17A /* HistoryRequest.m in Sources */,
+				2E9DD1EB1D57239D003CA17A /* HistoryItem.m in Sources */,
 				AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */,
 				0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */,
+				2E9DD1F41D5747EC003CA17A /* EditHistoryViewModel.m in Sources */,
 				0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */,
 				0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */,
 				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,
 				0D4C9BF81D5339CF00E1B534 /* MenuListViewController.m in Sources */,
 				0D4C9C061D533FC900E1B534 /* RemindMeal.m in Sources */,
+				2E9DD1E21D5719DD003CA17A /* HistoryListViewModel.m in Sources */,
 				2E35CB841D54B41400443FA8 /* SetRepeatViewController.m in Sources */,
+				2E9DD1E51D571AE2003CA17A /* HistoryListCellViewModel.m in Sources */,
 				0D4C9BBC1D53341E00E1B534 /* main.m in Sources */,
 				0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */,
 				0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */,
 				0D4C9C111D5393CE00E1B534 /* Menu.m in Sources */,
+				2E9DD1DF1D5717C6003CA17A /* HistoryListCell.m in Sources */,
 				0D4C9C0E1D53937900E1B534 /* MenuRequest.m in Sources */,
 				AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */,
 				AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */,
 				2E62BEDC1D5466CE0037F484 /* SetReminderViewController.m in Sources */,
+				2E9DD1E81D572059003CA17A /* HistoryListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
