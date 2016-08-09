@@ -12,7 +12,6 @@
 
 @interface EditMenuViewModel ()
 
-@property (strong, nonatomic)Menu *menu;
 
 @end
 
