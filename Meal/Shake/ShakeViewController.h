@@ -16,7 +16,5 @@ typedef NS_ENUM(NSInteger, ShakeStatus) {
 
 @interface ShakeViewController : UIViewController
 
-- (IBAction)clickShakeAgain:(id)sender;
-- (IBAction)clickConfirm:(id)sender;
 
 @end
