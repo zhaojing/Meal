@@ -43,7 +43,7 @@
 
 - (void)cleanUIForShakeBegin {
     self.currentShakeStatus = beginToShake;
-    self.resultImage.image = [UIImage imageNamed:@"dishes.png"];
+    self.resultImage.image = [UIImage imageNamed:@"images.png"];
     [self.resultName setHidden:true];
     [self.resultPrice setHidden:true];
     [self.resultLocation setHidden:true];

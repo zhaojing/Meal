@@ -49,7 +49,7 @@
 }
 
 - (NSString *)getTitleName {
-    return [self getTheType] == editType ? @"编辑界面" : @"添加界面";
+    return [self getTheType] == editType ? @"编辑食物" : @"添加食物";
 }
 
 - (void)saveEditTypeTheImage: (UIImage *)image
