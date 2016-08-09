@@ -22,6 +22,7 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)UIImage *image;
 
+@property (strong, nonatomic)Menu *menu;
 - (instancetype)initWithMenu: (Menu *)menu;
 - (UIImagePickerController *)getAlbumController;
 - (UIImagePickerController *)getImageController;

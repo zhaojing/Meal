@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D293B8D1D58DB2600C15F76 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BCB1D53341E00E1B534 /* Info.plist */; };
+		0D293B8F1D58E01400C15F76 /* EditMenuViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D293B8E1D58E01400C15F76 /* EditMenuViewModelSpec.m */; };
 		0D4C9BBC1D53341E00E1B534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BBB1D53341E00E1B534 /* main.m */; };
 		0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BBE1D53341E00E1B534 /* AppDelegate.m */; };
 		0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC11D53341E00E1B534 /* ViewController.m */; };
 		0D4C9BC51D53341E00E1B534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC31D53341E00E1B534 /* Main.storyboard */; };
 		0D4C9BC71D53341E00E1B534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC61D53341E00E1B534 /* Assets.xcassets */; };
 		0D4C9BCA1D53341E00E1B534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC81D53341E00E1B534 /* LaunchScreen.storyboard */; };
-		0D4C9BD51D53341E00E1B534 /* MealTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BD41D53341E00E1B534 /* MealTests.m */; };
 		0D4C9BE01D53341E00E1B534 /* MealUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BDF1D53341E00E1B534 /* MealUITests.m */; };
 		0D4C9BF21D5339A100E1B534 /* ShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BF11D5339A100E1B534 /* ShakeViewController.m */; };
 		0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BF41D5339B500E1B534 /* MineViewController.m */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D293B8E1D58E01400C15F76 /* EditMenuViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewModelSpec.m; sourceTree = "<group>"; };
 		0D4C9BB71D53341E00E1B534 /* Meal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4C9BBB1D53341E00E1B534 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D4C9BBD1D53341E00E1B534 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,7 +71,6 @@
 		0D4C9BC91D53341E00E1B534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D4C9BCB1D53341E00E1B534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D4C9BD01D53341E00E1B534 /* MealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D4C9BD41D53341E00E1B534 /* MealTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealTests.m; sourceTree = "<group>"; };
 		0D4C9BD61D53341E00E1B534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D4C9BDB1D53341E00E1B534 /* MealUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D4C9BDF1D53341E00E1B534 /* MealUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealUITests.m; sourceTree = "<group>"; };
@@ -206,7 +207,7 @@
 		0D4C9BD31D53341E00E1B534 /* MealTests */ = {
 			isa = PBXGroup;
 			children = (
-				0D4C9BD41D53341E00E1B534 /* MealTests.m */,
+				0D293B8E1D58E01400C15F76 /* EditMenuViewModelSpec.m */,
 				0D4C9BD61D53341E00E1B534 /* Info.plist */,
 			);
 			path = MealTests;
@@ -498,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D293B8D1D58DB2600C15F76 /* Info.plist in Resources */,
 				0D4C9BCA1D53341E00E1B534 /* LaunchScreen.storyboard in Resources */,
 				0D4C9BC71D53341E00E1B534 /* Assets.xcassets in Resources */,
 				0D4C9BC51D53341E00E1B534 /* Main.storyboard in Resources */,
@@ -678,7 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D4C9BD51D53341E00E1B534 /* MealTests.m in Sources */,
+				0D293B8F1D58E01400C15F76 /* EditMenuViewModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
