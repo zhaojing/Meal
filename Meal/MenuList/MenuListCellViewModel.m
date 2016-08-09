@@ -29,7 +29,7 @@
 }
 
 - (NSString *)getPrice {
-    return [@"￥" stringByAppendingString: self.menu.price];
+    return [NSString stringWithFormat:@"￥%@", self.menu.price];
 }
 
 - (NSString *)getLocation {
