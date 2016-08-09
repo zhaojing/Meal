@@ -8,6 +8,9 @@
 
 #import "ShakeViewModel.h"
 
+static const int LIMITCOUNT = 3;
+static const int LIMITTIME = 3600;
+
 @implementation ShakeViewModel
 
 - (void)confirmIfCanShake:(void (^)())succes andError:(void (^)(NSString *))error {
@@ -15,9 +18,9 @@
     NSArray *currentShakeArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"];
     if (!currentShakeArray) {
         succes();
-    } else if ([[[currentShakeArray lastObject] valueForKey:@"save"]isEqual:[NSNumber numberWithBool:YES]] && [date timeIntervalSinceDate:[[currentShakeArray lastObject] valueForKey:@"date"]] < 3600 ) {
+    } else if ([[[currentShakeArray lastObject] valueForKey:@"save"]isEqual:[NSNumber numberWithBool:YES]] && [date timeIntervalSinceDate:[[currentShakeArray lastObject] valueForKey:@"date"]] < LIMITTIME ) {
         error(@"在当前一个小时之内已经选过了");
-    } else if ([currentShakeArray count] == 3 &&[date timeIntervalSinceDate:[[currentShakeArray firstObject] valueForKey:@"date"]] < 3600) {
+    } else if ([currentShakeArray count] == LIMITCOUNT &&[date timeIntervalSinceDate:[[currentShakeArray firstObject] valueForKey:@"date"]] < LIMITTIME) {
         error(@"在当前一个小时之内摇动超过三次");
     } else {
         succes();
@@ -27,7 +30,7 @@
 - (void)saveDate:(NSDate *)date andSave:(BOOL)save {
     NSArray *currentShakeArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"] ? [[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"] : @[];
     NSMutableArray * array = [NSMutableArray arrayWithArray:currentShakeArray];
-    if ([array count] == 3) {
+    if ([array count] == LIMITCOUNT) {
         [array removeObjectAtIndex:0];
     }
     if ([date isEqual:[[array lastObject] valueForKey:@"date"]]) {
