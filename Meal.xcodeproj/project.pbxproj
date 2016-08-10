@@ -36,6 +36,8 @@
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
+		AE6AE59C1D59F58500D0A6C1 /* MenuListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6AE59B1D59F58500D0A6C1 /* MenuListViewModelSpec.m */; };
+		AE6AE59E1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6AE59D1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m */; };
 		AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */; };
 		AEFFDF051D5468FA0090C5D5 /* EditMenuViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF041D5468FA0090C5D5 /* EditMenuViewModel.m */; };
 		AEFFDF081D54764B0090C5D5 /* MenuListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFFDF071D54764B0090C5D5 /* MenuListViewModel.m */; };
@@ -115,6 +117,8 @@
 		7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDD40F5B6DACFDD1605D791 /* Pods-Meal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.release.xcconfig"; sourceTree = "<group>"; };
 		ACD02B04FD3D5BB6EA3BCEE0 /* Pods-Meal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meal/Pods-Meal.debug.xcconfig"; sourceTree = "<group>"; };
+		AE6AE59B1D59F58500D0A6C1 /* MenuListViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListViewModelSpec.m; sourceTree = "<group>"; };
+		AE6AE59D1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListViewModelSpec.m; sourceTree = "<group>"; };
 		AEFFDEFF1D5438830090C5D5 /* EditMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewController.h; sourceTree = "<group>"; };
 		AEFFDF001D5438830090C5D5 /* EditMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMenuViewController.m; sourceTree = "<group>"; };
 		AEFFDF031D5468FA0090C5D5 /* EditMenuViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMenuViewModel.h; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				0D293B8E1D58E01400C15F76 /* EditMenuViewModelSpec.m */,
+				AE6AE59D1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m */,
+				AE6AE59B1D59F58500D0A6C1 /* MenuListViewModelSpec.m */,
 				0D4C9BD61D53341E00E1B534 /* Info.plist */,
 			);
 			path = MealTests;
@@ -680,7 +686,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6AE59C1D59F58500D0A6C1 /* MenuListViewModelSpec.m in Sources */,
 				0D293B8F1D58E01400C15F76 /* EditMenuViewModelSpec.m in Sources */,
+				AE6AE59E1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
