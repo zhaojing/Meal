@@ -14,53 +14,35 @@
 SPEC_BEGIN(MenuListViewModelSpec)
 
 describe(@"MenuListViewModel", ^{
-//    context(@"configure menus", ^{
-//        __block MenuListViewModel *viewModel;
-//        beforeEach(^{
-//            id menuMock = [OCMockObject mockForClass: [Menu class]];
-//            viewModel = [[MenuListViewModel alloc] init];
-//            [viewModel stub: @selector(menu) andReturn: menuMock];
-//        });
-//        it(@"", ^{
-//        });
-//    });
-    
     context(@"will save menu", ^{
-        __block MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
-        it(@"", ^{
+        MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
+        it(@"return type be kind of EditMenuViewModel", ^{
             [[[viewModel willSaveMenu] should] beKindOfClass: [EditMenuViewModel class]];
         });
     });
-
-    context(@"get tableView count", ^{
-        __block MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
-        id menuMock = [OCMockObject mockForClass: [Menu class]];
-        [viewModel stub: @selector(menu) andReturn: menuMock];
-        it(@"", ^{
-            [[theValue([viewModel tableViewCount]) should] equal: theValue([menuMock count])];
+    context(@"menu have 2", ^{
+        MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
+        [viewModel configureMenus:@[@{},@{}]];
+        it(@"count should equal 2", ^{
+            [[theValue([viewModel tableViewCount]) should] equal: theValue(2)];
         });
     });
-    
     context(@"will edit menu with index", ^{
-        __block MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
-        id menuMock = [OCMockObject mockForClass: [Menu class]];
-        [viewModel stub: @selector(menu) andReturn: menuMock];
-        id indexMock = [OCMockObject mockForClass: [NSIndexPath class]];
-        it(@"", ^{
-            [[[viewModel willEditMenuWithIndex: indexMock] should] beKindOfClass: [EditMenuViewModel class]];
+        MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
+        Menu *menu = [[Menu alloc] initWithId:@"1" andName:@"1" andprice:@"1" andLocation:@"1" andImage: [[UIImage alloc]init]];
+        [viewModel configureMenus: @[menu]];
+        it(@"return type be kind of EditMenuViewModel", ^{
+            [[[viewModel willEditMenuWithIndex: [NSIndexPath indexPathForRow:0 inSection:0]] should] beKindOfClass: [EditMenuViewModel class]];
         });
     });
-    
     context(@"get cellViewModel", ^{
         __block MenuListViewModel *viewModel = [[MenuListViewModel alloc] init];
-        id menuMock = [OCMockObject mockForClass: [Menu class]];
-        [viewModel stub: @selector(menu) andReturn: menuMock];
-        id indexMock = [OCMockObject mockForClass: [NSIndexPath class]];
-        it(@"", ^{
-            [[[viewModel getCellViewModel: indexMock] should] beKindOfClass: [MenuListCellViewModel class]];
+        Menu *menu = [[Menu alloc] initWithId:@"1" andName:@"1" andprice:@"1" andLocation:@"1" andImage: [[UIImage alloc]init]];
+        [viewModel configureMenus: @[menu]];
+        it(@"return type be kind of EditMenuViewModel", ^{
+            [[[viewModel getCellViewModel: [NSIndexPath indexPathForRow:0 inSection:0]] should] beKindOfClass: [MenuListCellViewModel class]];
         });
     });
-
 });
 
 SPEC_END
