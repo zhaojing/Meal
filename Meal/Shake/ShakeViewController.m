@@ -23,7 +23,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *resultPrice;
 @property (strong, nonatomic) IBOutlet UILabel *resultLocation;
 @property (strong, nonatomic) IBOutlet UIButton *confirmButton;
-@property (strong, nonatomic) NSDate *date;
 
 @end
 
@@ -37,10 +36,6 @@
     [super viewDidLoad];
     [self cleanUI];
     self.shakeViewModel = [[ShakeViewModel alloc]init];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - SetUI
@@ -62,6 +57,7 @@
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (motion == UIEventSubtypeMotionShake) {
+        [SVProgressHUD dismiss];
         [self cleanUI];
     }
 }
@@ -73,10 +69,9 @@
             [SVProgressHUD showErrorWithStatus: @"还没有选项，请先添加一些"];
         } else {
             [self.shakeViewModel confirmIfCanShake:^{
-                self.menu = allMenus[arc4random() % [allMenus count]];
+                self.menu = [self.shakeViewModel getRandomMenu:allMenus];
                 [self showResult];
-                self.date  = [NSDate date];
-                [self.shakeViewModel saveDate:self.date andSave:false];
+                [self.shakeViewModel saveDate:[NSDate date] andSave:false];
             } andError:^(NSString *string) {
                 [SVProgressHUD showErrorWithStatus:string];
             }];
@@ -87,16 +82,15 @@
 #pragma mark - ClickButtonAction
 
 - (IBAction)clickConfirm:(id)sender {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour;
-    NSDateComponents *dateComponents  = [calendar components:unitFlags fromDate:self.date];
-    [self.shakeViewModel saveTheImage:self.self.menu.image andMenuId:self.menu.menuId andName:self.menu.name andLocation:self.menu.location andDate:[NSString stringWithFormat:@"%ld-%ld-%ld %ld时",(long)[dateComponents year], (long)[dateComponents month], (long)[dateComponents day], (long)[dateComponents hour]] andYear:[dateComponents year] andMonth:[dateComponents month] andPrice:self.menu.price andSuccess:^(NSString *successInfo) {
-        [self.confirmButton setEnabled:false];
-        [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
-        [self.shakeViewModel saveDate:self.date andSave:YES];
-    }andError:^(NSString *errorInfo){
-        [SVProgressHUD showErrorWithStatus: errorInfo];
-    }];
+    [self.shakeViewModel saveHistory:self.menu
+                             andDate:[NSDate date]
+                          andSuccess:^(NSString *successInfo) {
+                              [self.confirmButton setEnabled:false];
+                              [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
+                              [self.shakeViewModel saveDate:[NSDate date] andSave:YES];
+                          } andError:^(NSString *errorInfo) {
+                              [SVProgressHUD showErrorWithStatus: errorInfo];
+                          }];
 }
 
 @end

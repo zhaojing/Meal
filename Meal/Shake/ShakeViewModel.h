@@ -8,21 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "HistoryItem.h"
+#import "Menu.h"
 
 @interface ShakeViewModel : NSObject
 
-- (void)confirmIfCanShake:(void(^)())succes andError:(void(^)(NSString *string))error;
-- (void)saveDate:(NSDate *)date andSave:(BOOL)save;
+- (void)confirmIfCanShake: (void(^)())succes andError: (void(^)(NSString *string))error;
+- (void)saveDate: (NSDate *)date andSave:(BOOL)save;
+- (Menu *)getRandomMenu: (NSArray *)allMenus;
 - (instancetype)initWithHistory: (HistoryItem *)historyItem;
-- (void)saveTheImage: (UIImage *)image
-           andMenuId: (NSString *)menuId
-             andName: (NSString *)name
-         andLocation: (NSString *)location
-             andDate: (NSString *)date
-             andYear: (NSInteger)year
-            andMonth: (NSInteger)month
-            andPrice: (NSString *)price
-          andSuccess: (void(^)(NSString *successInfo))success
-            andError: (void(^)(NSString* errorInfo))error;
+- (void)saveHistory: (Menu *)menu
+            andDate: (NSDate *)date
+         andSuccess: (void(^)(NSString *successInfo))success
+           andError: (void(^)(NSString* errorInfo))error;
 
 @end

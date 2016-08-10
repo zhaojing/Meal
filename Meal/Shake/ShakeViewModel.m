@@ -9,6 +9,7 @@
 #import "ShakeViewModel.h"
 #import "HistoryItem.h"
 #import "HistoryRequest.h"
+#import "Menu.h"
 
 static const int LIMITCOUNT = 3;
 static const int LIMITTIME = 3600;
@@ -16,10 +17,7 @@ static const int LIMITTIME = 3600;
 @interface ShakeViewModel ()
 
 @property (strong, nonatomic)HistoryItem *historyItem;
-@property (assign, nonatomic)NSString *itemId;
-@property (strong, nonatomic)NSString *date;
-@property (assign, nonatomic)NSInteger year;
-@property (assign, nonatomic)NSInteger month;
+@property (strong, nonatomic)NSDate *date;
 
 @end
 
@@ -30,23 +28,19 @@ static const int LIMITTIME = 3600;
     if(self) {
         self.historyItem = historyItem;
         self.date = historyItem.date;
-        self.year = historyItem.year;
-        self.month = historyItem.month;
     }
     return self;
 }
 
-- (void)saveTheImage:(UIImage *)image
-           andMenuId:(NSString *)menuId
-             andName:(NSString *)name
-         andLocation:(NSString *)location
-             andDate:(NSString *)date
-             andYear:(NSInteger)year
-            andMonth:(NSInteger)month
-            andPrice:(NSString *)price
-          andSuccess:(void (^)(NSString *))success
-            andError:(void (^)(NSString *))error {
-    [[[HistoryRequest alloc]init] addHistoryItem:[[HistoryItem alloc] initWithId:[self getRandom] andMenuID:menuId andName:name andprice:price andLocation:location andDate:date andYear:year andMonth:month andImage:image]]? success(@"添加成功") : error(@"添加失败") ;
+- (void)saveHistory:(Menu *)menu
+            andDate:(NSDate *)date
+         andSuccess:(void (^)(NSString *))success
+           andError:(void (^)(NSString *))error {
+    [[[HistoryRequest alloc]init] addHistoryItem:[[HistoryItem alloc] initWithId:[self getRandom] andMenuID:menu.menuId andName:menu.name andprice:menu.price andLocation:menu.location andDate:date andImage:menu.image]]? success(@"添加成功") : error(@"添加失败") ;
+}
+
+- (Menu *)getRandomMenu:(NSArray *)allMenus {
+    return allMenus[arc4random() % [allMenus count]];
 }
 
 - (NSString *)getRandom {
