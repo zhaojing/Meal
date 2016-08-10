@@ -30,7 +30,6 @@
     self.cellPrice.text = [viewModel getPrice];
     self.cellLocation.text = [viewModel getLocation];
     self.cellDate.text = [viewModel getDate];
-    NSLog(@"%@",[viewModel getDate]);
 }
 
 -(void)prepareForReuse {

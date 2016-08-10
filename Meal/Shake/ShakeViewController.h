@@ -8,15 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-typedef NS_ENUM(NSInteger, ShakeStatus) {
-    beginToShake = 0,
-    showResult
-};
-
 @interface ShakeViewController : UIViewController
-
-- (IBAction)clickShakeAgain:(id)sender;
-- (IBAction)clickConfirm:(id)sender;
 
 @end

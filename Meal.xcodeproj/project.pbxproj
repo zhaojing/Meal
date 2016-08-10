@@ -32,7 +32,7 @@
 		2E9DD1E81D572059003CA17A /* HistoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1E71D572059003CA17A /* HistoryListViewController.m */; };
 		2E9DD1EB1D57239D003CA17A /* HistoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1EA1D57239D003CA17A /* HistoryItem.m */; };
 		2E9DD1EE1D572469003CA17A /* HistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1ED1D572469003CA17A /* HistoryRequest.m */; };
-		2E9DD1F41D5747EC003CA17A /* EditHistoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1F31D5747EC003CA17A /* EditHistoryViewModel.m */; };
+		2E9DD1F71D5861E5003CA17A /* ShakeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1F61D5861E5003CA17A /* ShakeViewModel.m */; };
 		39E982C33CB8EA5D22FD88C2 /* libPods-MealTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3242BF50AC1782E723A6D7 /* libPods-MealTests.a */; };
 		4430BD038C468EA4A19CA709 /* libPods-Meal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05E8BA41C60DFEC3307F81 /* libPods-Meal.a */; };
 		79AAE105680401D9B0C8EC2E /* libPods-MealUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C551BA407A8E85631B5A8F11 /* libPods-MealUITests.a */; };
@@ -107,8 +107,8 @@
 		2E9DD1EA1D57239D003CA17A /* HistoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryItem.m; sourceTree = "<group>"; };
 		2E9DD1EC1D572469003CA17A /* HistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryRequest.h; sourceTree = "<group>"; };
 		2E9DD1ED1D572469003CA17A /* HistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryRequest.m; sourceTree = "<group>"; };
-		2E9DD1F21D5747EC003CA17A /* EditHistoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHistoryViewModel.h; sourceTree = "<group>"; };
-		2E9DD1F31D5747EC003CA17A /* EditHistoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHistoryViewModel.m; sourceTree = "<group>"; };
+		2E9DD1F51D5861E5003CA17A /* ShakeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeViewModel.h; sourceTree = "<group>"; };
+		2E9DD1F61D5861E5003CA17A /* ShakeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeViewModel.m; sourceTree = "<group>"; };
 		3DC2D5825E802631CDB72B07 /* Pods-MealUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		674D94537B2189A99D8B31AB /* Pods-MealTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealTests/Pods-MealTests.debug.xcconfig"; sourceTree = "<group>"; };
 		749E4C1FC0D80D21003C763B /* Pods-MealUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealUITests/Pods-MealUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 		0D4C9BFA1D533B0B00E1B534 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2E9DD1F21D5747EC003CA17A /* EditHistoryViewModel.h */,
-				2E9DD1F31D5747EC003CA17A /* EditHistoryViewModel.m */,
+				2E9DD1F51D5861E5003CA17A /* ShakeViewModel.h */,
+				2E9DD1F61D5861E5003CA17A /* ShakeViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -653,8 +653,8 @@
 				2E9DD1EE1D572469003CA17A /* HistoryRequest.m in Sources */,
 				2E9DD1EB1D57239D003CA17A /* HistoryItem.m in Sources */,
 				AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */,
+				2E9DD1F71D5861E5003CA17A /* ShakeViewModel.m in Sources */,
 				0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */,
-				2E9DD1F41D5747EC003CA17A /* EditHistoryViewModel.m in Sources */,
 				0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */,
 				0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */,
 				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,

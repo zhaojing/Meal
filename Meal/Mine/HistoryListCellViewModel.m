@@ -29,7 +29,7 @@
 }
 
 -(NSString *)getPrice {
-    return self.historyItem.price;
+    return [NSString stringWithFormat:@"￥%@", self.historyItem.price];
 }
 
 -(NSString *)getLocation {
@@ -37,7 +37,9 @@
 }
 
 -(NSString *)getDate {
-    return self.historyItem.date;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
+    return [formatter stringFromDate:self.historyItem.date];
 }
 
 -(UIImage *)getImage {

@@ -7,87 +7,90 @@
 //
 
 #import "ShakeViewController.h"
-#import "EditHistoryViewModel.h"
+#import "ShakeViewModel.h"
 #import "SVProgressHUD.h"
 #import "MenuRequest.h"
 #import "Menu.h"
 
 @interface ShakeViewController ()
 
-@property (strong, nonatomic) MenuRequest *request;
 @property (strong, nonatomic) Menu *menu;
-@property (strong, nonatomic) EditHistoryViewModel *viewModel;
+@property (strong ,nonatomic) ShakeViewModel *shakeViewModel;
+@property (strong, nonatomic) IBOutlet UIView *DataView;
 @property (strong, nonatomic) IBOutlet UIImageView *resultImage;
+@property (strong, nonatomic) IBOutlet UIImageView *backgrougdImage;
 @property (strong, nonatomic) IBOutlet UILabel *resultName;
 @property (strong, nonatomic) IBOutlet UILabel *resultPrice;
 @property (strong, nonatomic) IBOutlet UILabel *resultLocation;
-@property ShakeStatus currentShakeStatus;
+@property (strong, nonatomic) IBOutlet UIButton *confirmButton;
 
 @end
 
 @implementation ShakeViewController
 
--(void)configure: (EditHistoryViewModel *)viewModel needUpdate: (void(^)())needUpdate {
-    self.viewModel = viewModel;
+-(void)configure: (ShakeViewModel *)shakeViewModel needUpdate: (void(^)())needUpdate {
+    self.shakeViewModel = shakeViewModel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self cleanUIForShakeBegin];
-    self.viewModel = [[EditHistoryViewModel alloc]init];
+    [self cleanUI];
+    self.shakeViewModel = [[ShakeViewModel alloc]init];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+#pragma mark - SetUI
+
+- (void)cleanUI {
+    self.backgrougdImage.image = [UIImage imageNamed:@"shake.png"];
+    [self.DataView setHidden:true];
 }
 
-- (void)cleanUIForShakeBegin {
-    self.currentShakeStatus = beginToShake;
-    self.resultImage.image = [UIImage imageNamed:@"images.png"];
-    [self.resultName setHidden:true];
-    [self.resultPrice setHidden:true];
-    [self.resultLocation setHidden:true];
+- (void)showResult {
+    [self.DataView setHidden:false];
+    self.resultImage.image = self.menu.image;
+    self.resultName.text = self.menu.name;
+    self.resultPrice.text = self.menu.price;
+    self.resultLocation.text = self.menu.location;
 }
 
 #pragma mark - ShakeAction
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-     if (motion == UIEventSubtypeMotionShake) {
-         if (self.currentShakeStatus == showResult) {
-             return;
-         }
-         self.request = [[MenuRequest alloc] init];
-         NSArray *allMenus = [self.request getAllMenus];
-         if([allMenus count] == 0) {
-             [SVProgressHUD showErrorWithStatus: @"还没有选项，请先添加一些"];
-         }else{
-             self.menu = allMenus[arc4random() % [allMenus count]];
-             self.resultImage.image = self.menu.image;
-             [self.resultName setHidden:false];
-             [self.resultPrice setHidden:false];
-             [self.resultLocation setHidden:false];
-             self.resultName.text = self.menu.name;
-             self.resultPrice.text = self.menu.price;
-             self.resultLocation.text = self.menu.location;
+    if (motion == UIEventSubtypeMotionShake) {
+        [SVProgressHUD dismiss];
+        [self cleanUI];
+    }
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        NSArray *allMenus = [[[MenuRequest alloc] init] getAllMenus];
+        if([allMenus count] == 0) {
+            [SVProgressHUD showErrorWithStatus: @"还没有选项，请先添加一些"];
+        } else {
+            [self.shakeViewModel confirmIfCanShake:^{
+                self.menu = [self.shakeViewModel getRandomMenu:allMenus];
+                [self showResult];
+                [self.shakeViewModel saveDate:[NSDate date] andSave:false];
+            } andError:^(NSString *string) {
+                [SVProgressHUD showErrorWithStatus:string];
+            }];
         }
     }
 }
 
 #pragma mark - ClickButtonAction
 
-- (IBAction)clickShakeAgain:(id)sender {
-    [self cleanUIForShakeBegin];
-}
-
 - (IBAction)clickConfirm:(id)sender {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour;
-    NSDateComponents *dateComponents  = [calendar components:unitFlags fromDate:[NSDate date]];
-    [self.viewModel saveTheImage:self.self.menu.image andMenuId:self.menu.menuId andName:self.menu.name andLocation:self.menu.location andDate:[NSString stringWithFormat:@"%ld-%ld-%ld %ld时",(long)[dateComponents year], [dateComponents month], (long)[dateComponents day], (long)[dateComponents hour]] andYear:[dateComponents year] andMonth:[dateComponents month] andPrice:self.menu.price andSuccess:^(NSString *successInfo){
-        [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
-    }andError:^(NSString *errorInfo){
-        [SVProgressHUD showErrorWithStatus: errorInfo];
-    }];
+    [self.shakeViewModel saveHistory:self.menu
+                             andDate:[NSDate date]
+                          andSuccess:^(NSString *successInfo) {
+                              [self.confirmButton setEnabled:false];
+                              [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
+                              [self.shakeViewModel saveDate:[NSDate date] andSave:YES];
+                          } andError:^(NSString *errorInfo) {
+                              [SVProgressHUD showErrorWithStatus: errorInfo];
+                          }];
 }
 
 @end

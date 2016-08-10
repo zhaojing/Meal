@@ -33,16 +33,17 @@
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
-    NSString * sql = @"create table if not exists 'History' ('id' text PRIMARY KEY  NOT NULL, 'menuid' text , 'name' VARCHAR(30) , 'location' text , 'date' text , 'year' INTEGER , 'month' INTEGER , 'price' text , 'imageData' blob )";
+    NSString * sql = @"create table if not exists 'History' ('id' text PRIMARY KEY  NOT NULL, 'menuid' text , 'name' VARCHAR(30) , 'location' text , 'price' text , 'date' DOUBLE , 'imageData' blob )";
     return [db executeUpdate:sql];
+
 }
 
 -(BOOL)addHistoryItem:(HistoryItem *)historyitem {
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
-    NSString * sql = @"insert into History (id, menuid, name, location, date, year, month, price, imageData) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    return [db executeUpdate:sql, historyitem.itemId , historyitem.menuId , historyitem.name , historyitem.location, historyitem.date, [NSString stringWithFormat:@"%ld",(long)historyitem.year], [NSString stringWithFormat:@"%ld",(long)historyitem.month], historyitem.price, [self transformImage:historyitem.image]];
+    NSString * sql = @"insert into History (id, menuid, name, location, price, date, imageData) values(?, ?, ?, ?, ?, ?, ?)";
+    return [db executeUpdate:sql, historyitem.itemId , historyitem.menuId , historyitem.name , historyitem.location , historyitem.price , [NSString stringWithFormat:@"%lf",(double)[historyitem.date timeIntervalSince1970]], [self transformImage:historyitem.image]];
 }
 
 -(BOOL)deleteHistoryItem:(NSString *)itemId {
@@ -57,9 +58,8 @@
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
-    NSString * sql = @"update History SET menuid = ? , name = ? , location = ? , date = ? , year = ? , month = ? , price = ? , imageData = ? WHERE id=?";
-    return [db executeUpdate:sql, historyitem.menuId, historyitem.name, historyitem.location, historyitem.date, (long)historyitem.year, (long)historyitem.month, historyitem.price, [self transformImage:historyitem.image], historyitem.itemId];
-    
+    NSString * sql = @"update History SET menuid = ? , name = ? , location = ? , price = ? , imageData = ? , date = ? WHERE id=?";
+    return [db executeUpdate:sql, historyitem.menuId, historyitem.name, historyitem.location, historyitem.price, [self transformImage:historyitem.image], [historyitem.date timeIntervalSince1970], historyitem.itemId];
 }
 
 -(NSArray<HistoryItem *> *)getAllHistoryItems {
@@ -75,9 +75,7 @@
                                                           andName:[rs stringForColumn:@"name"]
                                                          andprice:[rs stringForColumn:@"price"]
                                                       andLocation:[rs stringForColumn:@"location"]
-                                                          andDate:[rs stringForColumn:@"date"]
-                                                          andYear:[rs intForColumn:@"year"]
-                                                         andMonth:[rs intForColumn:@"month"]
+                                                          andDate:[NSDate dateWithTimeIntervalSince1970:[rs doubleForColumn:@"date"]]
                                                          andImage:[UIImage imageWithData:[rs dataForColumn:@"imageData"]]];
         [historyItems addObject:historyitem];
     }

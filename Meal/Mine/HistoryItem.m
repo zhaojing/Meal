@@ -15,9 +15,7 @@
                    andName:(NSString *)name
                   andprice:(NSString *)price
                andLocation:(NSString *)location
-                   andDate:(NSString *)date
-                   andYear:(NSInteger)year
-                  andMonth:(NSInteger)month
+                   andDate:(NSDate *)date
                   andImage:(UIImage *)image {
     self = [super init];
     if (self) {
@@ -27,8 +25,6 @@
         self.price = price;
         self.location = location;
         self.date = date;
-        self.year = year;
-        self.month = month;
         self.image = image;
     }
     return self;

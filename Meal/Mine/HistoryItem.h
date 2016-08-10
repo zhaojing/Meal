@@ -16,9 +16,7 @@
 @property (strong, nonatomic)NSString *name;
 @property (strong, nonatomic)NSString *location;
 @property (strong, nonatomic)NSString *price;
-@property (strong, nonatomic)NSString *date;
-@property (assign, nonatomic)NSInteger year;
-@property (assign, nonatomic)NSInteger month;
+@property (strong, nonatomic)NSDate *date;
 @property (strong, nonatomic)UIImage *image;
 
 -(instancetype)initWithId:(NSString *)itemId
@@ -26,9 +24,7 @@
                   andName:(NSString *)name
                  andprice:(NSString *)price
               andLocation:(NSString *)location
-                  andDate:(NSString *)date
-                  andYear:(NSInteger)year
-                 andMonth:(NSInteger)month
+                  andDate:(NSDate *)date
                  andImage:(UIImage *)image;
 
 @end
