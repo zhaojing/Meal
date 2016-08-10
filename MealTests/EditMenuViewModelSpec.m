@@ -39,8 +39,8 @@ describe(@"EditMenuViewModel", ^{
             [[theValue([viewModel getTheType]) should] equal: theValue(addType)];
         });
         
-        it(@"TitleName should equal 添加界面 ", ^{
-            [[[viewModel getTitleName] should] equal: @"添加界面"];
+        it(@"TitleName should equal 添加食物 ", ^{
+            [[[viewModel getTitleName] should] equal: @"添加食物"];
         });
         
     });
@@ -59,8 +59,8 @@ describe(@"EditMenuViewModel", ^{
             [[theValue([viewModel getTheType]) should] equal: theValue(editType)];
         });
         
-        it(@"TitleName should equal 编辑界面 ", ^{
-            [[[viewModel getTitleName] should] equal: @"编辑界面"];
+        it(@"TitleName should equal 编辑食物 ", ^{
+            [[[viewModel getTitleName] should] equal: @"编辑食物"];
         });
         
     });
