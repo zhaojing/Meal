@@ -7,11 +7,63 @@
 //
 
 #import "ShakeViewModel.h"
+#import "HistoryItem.h"
+#import "HistoryRequest.h"
 
 static const int LIMITCOUNT = 3;
 static const int LIMITTIME = 3600;
 
+@interface ShakeViewModel ()
+
+@property (strong, nonatomic)HistoryItem *historyItem;
+@property (assign, nonatomic)NSString *itemId;
+@property (strong, nonatomic)NSString *date;
+@property (assign, nonatomic)NSInteger year;
+@property (assign, nonatomic)NSInteger month;
+
+@end
+
 @implementation ShakeViewModel
+
+- (instancetype)initWithHistory:(HistoryItem *)historyItem {
+    self = [super init];
+    if(self) {
+        self.historyItem = historyItem;
+        self.date = historyItem.date;
+        self.year = historyItem.year;
+        self.month = historyItem.month;
+    }
+    return self;
+}
+
+- (void)saveTheImage:(UIImage *)image
+           andMenuId:(NSString *)menuId
+             andName:(NSString *)name
+         andLocation:(NSString *)location
+             andDate:(NSString *)date
+             andYear:(NSInteger)year
+            andMonth:(NSInteger)month
+            andPrice:(NSString *)price
+          andSuccess:(void (^)(NSString *))success
+            andError:(void (^)(NSString *))error {
+    [[[HistoryRequest alloc]init] addHistoryItem:[[HistoryItem alloc] initWithId:[self getRandom] andMenuID:menuId andName:name andprice:price andLocation:location andDate:date andYear:year andMonth:month andImage:image]]? success(@"添加成功") : error(@"添加失败") ;
+}
+
+- (NSString *)getRandom {
+    NSString *interval = [NSString stringWithFormat: @"%ld", (long)[[NSDate date] timeIntervalSince1970]];
+    return [NSString stringWithFormat: @"%1.0f", [interval doubleValue]*100 + arc4random() % 100];
+}
+
+- (BOOL)checkStringIsNumber: (NSString *)string {
+    NSString *expression = @"^([0-9]+)?(\\.([0-9]{1,2})?)?$";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: expression
+                                                                           options: NSRegularExpressionCaseInsensitive
+                                                                             error: nil];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString: string
+                                                        options: 0
+                                                          range: NSMakeRange(0, [string length])];
+    return numberOfMatches == 0 ? false : true;
+}
 
 - (void)confirmIfCanShake:(void (^)())succes andError:(void (^)(NSString *))error {
     NSDate *date = [NSDate date];
@@ -38,7 +90,7 @@ static const int LIMITTIME = 3600;
     }
     [array addObject:@{@"date":date, @"save": [NSNumber numberWithBool:save]}];
     [[NSUserDefaults standardUserDefaults] setObject:array forKey:@"Shakelist"];
-    [[NSUserDefaults standardUserDefaults]synchronize];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "ShakeViewController.h"
-#import "EditHistoryViewModel.h"
 #import "ShakeViewModel.h"
 #import "SVProgressHUD.h"
 #import "MenuRequest.h"
@@ -16,7 +15,6 @@
 @interface ShakeViewController ()
 
 @property (strong, nonatomic) Menu *menu;
-@property (strong, nonatomic) EditHistoryViewModel *viewModel;
 @property (strong ,nonatomic) ShakeViewModel *shakeViewModel;
 @property (strong, nonatomic) IBOutlet UIView *DataView;
 @property (strong, nonatomic) IBOutlet UIImageView *resultImage;
@@ -31,14 +29,13 @@
 
 @implementation ShakeViewController
 
--(void)configure: (EditHistoryViewModel *)viewModel needUpdate: (void(^)())needUpdate {
-    self.viewModel = viewModel;
+-(void)configure: (ShakeViewModel *)shakeViewModel needUpdate: (void(^)())needUpdate {
+    self.shakeViewModel = shakeViewModel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self cleanUI];
-    self.viewModel = [[EditHistoryViewModel alloc]init];
     self.shakeViewModel = [[ShakeViewModel alloc]init];
 }
 
@@ -93,7 +90,7 @@
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour;
     NSDateComponents *dateComponents  = [calendar components:unitFlags fromDate:self.date];
-    [self.viewModel saveTheImage:self.self.menu.image andMenuId:self.menu.menuId andName:self.menu.name andLocation:self.menu.location andDate:[NSString stringWithFormat:@"%ld-%ld-%ld %ld时",(long)[dateComponents year], (long)[dateComponents month], (long)[dateComponents day], (long)[dateComponents hour]] andYear:[dateComponents year] andMonth:[dateComponents month] andPrice:self.menu.price andSuccess:^(NSString *successInfo) {
+    [self.shakeViewModel saveTheImage:self.self.menu.image andMenuId:self.menu.menuId andName:self.menu.name andLocation:self.menu.location andDate:[NSString stringWithFormat:@"%ld-%ld-%ld %ld时",(long)[dateComponents year], (long)[dateComponents month], (long)[dateComponents day], (long)[dateComponents hour]] andYear:[dateComponents year] andMonth:[dateComponents month] andPrice:self.menu.price andSuccess:^(NSString *successInfo) {
         [self.confirmButton setEnabled:false];
         [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
         [self.shakeViewModel saveDate:self.date andSave:YES];
