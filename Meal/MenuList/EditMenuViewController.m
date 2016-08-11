@@ -128,19 +128,15 @@
 }
 
 - (IBAction)save: (id)sender {
-    if (![self checkText: self.name andInfo: @"名字"])
-        return;
-    if (![self checkText: self.price andInfo: @"价格"])
-        return;
-    if (![self checkText: self.location andInfo:@"地点"])
-        return;
-    [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text andSuccess: ^(NSString *successInfo) {
-        [SVProgressHUD showSuccessWithStatus: successInfo];
-        self.needUpdate();
-        [self performSelector: @selector(back:) withObject: nil afterDelay: 0.2];
-    } andError: ^(NSString *errorInfo) {
-        [SVProgressHUD showErrorWithStatus: errorInfo];
-    }];
+    if ([self checkText: self.name andInfo: @"名字"] && [self checkText: self.price andInfo: @"价格"] && [self checkText: self.location andInfo:@"地点"]){
+        [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text andSuccess: ^(NSString *successInfo) {
+            [SVProgressHUD showSuccessWithStatus: successInfo];
+            self.needUpdate();
+            [self performSelector: @selector(back:) withObject: nil afterDelay: 0.2];
+        } andError: ^(NSString *errorInfo) {
+            [SVProgressHUD showErrorWithStatus: errorInfo];
+        }];
+    }
 }
 
 -(BOOL)checkText: (UITextField *)field andInfo: (NSString *)info {
