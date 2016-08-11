@@ -10,11 +10,11 @@
 
 @interface HistoryListCell ()
 
-@property (weak,nonatomic) IBOutlet UIImageView *cellImage;
-@property (weak,nonatomic) IBOutlet UILabel *cellName;
-@property (weak,nonatomic) IBOutlet UILabel *cellPrice;
-@property (weak,nonatomic) IBOutlet UILabel *cellLocation;
-@property (weak,nonatomic) IBOutlet UILabel *cellDate;
+@property (weak,nonatomic) IBOutlet UIImageView *image;
+@property (weak,nonatomic) IBOutlet UILabel *name;
+@property (weak,nonatomic) IBOutlet UILabel *price;
+@property (weak,nonatomic) IBOutlet UILabel *location;
+@property (weak,nonatomic) IBOutlet UILabel *date;
 
 @end
 
@@ -25,21 +25,21 @@
 }
 
 - (void)configureViewModel: (HistoryListViewModel *)viewModel andIndex: (NSIndexPath *)index{
-    self.cellImage.image = [viewModel getImageWithIndex: index];
-    self.cellName.text = [viewModel getNameWithIndex: index];
-    self.cellPrice.text = [viewModel getPriceWithIndex: index];
-    self.cellLocation.text =[viewModel getLocationWithIndex: index];
-    self.cellDate.text = [viewModel getDateWithIndex: index] ;
+    self.image.image = [viewModel getImageWithIndex: index];
+    self.name.text = [viewModel getNameWithIndex: index];
+    self.price.text = [viewModel getPriceWithIndex: index];
+    self.location.text =[viewModel getLocationWithIndex: index];
+    self.date.text = [viewModel getDateWithIndex: index] ;
     
 }
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    self.cellImage.image = nil;
-    self.cellName.text = @"";
-    self.cellPrice.text = @"";
-    self.cellLocation.text = @"";
-    self.cellDate.text = @"";}
+    self.image.image = nil;
+    self.name.text = @"";
+    self.price.text = @"";
+    self.location.text = @"";
+    self.date.text = @"";}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
