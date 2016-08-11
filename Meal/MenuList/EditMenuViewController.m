@@ -8,6 +8,7 @@
 
 #import "EditMenuViewController.h"
 #import "SVProgressHUD.h"
+#import "NSString+Meal.h"
 
 @interface EditMenuViewController ()<UITextFieldDelegate>
 
@@ -110,7 +111,7 @@
 - (BOOL)textField: (UITextField *)textField shouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)string {
     if (textField == self.price) {
         NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        return [self.viewModel checkStringIsNumber: newString];
+        return [newString checkStringIsNumber];
     }
     return YES;
 }

@@ -28,7 +28,6 @@ typedef enum : NSUInteger {
 - (UIImagePickerController *)getImageController;
 - (Type )getTheType;
 - (NSString *)getTitleName;
-- (BOOL)checkStringIsNumber: (NSString *)string;
 - (void )saveTheImage: (UIImage *)image
               andName: (NSString *)name
           andLocation: (NSString *)location

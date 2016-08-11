@@ -10,6 +10,7 @@
 #import "HistoryItem.h"
 #import "HistoryRequest.h"
 #import "Menu.h"
+#import "NSString+Meal.h"
 
 static const int LIMITCOUNT = 3;
 static const int LIMITTIME = 3600;
@@ -36,27 +37,11 @@ static const int LIMITTIME = 3600;
             andDate:(NSDate *)date
          andSuccess:(void (^)(NSString *))success
            andError:(void (^)(NSString *))error {
-    [[[HistoryRequest alloc]init] addHistoryItem:[[HistoryItem alloc] initWithId:[self getRandom] andMenuID:menu.menuId andName:menu.name andprice:menu.price andLocation:menu.location andDate:date andImage:menu.image]]? success(@"添加成功") : error(@"添加失败") ;
+    [[[HistoryRequest alloc]init] addHistoryItem:[[HistoryItem alloc] initWithId:[NSString getRandom] andMenuID:menu.menuId andName:menu.name andprice:menu.price andLocation:menu.location andDate:date andImage:menu.image]]? success(@"添加成功") : error(@"添加失败") ;
 }
 
 - (Menu *)getRandomMenu:(NSArray <Menu *> *)allMenus {
     return allMenus[arc4random() % [allMenus count]];
-}
-
-- (NSString *)getRandom {
-    NSString *interval = [NSString stringWithFormat: @"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-    return [NSString stringWithFormat: @"%1.0f", [interval doubleValue]*100 + arc4random() % 100];
-}
-
-- (BOOL)checkStringIsNumber: (NSString *)string {
-    NSString *expression = @"^([0-9]+)?(\\.([0-9]{1,2})?)?$";
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: expression
-                                                                           options: NSRegularExpressionCaseInsensitive
-                                                                             error: nil];
-    NSUInteger numberOfMatches = [regex numberOfMatchesInString: string
-                                                        options: 0
-                                                          range: NSMakeRange(0, [string length])];
-    return numberOfMatches == 0 ? false : true;
 }
 
 - (void)confirmIfCanShake:(void (^)())succes andError:(void (^)(NSString *))error {
