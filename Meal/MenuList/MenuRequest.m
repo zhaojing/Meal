@@ -43,7 +43,6 @@
         return false;
     NSString * sql = @"insert into Menu (id, name, location, price, imageData) values(?, ?, ?, ?, ?)";
     return [db executeUpdate: sql, menu.menuId, menu.name, menu.location, menu.price, [self transformImage: menu.image]];
-    
 }
 
 - (BOOL)deleteMenu: (NSString *)menuId {
@@ -77,7 +76,6 @@
                                     andImage: [UIImage imageWithData:[rs dataForColumn: @"imageData"]]];
         [menus addObject: menu];
     }
-    
     return menus;
 }
 

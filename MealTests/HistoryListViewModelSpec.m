@@ -12,6 +12,7 @@
 #import "Menu.h"
 
 SPEC_BEGIN(HistoryListViewModelSpec)
+
 describe(@"test HistoryListViewModel", ^{
     context(@"get cellViewModel", ^{
         HistoryListViewModel *viewModel = [[HistoryListViewModel alloc] init];
@@ -28,4 +29,5 @@ describe(@"test HistoryListViewModel", ^{
         });
     });
 });
+
 SPEC_END

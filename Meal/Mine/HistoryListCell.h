@@ -11,7 +11,7 @@
 
 @interface HistoryListCell : UITableViewCell
 
-+(NSString *)identifierCell;
--(void)configureViewModel:(HistoryListCellViewModel *)viewModel;
++ (NSString *)identifierCell;
+- (void)configureViewModel:(HistoryListCellViewModel *)viewModel;
 
 @end

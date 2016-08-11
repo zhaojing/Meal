@@ -16,7 +16,7 @@
 
 @implementation HistoryListCellViewModel
 
--(instancetype)initWithHistory:(HistoryItem *)historyItem {
+- (instancetype)initWithHistory:(HistoryItem *)historyItem {
     self = [super init];
     if (self) {
         self.historyItem = historyItem;
@@ -24,25 +24,25 @@
     return self;
 }
 
--(NSString *)getName {
+- (NSString *)getName {
     return self.historyItem.name;
 }
 
--(NSString *)getPrice {
+- (NSString *)getPrice {
     return [NSString stringWithFormat:@"￥%@", self.historyItem.price];
 }
 
--(NSString *)getLocation {
+- (NSString *)getLocation {
     return self.historyItem.location;
 }
 
--(NSString *)getDate {
+- (NSString *)getDate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"YYYY-MM-dd HH:mm"];
     return [formatter stringFromDate:self.historyItem.date];
 }
 
--(UIImage *)getImage {
+- (UIImage *)getImage {
     return self.historyItem.image;
 }
 

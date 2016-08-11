@@ -20,11 +20,11 @@
 
 @implementation HistoryListCell
 
-+(NSString *)identifierCell{
++ (NSString *)identifierCell{
     return @"HistoryListCell";
 }
 
--(void)configureViewModel:(HistoryListCellViewModel *)viewModel {
+- (void)configureViewModel:(HistoryListCellViewModel *)viewModel {
     self.cellImage.image = [viewModel getImage];
     self.cellName.text = [viewModel getName];
     self.cellPrice.text = [viewModel getPrice];
@@ -32,7 +32,7 @@
     self.cellDate.text = [viewModel getDate];
 }
 
--(void)prepareForReuse {
+- (void)prepareForReuse {
     [super prepareForReuse];
     self.cellImage.image = nil;
     self.cellName.text = @"";

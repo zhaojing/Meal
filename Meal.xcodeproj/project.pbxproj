@@ -11,7 +11,6 @@
 		0D293B8F1D58E01400C15F76 /* EditMenuViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D293B8E1D58E01400C15F76 /* EditMenuViewModelSpec.m */; };
 		0D4C9BBC1D53341E00E1B534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BBB1D53341E00E1B534 /* main.m */; };
 		0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BBE1D53341E00E1B534 /* AppDelegate.m */; };
-		0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC11D53341E00E1B534 /* ViewController.m */; };
 		0D4C9BC51D53341E00E1B534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC31D53341E00E1B534 /* Main.storyboard */; };
 		0D4C9BC71D53341E00E1B534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC61D53341E00E1B534 /* Assets.xcassets */; };
 		0D4C9BCA1D53341E00E1B534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4C9BC81D53341E00E1B534 /* LaunchScreen.storyboard */; };
@@ -67,8 +66,6 @@
 		0D4C9BBB1D53341E00E1B534 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D4C9BBD1D53341E00E1B534 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0D4C9BBE1D53341E00E1B534 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0D4C9BC01D53341E00E1B534 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0D4C9BC11D53341E00E1B534 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0D4C9BC41D53341E00E1B534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D4C9BC61D53341E00E1B534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D4C9BC91D53341E00E1B534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -191,8 +188,6 @@
 				0D4C9BED1D53395800E1B534 /* MenuList */,
 				0D4C9BBD1D53341E00E1B534 /* AppDelegate.h */,
 				0D4C9BBE1D53341E00E1B534 /* AppDelegate.m */,
-				0D4C9BC01D53341E00E1B534 /* ViewController.h */,
-				0D4C9BC11D53341E00E1B534 /* ViewController.m */,
 				0D4C9BC31D53341E00E1B534 /* Main.storyboard */,
 				0D4C9BC61D53341E00E1B534 /* Assets.xcassets */,
 				0D4C9BC81D53341E00E1B534 /* LaunchScreen.storyboard */,
@@ -266,20 +261,11 @@
 		0D4C9BEF1D53397500E1B534 /* Shake */ = {
 			isa = PBXGroup;
 			children = (
-				0D4C9BFB1D533B3600E1B534 /* View */,
 				0D4C9BFA1D533B0B00E1B534 /* ViewModel */,
-				0D4C9BF91D533AF700E1B534 /* Model */,
 				0D4C9BF01D5339A100E1B534 /* ShakeViewController.h */,
 				0D4C9BF11D5339A100E1B534 /* ShakeViewController.m */,
 			);
 			path = Shake;
-			sourceTree = "<group>";
-		};
-		0D4C9BF91D533AF700E1B534 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		0D4C9BFA1D533B0B00E1B534 /* ViewModel */ = {
@@ -289,13 +275,6 @@
 				2E9DD1F61D5861E5003CA17A /* ShakeViewModel.m */,
 			);
 			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		0D4C9BFB1D533B3600E1B534 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		0D4C9BFC1D533B6D00E1B534 /* Model */ = {
@@ -663,7 +642,6 @@
 				2E9DD1EB1D57239D003CA17A /* HistoryItem.m in Sources */,
 				AEFFDF011D5438830090C5D5 /* EditMenuViewController.m in Sources */,
 				2E9DD1F71D5861E5003CA17A /* ShakeViewModel.m in Sources */,
-				0D4C9BC21D53341E00E1B534 /* ViewController.m in Sources */,
 				0D4C9BBF1D53341E00E1B534 /* AppDelegate.m in Sources */,
 				0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */,
 				0D4C9BF51D5339B500E1B534 /* MineViewController.m in Sources */,

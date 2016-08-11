@@ -15,12 +15,14 @@
 @interface ShakeViewController ()
 
 @property (strong ,nonatomic) ShakeViewModel *viewModel;
--(void)shakeDataStoreWithMenu:(NSArray <Menu *> *)allMenus;
+
+- (void)shakeDataStoreWithMenu:(NSArray <Menu *> *)allMenus;
 
 @end
 
 
 SPEC_BEGIN(ShakeViewModelSpec)
+
 describe(@"test ShakeViewModel", ^{
     it(@"getRandomMenu: allMenus should contain the return random menu", ^{
         ShakeViewModel *viewModel = [[ShakeViewModel alloc] init];

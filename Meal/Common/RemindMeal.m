@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) EKEventStore *eventStore;
 
-+(id)shareObject;
++ (id)shareObject;
 
 @end
 
@@ -20,14 +20,14 @@ static SingletonEventStore * object;
 
 @implementation SingletonEventStore
 
-+(id)shareObject {
++ (id)shareObject {
     if (!object) {
         object = [[SingletonEventStore alloc]init];
     }
     return object;
 }
 
--(id)init {
+- (id)init {
     self = [super init];
     if (self) {
         self.eventStore = [[EKEventStore alloc]init];
@@ -39,9 +39,9 @@ static SingletonEventStore * object;
 
 @implementation RemindMeal
 
--(void)addRemindParams:(NSDictionary *)remind
-              andError:(void(^)(RemindAddErrorResult addResult, NSString *errorInfo))errorResult
-            andSuccess:(void(^)())success {
+- (void)addRemindParams:(NSDictionary *)remind
+               andError:(void(^)(RemindAddErrorResult addResult, NSString *errorInfo))errorResult
+             andSuccess:(void(^)())success {
     SingletonEventStore  *singletonEventStore = [SingletonEventStore shareObject];
     EKEventStore *eventStore = singletonEventStore.eventStore;
     [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
@@ -53,9 +53,9 @@ static SingletonEventStore * object;
     }];
 }
 
--(void)addCalendarWithRemind:(NSDictionary*)remind
+- (void)addCalendarWithRemind:(NSDictionary*)remind
                      andError:(void(^)(RemindAddErrorResult addResult, NSString *errorInfo))errorResult
-                  andSuccess:(void(^)())success {
+                   andSuccess:(void(^)())success {
     SingletonEventStore  *staticEvent = [SingletonEventStore shareObject];
     EKEventStore *eventStore = staticEvent.eventStore;
     EKEvent *event = [EKEvent eventWithEventStore:eventStore];

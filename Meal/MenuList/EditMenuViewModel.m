@@ -40,6 +40,7 @@
     else
         [self saveAddTypeTheImage:image andName:name andLocation:location andPrice:price andSuccess:success andError:error];
 }
+
 - (Type )getTheType {
     if (self.menu) {
         return editType;
@@ -95,7 +96,7 @@
     return numberOfMatches == 0 ? false : true;
 }
 
-#pragma mark- getAlbumController
+#pragma mark - getAlbumController
 
 - (UIImagePickerController *)getAlbumController {
     if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypePhotoLibrary]){

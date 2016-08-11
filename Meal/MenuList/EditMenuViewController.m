@@ -16,7 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *price;
 @property (strong, nonatomic) IBOutlet UITextField *location;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (strong, nonatomic) UIAlertController *sheet;
 @property (copy, nonatomic) void(^needUpdate)();
 
@@ -39,7 +38,7 @@
     [self addChoosePhotoType];
 }
 
-#pragma mark -photo add
+#pragma mark - photo add
 
 - (void)addChoosePhotoType {
     self.sheet = [UIAlertController alertControllerWithTitle: @"请选择方式"
@@ -63,7 +62,7 @@
     [self.sheet addAction: takePhoto];
 }
 
--(void)addAlbumWithController: (EditMenuViewController *)controller {
+- (void)addAlbumWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getAlbumController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus:@"相册未授权"];
@@ -73,7 +72,7 @@
     [controller presentViewController: picker animated: YES completion: nil];
 }
 
--(void)addPickerWithController: (EditMenuViewController *)controller {
+- (void)addPickerWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getImageController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus: @"相册未授权"];
@@ -89,7 +88,7 @@
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
 }
 
-#pragma mark -textFileDelegate
+#pragma mark - textFileDelegate
 
 - (BOOL)textFieldShouldReturn: (UITextField *)textField {
     UITextField *nextTextField = [self getNextTextField: textField];
@@ -116,7 +115,7 @@
     return YES;
 }
 
-#pragma mark -action
+#pragma mark - action
 
 - (IBAction)back: (id)sender {
     [SVProgressHUD dismiss];

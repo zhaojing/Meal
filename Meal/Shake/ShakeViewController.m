@@ -28,7 +28,7 @@
 
 @implementation ShakeViewController
 
--(void)configure: (ShakeViewModel *)shakeViewModel needUpdate: (void(^)())needUpdate {
+- (void)configure: (ShakeViewModel *)shakeViewModel needUpdate: (void(^)())needUpdate {
     self.viewModel = shakeViewModel;
 }
 

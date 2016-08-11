@@ -12,8 +12,8 @@
 
 @interface HistoryListViewModel : NSObject
 
--(void)configureHistoryItems:(NSArray<HistoryItem *> *)historyItem;
--(HistoryListCellViewModel *)getCellViewModel:(NSIndexPath *)index;
--(NSUInteger )tableViewCount;
+- (void)configureHistoryItems:(NSArray<HistoryItem *> *)historyItem;
+- (HistoryListCellViewModel *)getCellViewModel:(NSIndexPath *)index;
+- (NSUInteger )tableViewCount;
 
 @end
