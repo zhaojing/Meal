@@ -28,10 +28,6 @@
 
 @implementation ShakeViewController
 
-- (void)configure: (ShakeViewModel *)shakeViewModel needUpdate: (void(^)())needUpdate {
-    self.viewModel = shakeViewModel;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self cleanUI];
