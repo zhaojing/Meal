@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HistoryListCellViewModel.h"
+#import "HistoryListViewModel.h"
 
 @interface HistoryListCell : UITableViewCell
 
 + (NSString *)identifierCell;
-- (void)configureViewModel:(HistoryListCellViewModel *)viewModel;
+- (void)configureViewModel:(HistoryListViewModel *)viewModel andIndex: (NSIndexPath *)index;
 
 @end

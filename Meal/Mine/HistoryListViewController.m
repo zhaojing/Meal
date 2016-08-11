@@ -43,7 +43,7 @@
 
 - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath: (NSIndexPath *)indexPath {
     HistoryListCell *cell = [tableView dequeueReusableCellWithIdentifier: [HistoryListCell identifierCell]];
-    [cell configureViewModel:[self.historyViewModel getCellViewModel: indexPath]];
+    [cell configureViewModel: self.historyViewModel andIndex: indexPath];
     return cell;
 }
 
@@ -53,7 +53,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSString *deletedId = [self.historyViewModel getCellViewModel:indexPath].getItemId;
+        NSString *deletedId = [self.historyViewModel getItemIdWithIndex: indexPath];
         [self.historyRequest deleteHistoryItem:deletedId];
         [self loadData];
     }

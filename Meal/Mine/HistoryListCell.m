@@ -24,12 +24,13 @@
     return @"HistoryListCell";
 }
 
-- (void)configureViewModel:(HistoryListCellViewModel *)viewModel {
-    self.cellImage.image = [viewModel getImage];
-    self.cellName.text = [viewModel getName];
-    self.cellPrice.text = [viewModel getPrice];
-    self.cellLocation.text = [viewModel getLocation];
-    self.cellDate.text = [viewModel getDate];
+- (void)configureViewModel: (HistoryListViewModel *)viewModel andIndex: (NSIndexPath *)index{
+    self.cellImage.image = [viewModel getImageWithIndex: index];
+    self.cellName.text = [viewModel getNameWithIndex: index];
+    self.cellPrice.text = [viewModel getPriceWithIndex: index];
+    self.cellLocation.text =[viewModel getLocationWithIndex: index];
+    self.cellDate.text = [viewModel getDateWithIndex: index] ;
+    
 }
 
 - (void)prepareForReuse {
