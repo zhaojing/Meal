@@ -14,7 +14,7 @@
 
 - (void)confirmIfCanShake: (void(^)())succes andError: (void(^)(NSString *string))error;
 - (void)saveDate: (NSDate *)date andSave:(BOOL)save;
-- (Menu *)getRandomMenu: (NSArray *)allMenus;
+- (Menu *)getRandomMenu: (NSArray <Menu *> *)allMenus;
 - (instancetype)initWithHistory: (HistoryItem *)historyItem;
 - (void)saveHistory: (Menu *)menu
             andDate: (NSDate *)date

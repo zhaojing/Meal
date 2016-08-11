@@ -15,7 +15,7 @@
 @interface ShakeViewController ()
 
 @property (strong, nonatomic) Menu *menu;
-@property (strong ,nonatomic) ShakeViewModel *shakeViewModel;
+@property (strong ,nonatomic) ShakeViewModel *viewModel;
 @property (strong, nonatomic) IBOutlet UIView *DataView;
 @property (strong, nonatomic) IBOutlet UIImageView *resultImage;
 @property (strong, nonatomic) IBOutlet UIImageView *backgrougdImage;
@@ -29,13 +29,13 @@
 @implementation ShakeViewController
 
 -(void)configure: (ShakeViewModel *)shakeViewModel needUpdate: (void(^)())needUpdate {
-    self.shakeViewModel = shakeViewModel;
+    self.viewModel = shakeViewModel;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self cleanUI];
-    self.shakeViewModel = [[ShakeViewModel alloc]init];
+    self.viewModel = [[ShakeViewModel alloc]init];
 }
 
 #pragma mark - SetUI
@@ -64,33 +64,37 @@
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (motion == UIEventSubtypeMotionShake) {
-        NSArray *allMenus = [[[MenuRequest alloc] init] getAllMenus];
+        NSArray <Menu *> *allMenus = [[[MenuRequest alloc] init] getAllMenus];
         if([allMenus count] == 0) {
             [SVProgressHUD showErrorWithStatus: @"还没有选项，请先添加一些"];
         } else {
-            [self.shakeViewModel confirmIfCanShake:^{
-                self.menu = [self.shakeViewModel getRandomMenu:allMenus];
-                [self showResult];
-                [self.shakeViewModel saveDate:[NSDate date] andSave:false];
-            } andError:^(NSString *string) {
-                [SVProgressHUD showErrorWithStatus:string];
-            }];
+            [self shakeDataStoreWithMenu:allMenus];
         }
     }
+}
+
+-(void)shakeDataStoreWithMenu:(NSArray <Menu *> *)allMenus {
+    [self.viewModel confirmIfCanShake:^{
+        self.menu = [self.viewModel getRandomMenu:allMenus];
+        [self showResult];
+        [self.viewModel saveDate:[NSDate date] andSave:false];
+    } andError:^(NSString *string) {
+        [SVProgressHUD showErrorWithStatus:string];
+    }];
 }
 
 #pragma mark - ClickButtonAction
 
 - (IBAction)clickConfirm:(id)sender {
-    [self.shakeViewModel saveHistory:self.menu
-                             andDate:[NSDate date]
-                          andSuccess:^(NSString *successInfo) {
-                              [self.confirmButton setEnabled:false];
-                              [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
-                              [self.shakeViewModel saveDate:[NSDate date] andSave:YES];
-                          } andError:^(NSString *errorInfo) {
-                              [SVProgressHUD showErrorWithStatus: errorInfo];
-                          }];
+    [self.viewModel saveHistory:self.menu
+                        andDate:[NSDate date]
+                     andSuccess:^(NSString *successInfo) {
+                         [self.confirmButton setEnabled:false];
+                         [SVProgressHUD showSuccessWithStatus:@"出发啦 记得带纸巾哦！"];
+                         [self.viewModel saveDate:[NSDate date] andSave:YES];
+                     } andError:^(NSString *errorInfo) {
+                         [SVProgressHUD showErrorWithStatus: errorInfo];
+                     }];
 }
 
 @end

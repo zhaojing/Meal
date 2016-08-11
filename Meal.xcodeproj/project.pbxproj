@@ -24,6 +24,7 @@
 		0D4C9C111D5393CE00E1B534 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C9C101D5393CE00E1B534 /* Menu.m */; };
 		0D9EE0631D54E82600360F9E /* MenuListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0621D54E82600360F9E /* MenuListCell.m */; };
 		0D9EE0661D54E84200360F9E /* MenuListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */; };
+		2E0AD2A81D5B16AF0008380A /* ShakeViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0AD2A71D5B16AF0008380A /* ShakeViewModelSpec.m */; };
 		2E35CB841D54B41400443FA8 /* SetRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */; };
 		2E62BEDC1D5466CE0037F484 /* SetReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */; };
 		2E9DD1DF1D5717C6003CA17A /* HistoryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1DE1D5717C6003CA17A /* HistoryListCell.m */; };
@@ -93,6 +94,7 @@
 		0D9EE0621D54E82600360F9E /* MenuListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListCell.m; sourceTree = "<group>"; };
 		0D9EE0641D54E84200360F9E /* MenuListCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuListCellViewModel.h; sourceTree = "<group>"; };
 		0D9EE0651D54E84200360F9E /* MenuListCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuListCellViewModel.m; sourceTree = "<group>"; };
+		2E0AD2A71D5B16AF0008380A /* ShakeViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeViewModelSpec.m; sourceTree = "<group>"; };
 		2E35CB821D54B41400443FA8 /* SetRepeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRepeatViewController.h; sourceTree = "<group>"; };
 		2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRepeatViewController.m; sourceTree = "<group>"; };
 		2E62BEDA1D5466CE0037F484 /* SetReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetReminderViewController.h; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				0D293B8E1D58E01400C15F76 /* EditMenuViewModelSpec.m */,
 				AE6AE59D1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m */,
+				2E0AD2A71D5B16AF0008380A /* ShakeViewModelSpec.m */,
 				AE6AE59B1D59F58500D0A6C1 /* MenuListViewModelSpec.m */,
 				0D4C9BD61D53341E00E1B534 /* Info.plist */,
 			);
@@ -688,6 +691,7 @@
 			files = (
 				AE6AE59C1D59F58500D0A6C1 /* MenuListViewModelSpec.m in Sources */,
 				0D293B8F1D58E01400C15F76 /* EditMenuViewModelSpec.m in Sources */,
+				2E0AD2A81D5B16AF0008380A /* ShakeViewModelSpec.m in Sources */,
 				AE6AE59E1D5AA1F700D0A6C1 /* HistoryListViewModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

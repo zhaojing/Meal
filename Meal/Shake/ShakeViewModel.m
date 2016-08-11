@@ -39,7 +39,7 @@ static const int LIMITTIME = 3600;
     [[[HistoryRequest alloc]init] addHistoryItem:[[HistoryItem alloc] initWithId:[self getRandom] andMenuID:menu.menuId andName:menu.name andprice:menu.price andLocation:menu.location andDate:date andImage:menu.image]]? success(@"添加成功") : error(@"添加失败") ;
 }
 
-- (Menu *)getRandomMenu:(NSArray *)allMenus {
+- (Menu *)getRandomMenu:(NSArray <Menu *> *)allMenus {
     return allMenus[arc4random() % [allMenus count]];
 }
 
@@ -74,16 +74,15 @@ static const int LIMITTIME = 3600;
 }
 
 - (void)saveDate:(NSDate *)date andSave:(BOOL)save {
-    NSArray *currentShakeArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"] ? [[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"] : @[];
-    NSMutableArray * array = [NSMutableArray arrayWithArray:currentShakeArray];
-    if ([array count] == LIMITCOUNT) {
-        [array removeObjectAtIndex:0];
+    NSMutableArray *currentShakeArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"] ? [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"Shakelist"]]: [[NSMutableArray alloc]init];
+    if ([currentShakeArray count] == LIMITCOUNT) {
+        [currentShakeArray removeObjectAtIndex:0];
     }
-    if ([date isEqual:[[array lastObject] valueForKey:@"date"]]) {
-        [array removeLastObject];
+    if ([date isEqual:[[currentShakeArray lastObject] valueForKey:@"date"]]) {
+        [currentShakeArray removeLastObject];
     }
-    [array addObject:@{@"date":date, @"save": [NSNumber numberWithBool:save]}];
-    [[NSUserDefaults standardUserDefaults] setObject:array forKey:@"Shakelist"];
+    [currentShakeArray addObject:@{@"date":date, @"save": [NSNumber numberWithBool:save]}];
+    [[NSUserDefaults standardUserDefaults] setObject:currentShakeArray forKey:@"Shakelist"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
