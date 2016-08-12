@@ -26,6 +26,7 @@
     self.historyRequest = [[HistoryRequest alloc] init];
     self.historyViewModel = [[HistoryListViewModel alloc] init];
     [self loadData];
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
 - (void)loadData {

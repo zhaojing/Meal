@@ -37,6 +37,7 @@
     self.price.text = self.viewModel.price;
     self.location.text = self.viewModel.location;
     [self addChoosePhotoType];
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
 #pragma mark - photo add
