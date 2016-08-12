@@ -65,6 +65,7 @@ static SingletonEventStore * object;
     NSDate *alarm = [remind.allKeys containsObject:@"alarm"] ? remind[@"alarm"] : [NSDate date];
     [event addAlarm:[EKAlarm alarmWithAbsoluteDate:alarm]];
     event.startDate = [remind.allKeys containsObject:@"startDate"] ? remind[@"startDate"] : alarm;
+    event.URL = [NSURL URLWithString:@"iOSDevMeal://"];
     event.endDate = [remind.allKeys containsObject:@"endDate"] ? remind[@"endDate"] : [alarm dateByAddingTimeInterval:1*60*60];
     event.notes = [remind.allKeys containsObject:@"notes"] ? remind[@"notes"] : @"";
     NSString *repeat = [remind.allKeys containsObject:@"repeat"] ? remind[@"repeat"] : @"" ;
