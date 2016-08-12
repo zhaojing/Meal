@@ -8,6 +8,7 @@
 
 #import "EditMenuViewController.h"
 #import "SVProgressHUD.h"
+#import "NSString+Meal.h"
 
 @interface EditMenuViewController ()<UITextFieldDelegate>
 
@@ -16,7 +17,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *price;
 @property (strong, nonatomic) IBOutlet UITextField *location;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @property (strong, nonatomic) UIAlertController *sheet;
 @property (copy, nonatomic) void(^needUpdate)();
 
@@ -37,9 +37,10 @@
     self.price.text = self.viewModel.price;
     self.location.text = self.viewModel.location;
     [self addChoosePhotoType];
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
-#pragma mark -photo add
+#pragma mark - photo add
 
 - (void)addChoosePhotoType {
     self.sheet = [UIAlertController alertControllerWithTitle: @"请选择方式"
@@ -63,7 +64,7 @@
     [self.sheet addAction: takePhoto];
 }
 
--(void)addAlbumWithController: (EditMenuViewController *)controller {
+- (void)addAlbumWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getAlbumController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus:@"相册未授权"];
@@ -73,7 +74,7 @@
     [controller presentViewController: picker animated: YES completion: nil];
 }
 
--(void)addPickerWithController: (EditMenuViewController *)controller {
+- (void)addPickerWithController: (EditMenuViewController *)controller {
     UIImagePickerController *picker = [self.viewModel getImageController];
     if (!picker) {
         [SVProgressHUD showInfoWithStatus: @"相册未授权"];
@@ -89,7 +90,7 @@
     [self.navigationController dismissViewControllerAnimated: YES completion: nil];
 }
 
-#pragma mark -textFileDelegate
+#pragma mark - textFileDelegate
 
 - (BOOL)textFieldShouldReturn: (UITextField *)textField {
     UITextField *nextTextField = [self getNextTextField: textField];
@@ -111,12 +112,12 @@
 - (BOOL)textField: (UITextField *)textField shouldChangeCharactersInRange: (NSRange)range replacementString:(NSString *)string {
     if (textField == self.price) {
         NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        return [self.viewModel checkStringIsNumber: newString];
+        return [newString checkStringIsNumber];
     }
     return YES;
 }
 
-#pragma mark -action
+#pragma mark - action
 
 - (IBAction)back: (id)sender {
     [SVProgressHUD dismiss];
@@ -128,19 +129,15 @@
 }
 
 - (IBAction)save: (id)sender {
-    if (![self checkText: self.name andInfo: @"名字"])
-        return;
-    if (![self checkText: self.price andInfo: @"价格"])
-        return;
-    if (![self checkText: self.location andInfo:@"地点"])
-        return;
-    [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text andSuccess: ^(NSString *successInfo) {
-        [SVProgressHUD showSuccessWithStatus: successInfo];
-        self.needUpdate();
-        [self performSelector: @selector(back:) withObject: nil afterDelay: 0.2];
-    } andError: ^(NSString *errorInfo) {
-        [SVProgressHUD showErrorWithStatus: errorInfo];
-    }];
+    if ([self checkText: self.name andInfo: @"名字"] && [self checkText: self.price andInfo: @"价格"] && [self checkText: self.location andInfo:@"地点"]){
+        [self.viewModel saveTheImage: self.imageView.image andName: self.name.text andLocation: self.location.text andPrice: self.price.text andSuccess: ^(NSString *successInfo) {
+            [SVProgressHUD showSuccessWithStatus: successInfo];
+            self.needUpdate();
+            [self performSelector: @selector(back:) withObject: nil afterDelay: 0.2];
+        } andError: ^(NSString *errorInfo) {
+            [SVProgressHUD showErrorWithStatus: errorInfo];
+        }];
+    }
 }
 
 -(BOOL)checkText: (UITextField *)field andInfo: (NSString *)info {

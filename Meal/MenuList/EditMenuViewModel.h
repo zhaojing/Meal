@@ -21,14 +21,13 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic)NSString *location;
 @property (strong, nonatomic)NSString *price;
 @property (strong, nonatomic)UIImage *image;
-
 @property (strong, nonatomic)Menu *menu;
+
 - (instancetype)initWithMenu: (Menu *)menu;
 - (UIImagePickerController *)getAlbumController;
 - (UIImagePickerController *)getImageController;
 - (Type )getTheType;
 - (NSString *)getTitleName;
-- (BOOL)checkStringIsNumber: (NSString *)string;
 - (void )saveTheImage: (UIImage *)image
               andName: (NSString *)name
           andLocation: (NSString *)location

@@ -11,9 +11,9 @@
 
 @interface HistoryRequest : NSObject
 
--(BOOL)addHistoryItem:(HistoryItem *)historyitem;
--(BOOL)deleteHistoryItem:(NSString *)itemId;
--(NSArray<HistoryItem *> *)getAllHistoryItems;
--(BOOL)modifyHistoryItem:(HistoryItem *)historyitem;
+- (BOOL)addHistoryItem:(HistoryItem *)historyitem;
+- (BOOL)deleteHistoryItem:(NSString *)itemId;
+- (NSArray<HistoryItem *> *)getAllHistoryItems;
+- (BOOL)modifyHistoryItem:(HistoryItem *)historyitem;
 
 @end

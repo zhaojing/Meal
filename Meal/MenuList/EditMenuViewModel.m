@@ -9,6 +9,7 @@
 #import "EditMenuViewModel.h"
 #import "SVProgressHUD.h"
 #import "MenuRequest.h"
+#import "NSString+Meal.h"
 
 @interface EditMenuViewModel ()
 
@@ -40,6 +41,7 @@
     else
         [self saveAddTypeTheImage:image andName:name andLocation:location andPrice:price andSuccess:success andError:error];
 }
+
 - (Type )getTheType {
     if (self.menu) {
         return editType;
@@ -69,7 +71,7 @@
                    andPrice: (NSString *)price
                  andSuccess: (void(^)(NSString *successInfo))success
                    andError: (void(^)(NSString* errorInfo))error {
-    [[[MenuRequest alloc]init] addMenu:[[Menu alloc] initWithId:[self getRandom] andName:name andprice:price andLocation:location andImage:image]] ? success(@"添加成功") : error(@"添加失败");
+    [[[MenuRequest alloc]init] addMenu:[[Menu alloc] initWithId:[NSString getRandom] andName:name andprice:price andLocation:location andImage:image]] ? success(@"添加成功") : error(@"添加失败");
 }
 
 -(BOOL)checkMenuModify: (UIImage *)image
@@ -79,23 +81,7 @@
     return [self.menu.image isEqual: image] && [self.menu.name isEqual: name] && [self.menu.location isEqual: location] && [self.menu.price isEqual: price] ? false : true;
 }
 
-- (NSString *)getRandom {
-    NSString *interval = [NSString stringWithFormat: @"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-    return [NSString stringWithFormat: @"%1.0f", [interval doubleValue]*100 + arc4random() % 100];
-}
-
-- (BOOL)checkStringIsNumber: (NSString *)string {
-    NSString *expression = @"^([0-9]+)?(\\.([0-9]{1,2})?)?$";
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: expression
-                                                                           options: NSRegularExpressionCaseInsensitive
-                                                                             error: nil];
-    NSUInteger numberOfMatches = [regex numberOfMatchesInString: string
-                                                        options: 0
-                                                          range: NSMakeRange(0, [string length])];
-    return numberOfMatches == 0 ? false : true;
-}
-
-#pragma mark- getAlbumController
+#pragma mark - getAlbumController
 
 - (UIImagePickerController *)getAlbumController {
     if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypePhotoLibrary]){

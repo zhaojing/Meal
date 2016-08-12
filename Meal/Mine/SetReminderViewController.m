@@ -31,13 +31,13 @@
     setRepeatController.delegate = self;
 }
 
-#pragma mark- PassRepeateFrequcnryDelegate
+#pragma mark - PassRepeateFrequcnryDelegate
 
 - (void)passRepeatFrequency:(int)repeatFrequency {
     self.reminderRepeatFrequency = [NSString stringWithFormat:@"%d", repeatFrequency];
 }
 
-#pragma mark- action
+#pragma mark - action
 
 - (IBAction)clickSaveReminder:(id)sender {
     [self.reminderTitleTextFiled resignFirstResponder];

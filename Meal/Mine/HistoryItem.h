@@ -19,12 +19,12 @@
 @property (strong, nonatomic)NSDate *date;
 @property (strong, nonatomic)UIImage *image;
 
--(instancetype)initWithId:(NSString *)itemId
-                andMenuID:(NSString *)menuId
-                  andName:(NSString *)name
-                 andprice:(NSString *)price
-              andLocation:(NSString *)location
-                  andDate:(NSDate *)date
-                 andImage:(UIImage *)image;
+- (instancetype)initWithId:(NSString *)itemId
+                 andMenuID:(NSString *)menuId
+                   andName:(NSString *)name
+                  andprice:(NSString *)price
+               andLocation:(NSString *)location
+                   andDate:(NSDate *)date
+                  andImage:(UIImage *)image;
 
 @end

@@ -19,26 +19,25 @@
     return self;
 }
 
--(void)dealloc {
+- (void)dealloc {
     FMDatabase *db = [self getDB];
     [db close];
 }
 
--(FMDatabase *)getDB {
+- (FMDatabase *)getDB {
     NSString *documentDirectory  = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     return [FMDatabase databaseWithPath:[documentDirectory stringByAppendingPathComponent:@"MyDatabase.db"]];
 }
 
--(BOOL)createHistoryTable {
+- (BOOL)createHistoryTable {
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
     NSString * sql = @"create table if not exists 'History' ('id' text PRIMARY KEY  NOT NULL, 'menuid' text , 'name' VARCHAR(30) , 'location' text , 'price' text , 'date' DOUBLE , 'imageData' blob )";
     return [db executeUpdate:sql];
-
 }
 
--(BOOL)addHistoryItem:(HistoryItem *)historyitem {
+- (BOOL)addHistoryItem:(HistoryItem *)historyitem {
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
@@ -46,7 +45,7 @@
     return [db executeUpdate:sql, historyitem.itemId , historyitem.menuId , historyitem.name , historyitem.location , historyitem.price , [NSString stringWithFormat:@"%lf",(double)[historyitem.date timeIntervalSince1970]], [self transformImage:historyitem.image]];
 }
 
--(BOOL)deleteHistoryItem:(NSString *)itemId {
+- (BOOL)deleteHistoryItem:(NSString *)itemId {
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
@@ -54,7 +53,7 @@
     return [db executeUpdate:sql, itemId];
 }
 
--(BOOL)modifyHistoryItem:(HistoryItem *)historyitem {
+- (BOOL)modifyHistoryItem:(HistoryItem *)historyitem {
     FMDatabase *db = [self getDB];
     if (![db open])
         return false;
@@ -62,7 +61,7 @@
     return [db executeUpdate:sql, historyitem.menuId, historyitem.name, historyitem.location, historyitem.price, [self transformImage:historyitem.image], [historyitem.date timeIntervalSince1970], historyitem.itemId];
 }
 
--(NSArray<HistoryItem *> *)getAllHistoryItems {
+- (NSArray<HistoryItem *> *)getAllHistoryItems {
     FMDatabase *db = [self getDB];
     if (![db open])
         return @[];
@@ -82,7 +81,7 @@
     return historyItems;
 }
 
--(NSData *)transformImage:(UIImage *)image {
+- (NSData *)transformImage:(UIImage *)image {
     NSData *data;
     if (UIImagePNGRepresentation(image) == nil) {
         data = UIImageJPEGRepresentation(image, 1);

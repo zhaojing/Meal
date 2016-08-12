@@ -34,7 +34,7 @@
     [self.tableView reloadData];
 }
 
--(void)prepareForSegue: (UIStoryboardSegue *)segue sender: (id)sender {
+- (void)prepareForSegue: (UIStoryboardSegue *)segue sender: (id)sender {
     if ([segue.identifier isEqualToString:@"add"]) {
         EditMenuViewController *editController = segue.destinationViewController;
         [editController configure: self.viewModel.willSaveMenu needUpdate: ^{
@@ -49,7 +49,7 @@
     }
 }
 
-#pragma mark -UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView: (UITableView *)tableView numberOfRowsInSection: (NSInteger)section {
     return self.viewModel.tableViewCount;

@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, RepeatFrequency) {
 
 @protocol PassRepeatFrequency <NSObject>
 
--(void)passRepeatFrequency:(int)repeatFrequency;
+- (void)passRepeatFrequency:(int)repeatFrequency;
 
 @end
 

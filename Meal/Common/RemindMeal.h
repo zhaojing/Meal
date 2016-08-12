@@ -14,7 +14,6 @@ typedef NS_ENUM(NSInteger, RemindAddErrorResult) {
     errorAuthorize
 };
 
-
 @interface RemindMeal : NSObject
 
 

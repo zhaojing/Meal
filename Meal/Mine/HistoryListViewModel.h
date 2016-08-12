@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HistoryListCellViewModel.h"
 #import "HistoryItem.h"
 
 @interface HistoryListViewModel : NSObject
 
--(void)configureHistoryItems:(NSArray<HistoryItem *> *)historyItem;
--(HistoryListCellViewModel *)getCellViewModel:(NSIndexPath *)index;
--(NSUInteger )tableViewCount;
+- (void)configureHistoryItems:(NSArray<HistoryItem *> *)historyItem;
+- (NSUInteger )tableViewCount;
+- (NSString *)getNameWithIndex: (NSIndexPath *)index;
+- (NSString *)getPriceWithIndex:(NSIndexPath *)index;
+- (NSString *)getLocationWithIndex:(NSIndexPath *)index;
+- (NSString *)getDateWithIndex:(NSIndexPath *)index;
+- (UIImage *)getImageWithIndex:(NSIndexPath *)index;
+- (NSString *)getItemIdWithIndex:(NSIndexPath *)index;
 
 @end

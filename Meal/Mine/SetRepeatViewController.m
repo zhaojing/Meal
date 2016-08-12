@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setAllSwitchOff];
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
 #pragma mark - action

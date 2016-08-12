@@ -74,7 +74,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EGA-Y3-wDW" id="L4d-zC-1Aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RKb-xN-e0Z">
@@ -558,7 +558,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5i0-Xh-6Uw" id="3CL-np-2J0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33d-ay-QHV">
@@ -615,11 +615,11 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellDate" destination="Bz9-M8-qOx" id="msE-8L-4jo"/>
-                                            <outlet property="cellImage" destination="33d-ay-QHV" id="UGt-PD-mHa"/>
-                                            <outlet property="cellLocation" destination="HgH-ak-eoj" id="nUn-t5-kyX"/>
-                                            <outlet property="cellName" destination="ipa-BA-wdY" id="odx-CA-d2z"/>
-                                            <outlet property="cellPrice" destination="hKh-zi-IJa" id="C4u-j7-Akp"/>
+                                            <outlet property="date" destination="Bz9-M8-qOx" id="R0t-ub-Ofz"/>
+                                            <outlet property="image" destination="33d-ay-QHV" id="2MN-vx-ORe"/>
+                                            <outlet property="location" destination="HgH-ak-eoj" id="Mrn-VX-ZsX"/>
+                                            <outlet property="name" destination="ipa-BA-wdY" id="2Dd-mX-QsM"/>
+                                            <outlet property="price" destination="hKh-zi-IJa" id="U01-4e-D19"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
