@@ -47,6 +47,8 @@
     self.resultName.text = self.menu.name;
     self.resultPrice.text = self.menu.price;
     self.resultLocation.text = self.menu.location;
+    [self setImageStyle];
+    [self setButtonStyle];
 }
 
 #pragma mark - ShakeAction
@@ -91,6 +93,16 @@
                      } andError:^(NSString *errorInfo) {
                          [SVProgressHUD showErrorWithStatus: errorInfo];
                      }];
+}
+
+- (void)setImageStyle{
+    self.resultImage.layer.masksToBounds = YES;
+    self.resultImage.layer.cornerRadius = self.resultImage.frame.size.height / 10;
+}
+
+- (void)setButtonStyle{
+    self.confirmButton.layer.masksToBounds = YES;
+    self.confirmButton.layer.cornerRadius = self.confirmButton.frame.size.height / 8;
 }
 
 @end

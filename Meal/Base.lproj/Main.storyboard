@@ -819,10 +819,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" width="25" height="25"/>
-        <image name="images" width="275" height="183"/>
-        <image name="menu" width="25" height="25"/>
-        <image name="user" width="25" height="25"/>
+        <image name="bell" width="32" height="32"/>
+        <image name="images" width="300" height="300"/>
+        <image name="menu" width="32" height="32"/>
+        <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sVd-XA-7hf"/>
