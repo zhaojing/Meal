@@ -38,6 +38,7 @@
     self.location.text = self.viewModel.location;
     [self addChoosePhotoType];
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    [self setImageStyle];
 }
 
 #pragma mark - photo add
@@ -146,6 +147,11 @@
         return false;
     }
     return YES;
+}
+
+- (void)setImageStyle{
+    self.imageView.layer.masksToBounds = YES;
+    self.imageView.layer.cornerRadius = self.imageView.frame.size.height / 10;
 }
 
 @end

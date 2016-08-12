@@ -29,8 +29,8 @@
     self.name.text = [viewModel getNameWithIndex: index];
     self.price.text = [viewModel getPriceWithIndex: index];
     self.location.text =[viewModel getLocationWithIndex: index];
-    self.date.text = [viewModel getDateWithIndex: index] ;
-    
+    self.date.text = [viewModel getDateWithIndex: index];
+    [self setImageStyle];
 }
 
 - (void)prepareForReuse {
@@ -43,6 +43,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
+
+- (void)setImageStyle{
+    self.image.layer.masksToBounds = YES;
+    self.image.layer.cornerRadius = self.image.frame.size.height / 10;
 }
 
 @end

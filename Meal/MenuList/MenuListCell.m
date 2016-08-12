@@ -28,6 +28,7 @@
     self.name.text = [viewModel getName];
     self.price.text = [viewModel getPrice];
     self.location.text = [viewModel getLocation];
+    [self setImageStyle];
 }
 
 - (void)prepareForReuse {
@@ -40,6 +41,11 @@
 
 - (void)setSelected: (BOOL)selected animated: (BOOL)animated {
     [super setSelected: selected animated: animated];
+}
+
+- (void)setImageStyle{
+    self.image.layer.masksToBounds = YES;
+    self.image.layer.cornerRadius = self.image.frame.size.height / 10;
 }
 
 @end
