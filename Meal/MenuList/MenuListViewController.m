@@ -27,6 +27,7 @@
     self.request = [[MenuRequest alloc]init];
     self.viewModel = [[MenuListViewModel alloc]init];
     [self loadData];
+    self.tableView.tableFooterView = [UIView new];
 }
 
 - (void)loadData {

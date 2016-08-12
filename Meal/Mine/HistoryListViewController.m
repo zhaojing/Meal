@@ -27,6 +27,7 @@
     self.historyViewModel = [[HistoryListViewModel alloc] init];
     [self loadData];
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    self.historyTableView.tableFooterView = [UIView new];
 }
 
 - (void)loadData {
