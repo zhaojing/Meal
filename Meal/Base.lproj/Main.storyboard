@@ -306,7 +306,7 @@
         <!--我的-->
         <scene sceneID="jMS-6U-Oab">
             <objects>
-                <tableViewController id="p12-TF-3L9" sceneMemberID="viewController">
+                <tableViewController id="p12-TF-3L9" customClass="MineViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zYp-sJ-YcA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
