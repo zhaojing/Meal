@@ -26,8 +26,7 @@
 		2E0AD2A81D5B16AF0008380A /* ShakeViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0AD2A71D5B16AF0008380A /* ShakeViewModelSpec.m */; };
 		2E35CB841D54B41400443FA8 /* SetRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */; };
 		2E62BEDC1D5466CE0037F484 /* SetReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */; };
-		2E65D9811D5D63D200A11C3B /* shock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65D9801D5D63D200A11C3B /* shock.mp3 */; };
-		2E65D9831D5D63FD00A11C3B /* shock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65D9821D5D63FD00A11C3B /* shock.mp3 */; };
+		2E65D9871D5DA40F00A11C3B /* shock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E65D9861D5DA40F00A11C3B /* shock.mp3 */; };
 		2E9DD1DF1D5717C6003CA17A /* HistoryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1DE1D5717C6003CA17A /* HistoryListCell.m */; };
 		2E9DD1E21D5719DD003CA17A /* HistoryListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1E11D5719DD003CA17A /* HistoryListViewModel.m */; };
 		2E9DD1E81D572059003CA17A /* HistoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1E71D572059003CA17A /* HistoryListViewController.m */; };
@@ -98,8 +97,7 @@
 		2E35CB831D54B41400443FA8 /* SetRepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRepeatViewController.m; sourceTree = "<group>"; };
 		2E62BEDA1D5466CE0037F484 /* SetReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetReminderViewController.h; sourceTree = "<group>"; };
 		2E62BEDB1D5466CE0037F484 /* SetReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetReminderViewController.m; sourceTree = "<group>"; };
-		2E65D9801D5D63D200A11C3B /* shock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = shock.mp3; path = ../../../../Desktop/shock.mp3; sourceTree = "<group>"; };
-		2E65D9821D5D63FD00A11C3B /* shock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = shock.mp3; path = ../../../../../Desktop/shock.mp3; sourceTree = "<group>"; };
+		2E65D9861D5DA40F00A11C3B /* shock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shock.mp3; sourceTree = "<group>"; };
 		2E9DD1DD1D5717C6003CA17A /* HistoryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListCell.h; sourceTree = "<group>"; };
 		2E9DD1DE1D5717C6003CA17A /* HistoryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryListCell.m; sourceTree = "<group>"; };
 		2E9DD1E01D5719DD003CA17A /* HistoryListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryListViewModel.h; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 		0D4C9BDE1D53341E00E1B534 /* MealUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2E65D9801D5D63D200A11C3B /* shock.mp3 */,
 				0D4C9BDF1D53341E00E1B534 /* MealUITests.m */,
 				0D4C9BE11D53341E00E1B534 /* Info.plist */,
 			);
@@ -267,6 +264,7 @@
 		0D4C9BEF1D53397500E1B534 /* Shake */ = {
 			isa = PBXGroup;
 			children = (
+				2E65D9861D5DA40F00A11C3B /* shock.mp3 */,
 				0D4C9BFA1D533B0B00E1B534 /* ViewModel */,
 				0D4C9BF01D5339A100E1B534 /* ShakeViewController.h */,
 				0D4C9BF11D5339A100E1B534 /* ShakeViewController.m */,
@@ -277,7 +275,6 @@
 		0D4C9BFA1D533B0B00E1B534 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2E65D9821D5D63FD00A11C3B /* shock.mp3 */,
 				2E9DD1F51D5861E5003CA17A /* ShakeViewModel.h */,
 				2E9DD1F61D5861E5003CA17A /* ShakeViewModel.m */,
 			);
@@ -501,7 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E65D9831D5D63FD00A11C3B /* shock.mp3 in Resources */,
+				2E65D9871D5DA40F00A11C3B /* shock.mp3 in Resources */,
 				0D293B8D1D58DB2600C15F76 /* Info.plist in Resources */,
 				0D4C9BCA1D53341E00E1B534 /* LaunchScreen.storyboard in Resources */,
 				0D4C9BC71D53341E00E1B534 /* Assets.xcassets in Resources */,
@@ -520,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E65D9811D5D63D200A11C3B /* shock.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
