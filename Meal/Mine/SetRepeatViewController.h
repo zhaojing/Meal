@@ -13,7 +13,8 @@ typedef NS_ENUM(NSInteger, RepeatFrequency) {
     everyday = 0,
     everyweek,
     everymonth,
-    everyyear
+    everyyear,
+    weekdays
 };
 
 @protocol PassRepeatFrequency <NSObject>
