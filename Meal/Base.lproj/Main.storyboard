@@ -772,6 +772,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作日重复" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq3-JX-Aae">
+                                <rect key="frame" x="40" y="252" width="90" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNd-zb-tur">
                                 <rect key="frame" x="511" y="80" width="51" height="31"/>
                                 <connections>
@@ -784,13 +790,21 @@
                                     <action selector="changeSwitchButton:" destination="kJY-ub-oVi" eventType="valueChanged" id="7eh-xJ-yZh"/>
                                 </connections>
                             </switch>
+                            <switch opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u1t-7h-OXh">
+                                <rect key="frame" x="511" y="248" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changeSwitchButton:" destination="kJY-ub-oVi" eventType="valueChanged" id="rVw-7h-7iU"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2Qz-fu-Pf2" firstAttribute="trailing" secondItem="fNd-zb-tur" secondAttribute="trailing" id="0BK-ii-h4b"/>
+                            <constraint firstItem="Iq3-JX-Aae" firstAttribute="leading" secondItem="bTU-KX-Efy" secondAttribute="leading" id="3c1-vF-Nlt"/>
                             <constraint firstItem="7hL-fG-UP5" firstAttribute="top" secondItem="Hog-TR-lba" secondAttribute="bottom" constant="20" id="3r2-9r-pEq"/>
                             <constraint firstItem="fNd-zb-tur" firstAttribute="centerY" secondItem="7hL-fG-UP5" secondAttribute="centerY" id="9oc-sA-sHd"/>
                             <constraint firstItem="7hL-fG-UP5" firstAttribute="leading" secondItem="uf7-Mo-C4z" secondAttribute="leadingMargin" constant="20" id="CpS-ju-C4B"/>
+                            <constraint firstItem="u1t-7h-OXh" firstAttribute="centerY" secondItem="Iq3-JX-Aae" secondAttribute="centerY" id="Gc3-8D-ggx"/>
                             <constraint firstItem="F3w-Bp-4b3" firstAttribute="leading" secondItem="7hL-fG-UP5" secondAttribute="leading" id="HYH-BE-d40"/>
                             <constraint firstItem="fNd-zb-tur" firstAttribute="trailing" secondItem="uf7-Mo-C4z" secondAttribute="trailingMargin" constant="-20" id="JCU-LI-gcR"/>
                             <constraint firstItem="ENV-30-Aei" firstAttribute="trailing" secondItem="fNd-zb-tur" secondAttribute="trailing" id="MjM-26-cnt"/>
@@ -799,6 +813,8 @@
                             <constraint firstItem="23g-PK-rjo" firstAttribute="centerY" secondItem="RAT-6K-G5B" secondAttribute="centerY" id="UTl-dF-tqY"/>
                             <constraint firstItem="F3w-Bp-4b3" firstAttribute="top" secondItem="7hL-fG-UP5" secondAttribute="bottom" constant="20" id="aJS-eB-d1Z"/>
                             <constraint firstItem="bTU-KX-Efy" firstAttribute="leading" secondItem="7hL-fG-UP5" secondAttribute="leading" id="bZK-5o-7kb"/>
+                            <constraint firstItem="u1t-7h-OXh" firstAttribute="trailing" secondItem="ENV-30-Aei" secondAttribute="trailing" id="gk0-pU-gzd"/>
+                            <constraint firstItem="Iq3-JX-Aae" firstAttribute="top" secondItem="bTU-KX-Efy" secondAttribute="bottom" constant="20" id="k38-05-k16"/>
                             <constraint firstItem="2Qz-fu-Pf2" firstAttribute="centerY" secondItem="F3w-Bp-4b3" secondAttribute="centerY" id="rw3-kl-OP1"/>
                             <constraint firstItem="23g-PK-rjo" firstAttribute="trailing" secondItem="fNd-zb-tur" secondAttribute="trailing" id="too-dn-4nl"/>
                             <constraint firstItem="bTU-KX-Efy" firstAttribute="top" secondItem="RAT-6K-G5B" secondAttribute="bottom" constant="20" id="vtp-ZM-Rhb"/>
@@ -811,6 +827,7 @@
                         <outlet property="everymonthSwitch" destination="23g-PK-rjo" id="WmD-zj-4eR"/>
                         <outlet property="everyweekSwitch" destination="2Qz-fu-Pf2" id="IlU-Hq-L0K"/>
                         <outlet property="everyyearSwitch" destination="ENV-30-Aei" id="uN8-YQ-RRU"/>
+                        <outlet property="weekdaysSwitch" destination="u1t-7h-OXh" id="peL-yy-xLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dz4-Ze-qAS" userLabel="First Responder" sceneMemberID="firstResponder"/>

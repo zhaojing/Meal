@@ -68,7 +68,7 @@ static SingletonEventStore * object;
     event.URL = [NSURL URLWithString:@"iOSDevMeal://"];
     event.endDate = [remind.allKeys containsObject:@"endDate"] ? remind[@"endDate"] : [alarm dateByAddingTimeInterval:1*60*60];
     event.notes = [remind.allKeys containsObject:@"notes"] ? remind[@"notes"] : @"";
-    NSString *occurrenceCount = [remind.allKeys containsObject:@"repeat_count"] ? remind[@"repeat_count"]: @"20";
+    NSString *occurrenceCount = [remind.allKeys containsObject:@"repeat_count"] ? remind[@"repeat_count"]: @"365";
     NSString *repeat = [remind.allKeys containsObject:@"repeat"] ? remind[@"repeat"] : @"" ;
     if (![repeat isEqualToString:@""]) {
         [repeat isEqualToString:@"4"] ?

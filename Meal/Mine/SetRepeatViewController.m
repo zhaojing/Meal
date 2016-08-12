@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UISwitch *everyweekSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *everymonthSwitch;
 @property (strong, nonatomic) IBOutlet UISwitch *everyyearSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *weekdaysSwitch;
 
 @end
 
@@ -39,6 +40,7 @@
     [self.everyweekSwitch setOn:false];
     [self.everymonthSwitch setOn:false];
     [self.everyyearSwitch setOn:false];
+    [self.weekdaysSwitch setOn:false];
 }
 
 @end

@@ -53,6 +53,7 @@
                               } andSuccess:^{
                                   [SVProgressHUD showSuccessWithStatus: @"提醒添加成功"];
                               }];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)clickBackground:(id)sender {

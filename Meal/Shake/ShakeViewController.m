@@ -5,7 +5,7 @@
 //  Created by JingZhao on 8/4/16.
 //  Copyright © 2016 JingZhao. All rights reserved.
 //
-
+#import <AVFoundation/AVFoundation.h>
 #import "ShakeViewController.h"
 #import "ShakeViewModel.h"
 #import "SVProgressHUD.h"
@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *resultPrice;
 @property (strong, nonatomic) IBOutlet UILabel *resultLocation;
 @property (strong, nonatomic) IBOutlet UIButton *confirmButton;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -30,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSURL *url=[[NSBundle mainBundle]URLForResource:@"shock.mp3" withExtension:Nil];
+    self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:Nil];
     [self cleanUI];
     self.viewModel = [[ShakeViewModel alloc]init];
 }
@@ -56,6 +59,8 @@
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (motion == UIEventSubtypeMotionShake) {
         [SVProgressHUD dismiss];
+        [self.audioPlayer prepareToPlay];
+        [self.audioPlayer play];
         [self cleanUI];
     }
 }
