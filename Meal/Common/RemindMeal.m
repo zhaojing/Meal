@@ -68,9 +68,24 @@ static SingletonEventStore * object;
     event.URL = [NSURL URLWithString:@"iOSDevMeal://"];
     event.endDate = [remind.allKeys containsObject:@"endDate"] ? remind[@"endDate"] : [alarm dateByAddingTimeInterval:1*60*60];
     event.notes = [remind.allKeys containsObject:@"notes"] ? remind[@"notes"] : @"";
+    NSString *occurrenceCount = [remind.allKeys containsObject:@"repeat_count"] ? remind[@"repeat_count"]: @"20";
     NSString *repeat = [remind.allKeys containsObject:@"repeat"] ? remind[@"repeat"] : @"" ;
     if (![repeat isEqualToString:@""]) {
-        [event addRecurrenceRule:[[EKRecurrenceRule alloc] initRecurrenceWithFrequency:repeat.integerValue interval:1 end:nil]];
+        [repeat isEqualToString:@"4"] ?
+        [event addRecurrenceRule: [[EKRecurrenceRule alloc]initRecurrenceWithFrequency:EKRecurrenceFrequencyDaily
+                                                                              interval:1
+                                                                         daysOfTheWeek:@[[EKRecurrenceDayOfWeek dayOfWeek:6], [EKRecurrenceDayOfWeek dayOfWeek:2], [EKRecurrenceDayOfWeek dayOfWeek:3], [EKRecurrenceDayOfWeek dayOfWeek:4], [EKRecurrenceDayOfWeek dayOfWeek:5]]
+                                                                        daysOfTheMonth:nil
+                                                                       monthsOfTheYear:nil
+                                                                        weeksOfTheYear:nil
+                                                                         daysOfTheYear:nil
+                                                                          setPositions:nil
+                                                                                   end:[EKRecurrenceEnd recurrenceEndWithOccurrenceCount:[occurrenceCount integerValue]]]] :
+        [event addRecurrenceRule:[[EKRecurrenceRule alloc] initRecurrenceWithFrequency:repeat.integerValue
+                                                                              interval:1
+                                                                                   end:[EKRecurrenceEnd recurrenceEndWithOccurrenceCount:[occurrenceCount integerValue]]]];
+        
+        
     }
     __block NSError *err;
     [eventStore saveEvent:event span:EKSpanFutureEvents commit:YES error:&err];
